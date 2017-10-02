@@ -70,8 +70,6 @@ public class InicioSesion extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         lblResultado = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        seljugador2 = new javax.swing.JRadioButton();
-        seljugador1 = new javax.swing.JRadioButton();
         txtContrasena = new javax.swing.JPasswordField();
         btnRegistrar = new javax.swing.JButton();
 
@@ -107,35 +105,15 @@ public class InicioSesion extends javax.swing.JFrame {
 
         lblResultado.setText("   ");
 
-        buttonGroup1.add(seljugador2);
-        seljugador2.setText("Jugador 2");
-
-        buttonGroup1.add(seljugador1);
-        seljugador1.setSelected(true);
-        seljugador1.setText("Jugador 1");
-        seljugador1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                seljugador1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(seljugador1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(seljugador2))
+            .addGap(0, 200, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 7, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(seljugador2)
-                    .addComponent(seljugador1)))
+            .addGap(0, 30, Short.MAX_VALUE)
         );
 
         txtContrasena.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -213,56 +191,25 @@ public class InicioSesion extends javax.swing.JFrame {
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         // TODO add your handling code here:
-        Cls_Validaciones validarinicio = new Cls_Validaciones();
-        Cls_ConnArchivos archivos = new Cls_ConnArchivos();
-        Jugador usuario = new Jugador();
+        ValidacionesContrasenas validarinicio = new ValidacionesContrasenas();
+        UsoArchivos archivos = new UsoArchivos();
+        Administradores usuario = new Administradores();
         String NombreUsuario, Contrasena;
-       
+
         NombreUsuario = txtNombreUsuario.getText();
         Contrasena = txtContrasena.getText();
 
         String Resultado = null;
 
-        int Jugador;
-
-        if (seljugador1.isSelected()) {
-            Jugador = 1;
-        } else if (seljugador2.isSelected()) {
-            Jugador = 2;
+        if ((NombreUsuario.equals("")) || (Contrasena.equals(""))) {
+            Resultado = "Uno de los campos está vacío";
         } else {
-            Jugador = 0;
-        }
-
-        if ((NombreUsuario.equals("")) || (Contrasena.equals(""))||JuegoPrincipal.txtJugador1.getText().equals(NombreUsuario)||JuegoPrincipal.txtJugador2.getText().equals(NombreUsuario)) {
-            Resultado = "Uno de los campos está vacío o ya inicio sesion";
-        } else {
-            Cls_Validaciones validar = new Cls_Validaciones();
+            ValidacionesContrasenas validar = new ValidacionesContrasenas();
 
             try {
                 if (validarinicio.ValidarInicioSesion(NombreUsuario, Contrasena)) {
-                    
-                    switch (Jugador) {
-                        
-                        case 1:
-                            
-                            JuegoPrincipal.txtJugador1.setText(txtNombreUsuario.getText());
-                            //JOptionPane.showMessageDialog(this, Principal.txtJugador1.getText() + " es el jugador " + Jugador);
-                            break;
-                            
-                        case 2:
-                            JuegoPrincipal.txtJugador2.setText(txtNombreUsuario.getText());
-                            //JOptionPane.showMessageDialog(this, txtNombreUsuario.getText() + " es el jugador " + Jugador);
-                            break;
-                            
-                        default:
-                            JOptionPane.showMessageDialog(this, "Error al recibir datos");
-                            break;
-                            
-                    }
-                    
-                    Resultado = "Sesion Iniciada." + " Ha ingresado el jugador " + Jugador + ", " + NombreUsuario;
-                    this.txtNombreUsuario.setText("");
-                    this.txtContrasena.setText("");
+                    JOptionPane.showMessageDialog(this, "Sesion Iniciada");
+                    //this.dispose();
                     
                 } else {
                     Resultado = "La contraseña no coincide con ningun usuario";
@@ -271,20 +218,9 @@ public class InicioSesion extends javax.swing.JFrame {
                 Logger.getLogger(InicioSesion.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
-        if (!JuegoPrincipal.txtJugador1.getText().equals("") && !JuegoPrincipal.txtJugador2.getText().equals("") )
-        {
-            this.setVisible(false);
-        }            
-                
-                
-        
+
         lblResultado.setText(Resultado);
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
-
-    private void seljugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seljugador1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_seljugador1ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
@@ -300,10 +236,10 @@ public class InicioSesion extends javax.swing.JFrame {
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
         Registrar iniciarregistro = new Registrar();
-        
+
         iniciarregistro.setVisible(true);
-        
-        
+
+
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
@@ -387,8 +323,6 @@ public class InicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblResultado;
-    private javax.swing.JRadioButton seljugador1;
-    private javax.swing.JRadioButton seljugador2;
     private javax.swing.JPasswordField txtContrasena;
     private javax.swing.JTextField txtNombreUsuario;
     // End of variables declaration//GEN-END:variables

@@ -129,8 +129,8 @@ public class Registrar extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-        Jugador usuario = new Jugador();
-        Cls_ConnArchivos archivos = new Cls_ConnArchivos();
+        Administradores usuario = new Administradores();
+        UsoArchivos archivos = new UsoArchivos();
         String NombreUsuario, Contrasena, CContrasena;
 
         NombreUsuario = this.txtNombreUsuario.getText();
@@ -142,10 +142,10 @@ public class Registrar extends javax.swing.JFrame {
         if ((txtNombreUsuario.getText().equals("")) || (txtContrasena.getText().equals("")) || (txtCContrasena.getText().equals(""))) {
             Resultado = "Uno de los campos está vacío.";
         } else {
-            Cls_Validaciones validar = new Cls_Validaciones();
+            ValidacionesContrasenas validar = new ValidacionesContrasenas();
 
             if (validar.ValidarContrasena(Contrasena, CContrasena)) {
-                usuario.setNombreJugador(NombreUsuario);
+                usuario.setNombre(NombreUsuario);
                 usuario.setContrasena(Contrasena);
                 try {
                     archivos.GuardarUsuario(usuario);

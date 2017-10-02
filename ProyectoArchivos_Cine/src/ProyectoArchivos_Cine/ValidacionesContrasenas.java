@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  *
  * @author Diaz
  */
-public class Cls_Validaciones {
+public class ValidacionesContrasenas {
 
     public boolean ValidarContrasena(String C1, String C2) {
 
@@ -37,7 +37,7 @@ public class Cls_Validaciones {
         // TODO add your handling code here:
 
         String linea;
-        FileReader f = new FileReader("JugadoresGato.txt");
+        FileReader f = new FileReader("Administradores.txt");
         try (BufferedReader b = new BufferedReader(f)) {
             while ((linea = b.readLine()) != null) {
                 String UserPass[] = linea.split(";");
