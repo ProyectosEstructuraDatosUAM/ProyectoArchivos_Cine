@@ -29,67 +29,67 @@ public class principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        Btn_Pelicula1 = new javax.swing.JButton();
+        Btn_Pelicula2 = new javax.swing.JButton();
+        Btn_Pelicula3 = new javax.swing.JButton();
+        Btn_Pelicula4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        Btn_Administracion = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        BtnSalir = new javax.swing.JButton();
+        Btn_Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pelicula1.png"))); // NOI18N
-        jButton1.setPreferredSize(new java.awt.Dimension(70, 30));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Pelicula1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pelicula1.png"))); // NOI18N
+        Btn_Pelicula1.setPreferredSize(new java.awt.Dimension(70, 30));
+        Btn_Pelicula1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Btn_Pelicula1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 58, 180, 280));
+        getContentPane().add(Btn_Pelicula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 58, 180, 280));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pelicula2.png"))); // NOI18N
-        jButton2.setPreferredSize(new java.awt.Dimension(70, 30));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Pelicula2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pelicula2.png"))); // NOI18N
+        Btn_Pelicula2.setPreferredSize(new java.awt.Dimension(70, 30));
+        Btn_Pelicula2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                Btn_Pelicula2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 180, 280));
+        getContentPane().add(Btn_Pelicula2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 180, 280));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pelicula3.png"))); // NOI18N
-        jButton3.setPreferredSize(new java.awt.Dimension(70, 30));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Pelicula3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pelicula3.png"))); // NOI18N
+        Btn_Pelicula3.setPreferredSize(new java.awt.Dimension(70, 30));
+        Btn_Pelicula3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                Btn_Pelicula3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 180, 280));
+        getContentPane().add(Btn_Pelicula3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 180, 280));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pelicula4.png"))); // NOI18N
-        jButton4.setPreferredSize(new java.awt.Dimension(70, 30));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Pelicula4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pelicula4.png"))); // NOI18N
+        Btn_Pelicula4.setPreferredSize(new java.awt.Dimension(70, 30));
+        Btn_Pelicula4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                Btn_Pelicula4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 180, 280));
+        getContentPane().add(Btn_Pelicula4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 180, 280));
 
         jLabel1.setFont(new java.awt.Font("Courier 10 Pitch", 3, 24)); // NOI18N
         jLabel1.setText("Escoja la pelicula que desea ver");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, -1));
 
-        jButton5.setText("Admin Login");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Administracion.setText("Admin Login");
+        Btn_Administracion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                Btn_AdministracionActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, -1, -1));
+        getContentPane().add(Btn_Administracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo.png"))); // NOI18N
         jLabel5.setText("jLabel5");
@@ -103,25 +103,26 @@ public class principal extends javax.swing.JFrame {
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 380, -1));
 
-        BtnSalir.setFont(new java.awt.Font("DejaVu Sans", 2, 18)); // NOI18N
-        BtnSalir.setText("Salir");
-        BtnSalir.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Salir.setFont(new java.awt.Font("DejaVu Sans", 2, 18)); // NOI18N
+        Btn_Salir.setText("Salir");
+        Btn_Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSalirActionPerformed(evt);
+                Btn_SalirActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 70, -1));
+        getContentPane().add(Btn_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 70, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void Btn_Pelicula1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pelicula1ActionPerformed
         // Pelicula 1
-        formulario abrir = new formulario();
+        seleccionCampos abrir = new seleccionCampos();
         abrir.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_Btn_Pelicula1ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void Btn_AdministracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_AdministracionActionPerformed
         // TODO add your handling code here:
         String paswd = "eGt56$", contrasena=" ";
         int cont=3;
@@ -144,30 +145,33 @@ public class principal extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(rootPane, "Maximo intentos aceptados.\n"
                    + "Chao..."); 
         }
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_Btn_AdministracionActionPerformed
 
-    private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalirActionPerformed
+    private void Btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SalirActionPerformed
         // Boton Salir
         System.exit(0);
-    }//GEN-LAST:event_BtnSalirActionPerformed
+    }//GEN-LAST:event_Btn_SalirActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void Btn_Pelicula2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pelicula2ActionPerformed
         // Peicula 2
-        formulario abrir = new formulario();
+        seleccionCampos abrir = new seleccionCampos();
         abrir.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_Btn_Pelicula2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void Btn_Pelicula3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pelicula3ActionPerformed
         // Pelicula 3
-        formulario abrir = new formulario();
+        seleccionCampos abrir = new seleccionCampos();
         abrir.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_Btn_Pelicula3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void Btn_Pelicula4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pelicula4ActionPerformed
         // pelicula 4
-        formulario abrir = new formulario();
+        seleccionCampos abrir = new seleccionCampos();
         abrir.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_Btn_Pelicula4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,12 +209,12 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnSalir;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton Btn_Administracion;
+    private javax.swing.JButton Btn_Pelicula1;
+    private javax.swing.JButton Btn_Pelicula2;
+    private javax.swing.JButton Btn_Pelicula3;
+    private javax.swing.JButton Btn_Pelicula4;
+    private javax.swing.JButton Btn_Salir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

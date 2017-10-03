@@ -1,19 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProyectoArchivos_Cine;
 
 /**
  *
  * @author yogg-saron
  */
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 public class seleccionCampos extends javax.swing.JFrame {
 
-    /**
-     * Creates new form seleccionCampos
-     */
+    /*Creamos el arraylist par almacenar los datos*/
+    ArrayList <Reservacion> lista = new ArrayList <Reservacion>();
+    String tipoTicket = " ", tipoPelicula=" ";
+    
     public seleccionCampos() {
         initComponents();
     }
@@ -107,8 +106,28 @@ public class seleccionCampos extends javax.swing.JFrame {
         jButton68 = new javax.swing.JButton();
         jButton69 = new javax.swing.JButton();
         jButton70 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        txt_cantidad_tiquetes = new javax.swing.JTextField();
+        txt_nombre_completo = new javax.swing.JTextField();
+        txt_correo_electronico = new javax.swing.JTextField();
+        txt_cedula = new javax.swing.JTextField();
+        txt_telefono = new javax.swing.JTextField();
+        Btn_Atras = new javax.swing.JButton();
+        txt_tipo_tiquete = new javax.swing.JComboBox<>();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        Btn_Pagar = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        txt_tipoTicket = new javax.swing.JTextField();
+        txt_peliculas = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Seleccion de Butacas");
@@ -119,93 +138,98 @@ public class seleccionCampos extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Century Schoolbook L", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(246, 245, 255));
         jLabel3.setText("B");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Century Schoolbook L", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(246, 245, 255));
         jLabel4.setText("A");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Century Schoolbook L", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(246, 245, 255));
         jLabel5.setText("A");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 130, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 250, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Century Schoolbook L", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(246, 245, 255));
         jLabel6.setText("B");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 170, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Century Schoolbook L", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(246, 245, 255));
         jLabel7.setText("C");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 210, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 330, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Century Schoolbook L", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(246, 245, 255));
         jLabel8.setText("D");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 250, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 370, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Century Schoolbook L", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(246, 245, 255));
         jLabel9.setText("E");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Century Schoolbook L", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(246, 245, 255));
         jLabel10.setText("E");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 290, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 410, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Century Schoolbook L", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(246, 245, 255));
         jLabel11.setText("C");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Century Schoolbook L", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(246, 245, 255));
         jLabel12.setText("D");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
-        jButton1.setText("11");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 40, -1));
+        jButton1.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton1.setText("14");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 40, -1));
 
-        jButton2.setText("11");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 40, -1));
+        jButton2.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton2.setText("14");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 40, -1));
 
-        jButton3.setText("11");
+        jButton3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton3.setText("14");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 40, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 40, -1));
 
-        jButton4.setText("11");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 40, -1));
+        jButton4.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton4.setText("14");
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 40, -1));
 
-        jButton5.setText("11");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 40, -1));
+        jButton5.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton5.setText("14");
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 40, -1));
 
         jButton6.setText("7");
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 40, -1));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, 40, -1));
 
         jButton7.setText("7");
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 40, -1));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, 40, -1));
 
         jButton8.setText("7");
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 40, -1));
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 40, -1));
 
         jButton9.setText("7");
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 40, -1));
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 40, -1));
 
         jButton10.setText("7");
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 40, -1));
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 40, -1));
 
         jButton11.setText("6");
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 40, -1));
+        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 40, -1));
 
         jButton12.setText("6");
-        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 40, -1));
+        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 40, -1));
 
         jButton13.setText("6");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -213,25 +237,25 @@ public class seleccionCampos extends javax.swing.JFrame {
                 jButton13ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 40, -1));
+        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 40, -1));
 
         jButton14.setText("6");
-        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, 40, -1));
+        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 40, -1));
 
         jButton15.setText("6");
-        getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 40, -1));
+        getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 40, -1));
 
         jButton16.setText("5");
-        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 40, -1));
+        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, 40, -1));
 
         jButton17.setText("5");
-        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 250, 40, -1));
+        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, 40, -1));
 
         jButton18.setText("5");
-        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 40, -1));
+        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 40, -1));
 
         jButton19.setText("5");
-        getContentPane().add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 40, -1));
+        getContentPane().add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 410, 40, -1));
 
         jButton20.setText("5");
         jButton20.addActionListener(new java.awt.event.ActionListener() {
@@ -239,7 +263,7 @@ public class seleccionCampos extends javax.swing.JFrame {
                 jButton20ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 40, -1));
+        getContentPane().add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, 40, -1));
 
         jButton21.setText("4");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
@@ -247,22 +271,22 @@ public class seleccionCampos extends javax.swing.JFrame {
                 jButton21ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, 40, -1));
+        getContentPane().add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, 40, -1));
 
         jButton22.setText("4");
-        getContentPane().add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 290, 40, -1));
+        getContentPane().add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 40, -1));
 
         jButton23.setText("4");
-        getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 250, 40, -1));
+        getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 40, -1));
 
         jButton24.setText("4");
-        getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 130, 40, -1));
+        getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 40, -1));
 
         jButton25.setText("4");
-        getContentPane().add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 40, -1));
+        getContentPane().add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 40, -1));
 
         jButton26.setText("3");
-        getContentPane().add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 170, 40, -1));
+        getContentPane().add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, 40, -1));
 
         jButton27.setText("3");
         jButton27.addActionListener(new java.awt.event.ActionListener() {
@@ -270,22 +294,22 @@ public class seleccionCampos extends javax.swing.JFrame {
                 jButton27ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 290, 40, -1));
+        getContentPane().add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 410, 40, -1));
 
         jButton28.setText("3");
-        getContentPane().add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 210, 40, -1));
+        getContentPane().add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, 40, -1));
 
         jButton29.setText("3");
-        getContentPane().add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 40, -1));
+        getContentPane().add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, 40, -1));
 
         jButton30.setText("3");
-        getContentPane().add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 40, -1));
+        getContentPane().add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 370, 40, -1));
 
         jButton31.setText("2");
-        getContentPane().add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 210, 40, -1));
+        getContentPane().add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 330, 40, -1));
 
         jButton32.setText("2");
-        getContentPane().add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 250, 40, -1));
+        getContentPane().add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 370, 40, -1));
 
         jButton33.setText("2");
         jButton33.addActionListener(new java.awt.event.ActionListener() {
@@ -293,166 +317,303 @@ public class seleccionCampos extends javax.swing.JFrame {
                 jButton33ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 130, 40, -1));
+        getContentPane().add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, 40, -1));
 
         jButton34.setText("2");
-        getContentPane().add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 170, 40, -1));
+        getContentPane().add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 290, 40, -1));
 
         jButton35.setText("2");
-        getContentPane().add(jButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 290, 40, -1));
+        getContentPane().add(jButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 40, -1));
 
         jButton36.setText("1");
-        getContentPane().add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 170, 40, -1));
+        getContentPane().add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 290, 40, -1));
 
         jButton37.setText("1");
-        getContentPane().add(jButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 250, 40, -1));
+        getContentPane().add(jButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 370, 40, -1));
 
         jButton38.setText("1");
-        getContentPane().add(jButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 290, 40, -1));
+        getContentPane().add(jButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 410, 40, -1));
 
         jButton39.setText("1");
-        getContentPane().add(jButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, 40, -1));
+        getContentPane().add(jButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 330, 40, -1));
 
         jButton40.setText("1");
-        getContentPane().add(jButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 130, 40, -1));
+        getContentPane().add(jButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 250, 40, -1));
 
-        jButton41.setText("7");
-        getContentPane().add(jButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 40, -1));
+        jButton41.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton41.setText("10");
+        getContentPane().add(jButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 40, -1));
 
-        jButton42.setText("7");
-        getContentPane().add(jButton42, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 40, -1));
+        jButton42.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton42.setText("10");
+        getContentPane().add(jButton42, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 40, -1));
 
-        jButton43.setText("7");
-        getContentPane().add(jButton43, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 40, -1));
+        jButton43.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton43.setText("10");
+        getContentPane().add(jButton43, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 40, -1));
 
-        jButton44.setText("7");
-        getContentPane().add(jButton44, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 40, -1));
+        jButton44.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton44.setText("10");
+        getContentPane().add(jButton44, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 40, -1));
 
-        jButton45.setText("7");
-        getContentPane().add(jButton45, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 40, -1));
+        jButton45.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton45.setText("10");
+        getContentPane().add(jButton45, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 40, -1));
 
-        jButton46.setText("6");
-        getContentPane().add(jButton46, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 40, -1));
+        jButton46.setText("9");
+        getContentPane().add(jButton46, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 40, -1));
 
-        jButton47.setText("6");
-        getContentPane().add(jButton47, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 40, -1));
+        jButton47.setText("9");
+        getContentPane().add(jButton47, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 40, -1));
 
-        jButton48.setText("6");
+        jButton48.setText("9");
         jButton48.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton48ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton48, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 40, -1));
+        getContentPane().add(jButton48, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, 40, -1));
 
-        jButton49.setText("6");
-        getContentPane().add(jButton49, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 40, -1));
+        jButton49.setText("9");
+        getContentPane().add(jButton49, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 40, -1));
 
-        jButton50.setText("6");
-        getContentPane().add(jButton50, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 40, -1));
+        jButton50.setText("9");
+        getContentPane().add(jButton50, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 40, -1));
 
-        jButton51.setText("5");
-        getContentPane().add(jButton51, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 40, -1));
+        jButton51.setText("8");
+        getContentPane().add(jButton51, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 40, -1));
 
-        jButton52.setText("5");
-        getContentPane().add(jButton52, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 40, -1));
+        jButton52.setText("8");
+        getContentPane().add(jButton52, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 40, -1));
 
-        jButton53.setText("5");
-        getContentPane().add(jButton53, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 40, -1));
+        jButton53.setText("8");
+        getContentPane().add(jButton53, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 40, -1));
 
-        jButton54.setText("5");
-        getContentPane().add(jButton54, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 40, -1));
+        jButton54.setText("8");
+        getContentPane().add(jButton54, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, 40, -1));
 
-        jButton55.setText("5");
+        jButton55.setText("8");
         jButton55.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton55ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton55, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 40, -1));
+        getContentPane().add(jButton55, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 40, -1));
 
-        jButton56.setText("10");
-        getContentPane().add(jButton56, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 40, -1));
+        jButton56.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton56.setText("13");
+        getContentPane().add(jButton56, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 40, -1));
 
-        jButton57.setText("10");
-        getContentPane().add(jButton57, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 40, -1));
+        jButton57.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton57.setText("13");
+        getContentPane().add(jButton57, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 40, -1));
 
-        jButton58.setText("8");
-        getContentPane().add(jButton58, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 40, -1));
+        jButton58.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton58.setText("11");
+        getContentPane().add(jButton58, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 40, -1));
 
-        jButton59.setText("8");
-        getContentPane().add(jButton59, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 40, -1));
+        jButton59.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton59.setText("11");
+        getContentPane().add(jButton59, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 40, -1));
 
-        jButton60.setText("9");
-        getContentPane().add(jButton60, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 40, -1));
+        jButton60.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton60.setText("12");
+        getContentPane().add(jButton60, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 40, -1));
 
-        jButton61.setText("9");
-        getContentPane().add(jButton61, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 40, -1));
+        jButton61.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton61.setText("12");
+        getContentPane().add(jButton61, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 40, -1));
 
-        jButton62.setText("8");
-        getContentPane().add(jButton62, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 40, -1));
+        jButton62.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton62.setText("11");
+        getContentPane().add(jButton62, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 40, -1));
 
-        jButton63.setText("10");
-        getContentPane().add(jButton63, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 40, -1));
+        jButton63.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton63.setText("13");
+        getContentPane().add(jButton63, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 40, -1));
 
-        jButton64.setText("10");
-        getContentPane().add(jButton64, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 40, -1));
+        jButton64.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton64.setText("13");
+        getContentPane().add(jButton64, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 40, -1));
 
-        jButton65.setText("8");
+        jButton65.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton65.setText("11");
         jButton65.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton65ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton65, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 40, -1));
+        getContentPane().add(jButton65, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 40, -1));
 
-        jButton66.setText("9");
+        jButton66.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton66.setText("12");
         jButton66.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton66ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton66, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 40, -1));
+        getContentPane().add(jButton66, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 40, -1));
 
-        jButton67.setText("8");
-        getContentPane().add(jButton67, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 40, -1));
+        jButton67.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton67.setText("11");
+        getContentPane().add(jButton67, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 40, -1));
 
-        jButton68.setText("10");
-        getContentPane().add(jButton68, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 40, -1));
+        jButton68.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton68.setText("13");
+        getContentPane().add(jButton68, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 40, -1));
 
-        jButton69.setText("9");
-        getContentPane().add(jButton69, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 40, -1));
+        jButton69.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton69.setText("12");
+        getContentPane().add(jButton69, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 40, -1));
 
-        jButton70.setText("9");
+        jButton70.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        jButton70.setText("12");
         jButton70.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton70ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton70, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 40, -1));
+        getContentPane().add(jButton70, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 40, -1));
 
-        jPanel1.setBackground(new java.awt.Color(75, 43, 104));
+        jLabel13.setFont(new java.awt.Font("Abyssinica SIL", 2, 24)); // NOI18N
+        jLabel13.setForeground(java.awt.Color.orange);
+        jLabel13.setText("Formulario de Reservación");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imax.jpg"))); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
+        jLabel2.setForeground(java.awt.Color.white);
+        jLabel2.setText("Tipo de tiquete");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
+        jLabel14.setForeground(java.awt.Color.white);
+        jLabel14.setText("Nombre Completo: ");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+
+        jLabel15.setBackground(java.awt.Color.white);
+        jLabel15.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
+        jLabel15.setForeground(java.awt.Color.white);
+        jLabel15.setText("Correo Electronico: ");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
+        jLabel16.setForeground(java.awt.Color.white);
+        jLabel16.setText("Cedula: ");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
+        jLabel17.setForeground(java.awt.Color.white);
+        jLabel17.setText("Cantidad de tiquetes: ");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
+        jLabel18.setForeground(java.awt.Color.white);
+        jLabel18.setText("Telefono: ");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Abyssinica SIL", 2, 24)); // NOI18N
+        jLabel1.setForeground(java.awt.Color.orange);
+        jLabel1.setText("Seleccione Butacas: ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, -1));
+        getContentPane().add(txt_cantidad_tiquetes, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 80, -1));
+        getContentPane().add(txt_nombre_completo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 270, -1));
+
+        txt_correo_electronico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_correo_electronicoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_correo_electronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 210, -1));
+        getContentPane().add(txt_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 210, -1));
+        getContentPane().add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 210, -1));
+
+        Btn_Atras.setText("Atras");
+        Btn_Atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_AtrasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_Atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+
+        txt_tipo_tiquete.setFont(new java.awt.Font("Abyssinica SIL", 2, 12)); // NOI18N
+        txt_tipo_tiquete.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Adulto Mayor", "Adulto", "Joven", "Niño" }));
+        txt_tipo_tiquete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_tipo_tiqueteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_tipo_tiquete, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, 120, -1));
+
+        jPanel1.setBackground(java.awt.Color.black);
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imax.jpg"))); // NOI18N
+        jLabel19.setText("jLabel19");
+
+        jLabel20.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
+        jLabel20.setForeground(java.awt.Color.white);
+        jLabel20.setText("Seleccione Pelicula: ");
+
+        Btn_Pagar.setText("Pagar");
+        Btn_Pagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_PagarActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
+        jLabel21.setForeground(java.awt.Color.white);
+        jLabel21.setText("Seleccionado: ");
+
+        txt_tipoTicket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_tipoTicketActionPerformed(evt);
+            }
+        });
+
+        txt_peliculas.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
+        txt_peliculas.setForeground(java.awt.Color.black);
+        txt_peliculas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BladeBlade Runner - Double Feature", "Id - El payaso diabolico", "NinjaGo - Lego", "Battle of the Sexes" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(jLabel1)
-                .addContainerGap(200, Short.MAX_VALUE))
+                .addGap(191, 191, 191)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel21)
+                    .addComponent(txt_tipoTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jLabel20)
+                .addGap(54, 54, 54)
+                .addComponent(txt_peliculas, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Btn_Pagar)
+                .addGap(109, 109, 109))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel19)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_tipoTicket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(Btn_Pagar)
+                    .addComponent(txt_peliculas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 330));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -501,6 +662,69 @@ public class seleccionCampos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void txt_tipo_tiqueteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tipo_tiqueteActionPerformed
+        // TODO add your handling code here:
+        txt_tipoTicket.setText(txt_tipo_tiquete.getSelectedItem().toString());
+        tipoTicket = txt_tipo_tiquete.getSelectedItem().toString();
+    }//GEN-LAST:event_txt_tipo_tiqueteActionPerformed
+
+    private void txt_correo_electronicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_correo_electronicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_correo_electronicoActionPerformed
+
+    private void Btn_PagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_PagarActionPerformed
+        // TODO add your handling code here:
+        Reservacion reserva = new Reservacion();
+        
+        reserva.setNombre_completo(txt_nombre_completo.getText());
+        reserva.setCorreo_electronico(txt_correo_electronico.getText());
+        reserva.setCedula(txt_cedula.getText());
+        reserva.setTelefono(txt_telefono.getText());
+        reserva.setTipo_tiquete(tipoTicket);
+        reserva.setCantidad_tiquetes(txt_cantidad_tiquetes.getText());
+        tipoPelicula= txt_peliculas.getSelectedItem().toString();
+        reserva.setPelicula(tipoPelicula);
+        
+        lista.add(reserva);
+        
+        int tickets = Integer.parseInt(reserva.getCantidad_tiquetes());
+        int total = tickets*2000;
+        String totaltickets = Integer.toString(total);
+        
+        /*JOptionPane.showMessageDialog(rootPane,"\nResumen de solicitud:\n"
+            +"Nombre:        "+reserva.getNombre_completo()+"\n"
+            +"Correo:        "+reserva.getCorreo_electronico()+"\n"
+            +"Cedula:        "+reserva.getCedula()+"\n"
+            +"Telefono:      "+reserva.getTelefono()+"\n"
+            +"Tipo tiquete:  "+reserva.getTipo_tiquete()+"\n"
+            +"Total a pagar: "+totaltickets+"\n"
+            +"Pelicula:      "+reserva.getPelicula());*/
+                
+        ResumenReservacion abrir = new ResumenReservacion();
+        abrir.setVisible(true);
+        this.setVisible(false);        
+        
+        ResumenReservacion.txt_nombre_completo.setText(txt_nombre_completo.getText());
+        ResumenReservacion.txt_correo_electronico.setText(txt_correo_electronico.getText());
+        ResumenReservacion.txt_cedula.setText(txt_cedula.getText());
+        ResumenReservacion.txt_telefono.setText(txt_telefono.getText()); 
+        ResumenReservacion.txt_tipo_tiquete.setText(tipoTicket);
+        ResumenReservacion.txt_pelicula.setText(tipoPelicula);
+        ResumenReservacion.txt_total.setText(totaltickets);
+    }//GEN-LAST:event_Btn_PagarActionPerformed
+
+    private void Btn_AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_AtrasActionPerformed
+        // TODO add your handling code here:
+            principal abrir = new principal();
+            abrir.setVisible(true);
+            this.setVisible(false);
+    }//GEN-LAST:event_Btn_AtrasActionPerformed
+
+    private void txt_tipoTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tipoTicketActionPerformed
+        // TODO add your handling code here:
+            
+    }//GEN-LAST:event_txt_tipoTicketActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -537,6 +761,8 @@ public class seleccionCampos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn_Atras;
+    private javax.swing.JButton Btn_Pagar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -611,6 +837,16 @@ public class seleccionCampos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -619,5 +855,13 @@ public class seleccionCampos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txt_cantidad_tiquetes;
+    private javax.swing.JTextField txt_cedula;
+    private javax.swing.JTextField txt_correo_electronico;
+    private javax.swing.JTextField txt_nombre_completo;
+    private javax.swing.JComboBox<String> txt_peliculas;
+    private javax.swing.JTextField txt_telefono;
+    private javax.swing.JTextField txt_tipoTicket;
+    private javax.swing.JComboBox<String> txt_tipo_tiquete;
     // End of variables declaration//GEN-END:variables
 }
