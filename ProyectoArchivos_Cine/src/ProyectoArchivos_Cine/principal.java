@@ -124,12 +124,15 @@ public class principal extends javax.swing.JFrame {
 
     private void Btn_AdministracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_AdministracionActionPerformed
         // TODO add your handling code here:
-        String paswd = "eGt56$", contrasena=" ";
+        Contrasena archivo = new Contrasena(); //se crea objeto de Contrasena
+        archivo.leer("Contrasena.txt"); /*se lee el archivo y en la misma linea se retrorna el valor 
+        de lo leido en la linea del archivo.*/
+        String password=" ";
         int cont=3;
         boolean pase=false;
         do{
-            contrasena = JOptionPane.showInputDialog("Introduzca la contraseña del Admisnitrador:");
-            if(contrasena.equals(paswd)){
+            password = JOptionPane.showInputDialog("Introduzca la contraseña del Admisnitrador:");
+            if(archivo.leer("Contrasena.txt").equals(password)){
                 pase=true;
                 break;
             }else{
