@@ -40,6 +40,7 @@ public class Registrar extends javax.swing.JFrame {
         txtContrasena = new javax.swing.JPasswordField();
         txtCContrasena = new javax.swing.JPasswordField();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Registro");
 
         txtNombreUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -157,7 +158,7 @@ public class Registrar extends javax.swing.JFrame {
                 this.txtNombreUsuario.setText("");
                 this.txtContrasena.setText("");
                 this.txtCContrasena.setText("");
-                this.setVisible(false);
+                this.dispose();
 
             } else {
                 Resultado = "La contraseña no coincide";
