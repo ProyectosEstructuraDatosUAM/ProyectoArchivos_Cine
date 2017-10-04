@@ -124,7 +124,7 @@ public class principal extends javax.swing.JFrame {
 
     private void Btn_AdministracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_AdministracionActionPerformed
         // TODO add your handling code here:
-        String paswd = "eGt56$", contrasena=" ";
+       /* String paswd = "eGt56$", contrasena=" ";
         int cont=3;
         boolean pase=false;
         do{
@@ -144,7 +144,12 @@ public class principal extends javax.swing.JFrame {
         }else{
            JOptionPane.showMessageDialog(rootPane, "Maximo intentos aceptados.\n"
                    + "Chao..."); 
-        }
+        }*/
+       
+       InicioSesion sesion = new InicioSesion();
+       sesion.setVisible(true);
+       
+       
     }//GEN-LAST:event_Btn_AdministracionActionPerformed
 
     private void Btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SalirActionPerformed

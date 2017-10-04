@@ -156,7 +156,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Peliciula:"/>
+        <Property name="text" type="java.lang.String" value="Pelicula:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">

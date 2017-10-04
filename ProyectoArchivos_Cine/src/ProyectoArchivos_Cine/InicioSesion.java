@@ -71,7 +71,6 @@ public class InicioSesion extends javax.swing.JFrame {
         lblResultado = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         txtContrasena = new javax.swing.JPasswordField();
-        btnRegistrar = new javax.swing.JButton();
 
         setTitle("Login");
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -118,13 +117,6 @@ public class InicioSesion extends javax.swing.JFrame {
 
         txtContrasena.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        btnRegistrar.setText("Registrar");
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -142,9 +134,6 @@ public class InicioSesion extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnIniciarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(72, 72, 72)
                         .addComponent(lblResultado)))
@@ -164,13 +153,11 @@ public class InicioSesion extends javax.swing.JFrame {
                 .addComponent(txtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnRegistrar)
-                .addGap(18, 18, 18)
+                .addGap(52, 52, 52)
                 .addComponent(lblResultado)
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +166,7 @@ public class InicioSesion extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addGap(27, 27, 27)
                     .addComponent(jLabel3)
-                    .addContainerGap(206, Short.MAX_VALUE)))
+                    .addContainerGap(167, Short.MAX_VALUE)))
         );
 
         pack();
@@ -208,11 +195,13 @@ public class InicioSesion extends javax.swing.JFrame {
 
             try {
                 if (validarinicio.ValidarInicioSesion(NombreUsuario, Contrasena)) {
-                    JOptionPane.showMessageDialog(this, "Sesion Iniciada");
-                    //this.dispose();
+                    JOptionPane.showMessageDialog(this, "Sesion Iniciada, Bienvenido " + NombreUsuario);
+                    administrador admin = new administrador();
+                    admin.setVisible(true);
+                    this.dispose();
                     
                 } else {
-                    Resultado = "La contraseña no coincide con ningun usuario";
+                    Resultado = "La contraseña no coincide con ningun administrador";
                 }
             } catch (IOException ex) {
                 Logger.getLogger(InicioSesion.class.getName()).log(Level.SEVERE, null, ex);
@@ -232,15 +221,6 @@ public class InicioSesion extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_formWindowClosing
-
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
-        Registrar iniciarregistro = new Registrar();
-
-        iniciarregistro.setVisible(true);
-
-
-    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,7 +266,6 @@ public class InicioSesion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIniciarSesion;
-    private javax.swing.JButton btnRegistrar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup10;
     private javax.swing.ButtonGroup buttonGroup11;

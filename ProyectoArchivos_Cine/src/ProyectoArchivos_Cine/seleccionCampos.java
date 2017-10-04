@@ -571,8 +571,12 @@ public class seleccionCampos extends javax.swing.JFrame {
         });
 
         txt_peliculas.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
-        txt_peliculas.setForeground(java.awt.Color.black);
-        txt_peliculas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BladeBlade Runner - Double Feature", "Id - El payaso diabolico", "NinjaGo - Lego", "Battle of the Sexes" }));
+        txt_peliculas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BladeBlade Runner - Double Feature", "It - El payaso diabolico", "NinjaGo - Lego", "Battle of the Sexes" }));
+        txt_peliculas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_peliculasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -724,6 +728,10 @@ public class seleccionCampos extends javax.swing.JFrame {
         // TODO add your handling code here:
             
     }//GEN-LAST:event_txt_tipoTicketActionPerformed
+
+    private void txt_peliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_peliculasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_peliculasActionPerformed
 
     /**
      * @param args the command line arguments
