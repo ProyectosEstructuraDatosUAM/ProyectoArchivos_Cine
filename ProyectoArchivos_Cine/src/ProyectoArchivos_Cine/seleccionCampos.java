@@ -147,10 +147,15 @@ public class seleccionCampos extends javax.swing.JFrame {
         txt_peliculas = new javax.swing.JComboBox<>();
         txt_tanda = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Seleccion de Butacas");
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(60, 51, 87));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Century Schoolbook L", 1, 18)); // NOI18N
@@ -993,8 +998,12 @@ public class seleccionCampos extends javax.swing.JFrame {
         jLabel21.setText("Tanda de:");
 
         txt_peliculas.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
-        txt_peliculas.setForeground(java.awt.Color.black);
-        txt_peliculas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BladeBlade Runner - Double Feature", "Id - El payaso diabolico", "NinjaGo - Lego", "Battle of the Sexes" }));
+        txt_peliculas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BladeBlade Runner - Double Feature", "It - El payaso diabolico", "NinjaGo - Lego", "Battle of the Sexes" }));
+        txt_peliculas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_peliculasActionPerformed(evt);
+            }
+        });
 
         txt_tanda.setFont(new java.awt.Font("Abyssinica SIL", 2, 12)); // NOI18N
         txt_tanda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mañana  10:00-12:00", "Tarde      16:00-18:00", "Noche     20:00-22:00" }));
@@ -1396,6 +1405,16 @@ public class seleccionCampos extends javax.swing.JFrame {
     private void Btn_E14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E14ActionPerformed
         cont++;color(Btn_E14, 4, 13,"E14");
     }//GEN-LAST:event_Btn_E14ActionPerformed
+
+    private void txt_peliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_peliculasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_peliculasActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        principal princ = new principal();
+        princ.setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

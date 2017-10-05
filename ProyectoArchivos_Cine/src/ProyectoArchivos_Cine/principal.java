@@ -41,6 +41,7 @@ public class principal extends javax.swing.JFrame {
         Btn_Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Btn_Pelicula1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pelicula1.png"))); // NOI18N
@@ -119,20 +120,18 @@ public class principal extends javax.swing.JFrame {
         // Pelicula 1
         seleccionCampos abrir = new seleccionCampos();
         abrir.setVisible(true);
-        this.setVisible(false);
+        //this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_Btn_Pelicula1ActionPerformed
 
     private void Btn_AdministracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_AdministracionActionPerformed
         // TODO add your handling code here:
-        Contrasena archivo = new Contrasena(); //se crea objeto de Contrasena
-        archivo.leer("Contrasena.txt"); /*se lee el archivo y en la misma linea se retrorna el valor 
-        de lo leido en la linea del archivo.*/
-        String password=" ";
+        /* String paswd = "eGt56$", contrasena=" ";
         int cont=3;
         boolean pase=false;
         do{
-            password = JOptionPane.showInputDialog("Introduzca la contraseña del Admisnitrador:");
-            if(archivo.leer("Contrasena.txt").equals(password)){
+            contrasena = JOptionPane.showInputDialog("Introduzca la contraseña del Admisnitrador:");
+            if(contrasena.equals(paswd)){
                 pase=true;
                 break;
             }else{
@@ -147,7 +146,12 @@ public class principal extends javax.swing.JFrame {
         }else{
            JOptionPane.showMessageDialog(rootPane, "Maximo intentos aceptados.\n"
                    + "Chao..."); 
-        }
+        }*/
+
+        InicioSesion sesion = new InicioSesion();
+        sesion.setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_Btn_AdministracionActionPerformed
 
     private void Btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SalirActionPerformed
@@ -159,21 +163,21 @@ public class principal extends javax.swing.JFrame {
         // Peicula 2
         seleccionCampos abrir = new seleccionCampos();
         abrir.setVisible(true);
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_Btn_Pelicula2ActionPerformed
 
     private void Btn_Pelicula3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pelicula3ActionPerformed
         // Pelicula 3
         seleccionCampos abrir = new seleccionCampos();
         abrir.setVisible(true);
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_Btn_Pelicula3ActionPerformed
 
     private void Btn_Pelicula4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pelicula4ActionPerformed
         // pelicula 4
         seleccionCampos abrir = new seleccionCampos();
         abrir.setVisible(true);
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_Btn_Pelicula4ActionPerformed
 
     /**

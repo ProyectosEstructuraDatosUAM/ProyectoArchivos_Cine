@@ -67,7 +67,7 @@ public class ResumenReservacion extends javax.swing.JFrame {
 
         jLabel6.setText("Tipo de tiquetes:");
 
-        jLabel7.setText("Peliciula:");
+        jLabel7.setText("Pelicula:");
 
         jLabel8.setText("Total:");
 
