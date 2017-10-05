@@ -5,6 +5,8 @@ package ProyectoArchivos_Cine;
  * @author infinitus
  */
 public class Reservacion {
+    String [][] campos = new String[5][13];
+    
     private String nombre_completo;
     private String correo_electronico;
     private String cedula;
@@ -12,7 +14,11 @@ public class Reservacion {
     private String Cantidad_tiquetes;
     private String tipo_tiquete;
     private String pelicula;
-
+    private String tanda;
+    private String Campo;
+    private int row, column;
+    
+    
     public String getNombre_completo() {
         return nombre_completo;
     }
@@ -68,12 +74,34 @@ public class Reservacion {
     public void setPelicula(String pelicula) {
         this.pelicula = pelicula;
     }
-
-
-
     
+    public String getTanda() {
+        return tanda;
+    }
 
-    
+    public void setTanda(String tanda) {
+        this.tanda = tanda;
+    }
+     
+    public void setPosition(int row, int column, String campo){
+        this.row=row;
+        this.column=column;
+        this.Campo=campo;
+        
+        for(int i=0; i<campos.length; i++){
+            if(i==row){
+               for(int j=0; j<campos[0].length; j++){
+                   if(j==column){
+                       campos[row][column]=campo;
+                   }
+               } 
+            }
+        }
+    }
+    public String getPosition(int row, int column){
+        
+        return campos[row][column];
+    }
     
     
 }

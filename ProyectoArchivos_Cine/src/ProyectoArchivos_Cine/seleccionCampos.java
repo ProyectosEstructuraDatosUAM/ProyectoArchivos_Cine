@@ -5,18 +5,36 @@ package ProyectoArchivos_Cine;
  *
  * @author yogg-saron
  */
+import java.awt.Color;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 public class seleccionCampos extends javax.swing.JFrame {
 
     /*Creamos el arraylist par almacenar los datos*/
     ArrayList <Reservacion> lista = new ArrayList <Reservacion>();
-    String tipoTicket = " ", tipoPelicula=" ";
+    Reservacion reserva = new Reservacion();
+    String tipoTicket = " ", tipoPelicula=" ", tanda=" ";
+    int cont = 0;
     
     public seleccionCampos() {
         initComponents();
     }
-
+    
+    public void color(javax.swing.JButton evt, int row, int column, String campo){ 
+        /*Se crea el metodo para cambiar de color en los botones de verde a amarillo
+        tambien setea la posicion del array de la clase reserva*/
+            if(cont%2==0){
+               evt.setBackground(Color.green);
+               //reserva.setPosition(row, column, "Libre");
+            }else if(cont%2==1){
+               evt.setBackground(Color.yellow);
+               reserva.setPosition(row, column, campo);
+            }
+            if(cont>1){
+                cont=0;
+            }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,76 +54,76 @@ public class seleccionCampos extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jButton33 = new javax.swing.JButton();
-        jButton34 = new javax.swing.JButton();
-        jButton35 = new javax.swing.JButton();
-        jButton36 = new javax.swing.JButton();
-        jButton37 = new javax.swing.JButton();
-        jButton38 = new javax.swing.JButton();
-        jButton39 = new javax.swing.JButton();
-        jButton40 = new javax.swing.JButton();
-        jButton41 = new javax.swing.JButton();
-        jButton42 = new javax.swing.JButton();
-        jButton43 = new javax.swing.JButton();
-        jButton44 = new javax.swing.JButton();
-        jButton45 = new javax.swing.JButton();
-        jButton46 = new javax.swing.JButton();
-        jButton47 = new javax.swing.JButton();
-        jButton48 = new javax.swing.JButton();
-        jButton49 = new javax.swing.JButton();
-        jButton50 = new javax.swing.JButton();
-        jButton51 = new javax.swing.JButton();
-        jButton52 = new javax.swing.JButton();
-        jButton53 = new javax.swing.JButton();
-        jButton54 = new javax.swing.JButton();
-        jButton55 = new javax.swing.JButton();
-        jButton56 = new javax.swing.JButton();
-        jButton57 = new javax.swing.JButton();
-        jButton58 = new javax.swing.JButton();
-        jButton59 = new javax.swing.JButton();
-        jButton60 = new javax.swing.JButton();
-        jButton61 = new javax.swing.JButton();
-        jButton62 = new javax.swing.JButton();
-        jButton63 = new javax.swing.JButton();
-        jButton64 = new javax.swing.JButton();
-        jButton65 = new javax.swing.JButton();
-        jButton66 = new javax.swing.JButton();
-        jButton67 = new javax.swing.JButton();
-        jButton68 = new javax.swing.JButton();
-        jButton69 = new javax.swing.JButton();
-        jButton70 = new javax.swing.JButton();
+        Btn_E14 = new javax.swing.JButton();
+        Btn_A14 = new javax.swing.JButton();
+        Btn_B14 = new javax.swing.JButton();
+        Btn_C14 = new javax.swing.JButton();
+        Btn_D14 = new javax.swing.JButton();
+        Btn_A7 = new javax.swing.JButton();
+        Btn_B7 = new javax.swing.JButton();
+        Btn_C7 = new javax.swing.JButton();
+        Btn_D7 = new javax.swing.JButton();
+        Btn_E7 = new javax.swing.JButton();
+        Btn_A6 = new javax.swing.JButton();
+        Btn_E6 = new javax.swing.JButton();
+        Btn_B6 = new javax.swing.JButton();
+        Btn_C6 = new javax.swing.JButton();
+        Btn_D6 = new javax.swing.JButton();
+        Btn_B5 = new javax.swing.JButton();
+        Btn_D5 = new javax.swing.JButton();
+        Btn_C5 = new javax.swing.JButton();
+        Btn_E5 = new javax.swing.JButton();
+        Btn_A5 = new javax.swing.JButton();
+        Btn_B4 = new javax.swing.JButton();
+        Btn_E4 = new javax.swing.JButton();
+        Btn_D4 = new javax.swing.JButton();
+        Btn_A4 = new javax.swing.JButton();
+        Btn_C4 = new javax.swing.JButton();
+        Btn_B3 = new javax.swing.JButton();
+        Btn_E3 = new javax.swing.JButton();
+        Btn_C3 = new javax.swing.JButton();
+        Btn_A3 = new javax.swing.JButton();
+        Btn_D3 = new javax.swing.JButton();
+        Btn_C2 = new javax.swing.JButton();
+        Btn_D2 = new javax.swing.JButton();
+        Btn_A2 = new javax.swing.JButton();
+        Btn_B2 = new javax.swing.JButton();
+        Btn_E2 = new javax.swing.JButton();
+        Btn_B1 = new javax.swing.JButton();
+        Btn_D1 = new javax.swing.JButton();
+        Btn_E1 = new javax.swing.JButton();
+        Btn_C1 = new javax.swing.JButton();
+        Btn_A1 = new javax.swing.JButton();
+        Btn_A10 = new javax.swing.JButton();
+        Btn_B10 = new javax.swing.JButton();
+        Btn_C10 = new javax.swing.JButton();
+        Btn_D10 = new javax.swing.JButton();
+        Btn_E10 = new javax.swing.JButton();
+        Btn_A9 = new javax.swing.JButton();
+        Btn_E9 = new javax.swing.JButton();
+        Btn_B9 = new javax.swing.JButton();
+        Btn_C9 = new javax.swing.JButton();
+        Btn_D9 = new javax.swing.JButton();
+        Btn_B8 = new javax.swing.JButton();
+        Btn_D8 = new javax.swing.JButton();
+        Btn_C8 = new javax.swing.JButton();
+        Btn_E8 = new javax.swing.JButton();
+        Btn_A8 = new javax.swing.JButton();
+        Btn_A13 = new javax.swing.JButton();
+        Btn_D13 = new javax.swing.JButton();
+        Btn_D11 = new javax.swing.JButton();
+        Btn_C11 = new javax.swing.JButton();
+        Btn_D12 = new javax.swing.JButton();
+        Btn_E12 = new javax.swing.JButton();
+        Btn_B11 = new javax.swing.JButton();
+        Btn_E13 = new javax.swing.JButton();
+        Btn_B13 = new javax.swing.JButton();
+        Btn_A11 = new javax.swing.JButton();
+        Btn_B12 = new javax.swing.JButton();
+        Btn_E11 = new javax.swing.JButton();
+        Btn_C13 = new javax.swing.JButton();
+        Btn_A12 = new javax.swing.JButton();
+        Btn_C12 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -126,8 +144,8 @@ public class seleccionCampos extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         Btn_Pagar = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
-        txt_tipoTicket = new javax.swing.JTextField();
         txt_peliculas = new javax.swing.JComboBox<>();
+        txt_tanda = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Seleccion de Butacas");
@@ -185,295 +203,705 @@ public class seleccionCampos extends javax.swing.JFrame {
         jLabel12.setText("D");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton1.setText("14");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 40, -1));
-
-        jButton2.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton2.setText("14");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 40, -1));
-
-        jButton3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton3.setText("14");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Btn_E14.setBackground(java.awt.Color.green);
+        Btn_E14.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_E14.setText("14");
+        Btn_E14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                Btn_E14ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 40, -1));
+        getContentPane().add(Btn_E14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 40, -1));
 
-        jButton4.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton4.setText("14");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 40, -1));
-
-        jButton5.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton5.setText("14");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 40, -1));
-
-        jButton6.setText("7");
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, 40, -1));
-
-        jButton7.setText("7");
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, 40, -1));
-
-        jButton8.setText("7");
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 40, -1));
-
-        jButton9.setText("7");
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 40, -1));
-
-        jButton10.setText("7");
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 40, -1));
-
-        jButton11.setText("6");
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 40, -1));
-
-        jButton12.setText("6");
-        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 40, -1));
-
-        jButton13.setText("6");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        Btn_A14.setBackground(java.awt.Color.green);
+        Btn_A14.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_A14.setText("14");
+        Btn_A14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                Btn_A14ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 40, -1));
+        getContentPane().add(Btn_A14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 40, -1));
 
-        jButton14.setText("6");
-        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 40, -1));
-
-        jButton15.setText("6");
-        getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 40, -1));
-
-        jButton16.setText("5");
-        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, 40, -1));
-
-        jButton17.setText("5");
-        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, 40, -1));
-
-        jButton18.setText("5");
-        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 40, -1));
-
-        jButton19.setText("5");
-        getContentPane().add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 410, 40, -1));
-
-        jButton20.setText("5");
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        Btn_B14.setBackground(java.awt.Color.green);
+        Btn_B14.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_B14.setText("14");
+        Btn_B14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                Btn_B14ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, 40, -1));
+        getContentPane().add(Btn_B14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 40, -1));
 
-        jButton21.setText("4");
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
+        Btn_C14.setBackground(java.awt.Color.green);
+        Btn_C14.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_C14.setText("14");
+        Btn_C14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
+                Btn_C14ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, 40, -1));
+        getContentPane().add(Btn_C14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 40, -1));
 
-        jButton22.setText("4");
-        getContentPane().add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 40, -1));
-
-        jButton23.setText("4");
-        getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 40, -1));
-
-        jButton24.setText("4");
-        getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 40, -1));
-
-        jButton25.setText("4");
-        getContentPane().add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 40, -1));
-
-        jButton26.setText("3");
-        getContentPane().add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, 40, -1));
-
-        jButton27.setText("3");
-        jButton27.addActionListener(new java.awt.event.ActionListener() {
+        Btn_D14.setBackground(java.awt.Color.green);
+        Btn_D14.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_D14.setText("14");
+        Btn_D14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton27ActionPerformed(evt);
+                Btn_D14ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 410, 40, -1));
+        getContentPane().add(Btn_D14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 40, -1));
 
-        jButton28.setText("3");
-        getContentPane().add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, 40, -1));
-
-        jButton29.setText("3");
-        getContentPane().add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, 40, -1));
-
-        jButton30.setText("3");
-        getContentPane().add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 370, 40, -1));
-
-        jButton31.setText("2");
-        getContentPane().add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 330, 40, -1));
-
-        jButton32.setText("2");
-        getContentPane().add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 370, 40, -1));
-
-        jButton33.setText("2");
-        jButton33.addActionListener(new java.awt.event.ActionListener() {
+        Btn_A7.setBackground(java.awt.Color.green);
+        Btn_A7.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_A7.setText("7");
+        Btn_A7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton33ActionPerformed(evt);
+                Btn_A7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, 40, -1));
+        getContentPane().add(Btn_A7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, 40, -1));
 
-        jButton34.setText("2");
-        getContentPane().add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 290, 40, -1));
-
-        jButton35.setText("2");
-        getContentPane().add(jButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 40, -1));
-
-        jButton36.setText("1");
-        getContentPane().add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 290, 40, -1));
-
-        jButton37.setText("1");
-        getContentPane().add(jButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 370, 40, -1));
-
-        jButton38.setText("1");
-        getContentPane().add(jButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 410, 40, -1));
-
-        jButton39.setText("1");
-        getContentPane().add(jButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 330, 40, -1));
-
-        jButton40.setText("1");
-        getContentPane().add(jButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 250, 40, -1));
-
-        jButton41.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton41.setText("10");
-        getContentPane().add(jButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 40, -1));
-
-        jButton42.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton42.setText("10");
-        getContentPane().add(jButton42, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 40, -1));
-
-        jButton43.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton43.setText("10");
-        getContentPane().add(jButton43, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 40, -1));
-
-        jButton44.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton44.setText("10");
-        getContentPane().add(jButton44, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 40, -1));
-
-        jButton45.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton45.setText("10");
-        getContentPane().add(jButton45, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 40, -1));
-
-        jButton46.setText("9");
-        getContentPane().add(jButton46, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 40, -1));
-
-        jButton47.setText("9");
-        getContentPane().add(jButton47, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 40, -1));
-
-        jButton48.setText("9");
-        jButton48.addActionListener(new java.awt.event.ActionListener() {
+        Btn_B7.setBackground(java.awt.Color.green);
+        Btn_B7.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_B7.setText("7");
+        Btn_B7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton48ActionPerformed(evt);
+                Btn_B7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton48, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, 40, -1));
+        getContentPane().add(Btn_B7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, 40, -1));
 
-        jButton49.setText("9");
-        getContentPane().add(jButton49, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 40, -1));
-
-        jButton50.setText("9");
-        getContentPane().add(jButton50, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 40, -1));
-
-        jButton51.setText("8");
-        getContentPane().add(jButton51, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 40, -1));
-
-        jButton52.setText("8");
-        getContentPane().add(jButton52, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 40, -1));
-
-        jButton53.setText("8");
-        getContentPane().add(jButton53, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 40, -1));
-
-        jButton54.setText("8");
-        getContentPane().add(jButton54, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, 40, -1));
-
-        jButton55.setText("8");
-        jButton55.addActionListener(new java.awt.event.ActionListener() {
+        Btn_C7.setBackground(java.awt.Color.green);
+        Btn_C7.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_C7.setText("7");
+        Btn_C7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton55ActionPerformed(evt);
+                Btn_C7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton55, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 40, -1));
+        getContentPane().add(Btn_C7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 40, -1));
 
-        jButton56.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton56.setText("13");
-        getContentPane().add(jButton56, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 40, -1));
-
-        jButton57.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton57.setText("13");
-        getContentPane().add(jButton57, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 40, -1));
-
-        jButton58.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton58.setText("11");
-        getContentPane().add(jButton58, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 40, -1));
-
-        jButton59.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton59.setText("11");
-        getContentPane().add(jButton59, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 40, -1));
-
-        jButton60.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton60.setText("12");
-        getContentPane().add(jButton60, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 40, -1));
-
-        jButton61.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton61.setText("12");
-        getContentPane().add(jButton61, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 40, -1));
-
-        jButton62.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton62.setText("11");
-        getContentPane().add(jButton62, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 40, -1));
-
-        jButton63.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton63.setText("13");
-        getContentPane().add(jButton63, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 40, -1));
-
-        jButton64.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton64.setText("13");
-        getContentPane().add(jButton64, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 40, -1));
-
-        jButton65.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton65.setText("11");
-        jButton65.addActionListener(new java.awt.event.ActionListener() {
+        Btn_D7.setBackground(java.awt.Color.green);
+        Btn_D7.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_D7.setText("7");
+        Btn_D7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton65ActionPerformed(evt);
+                Btn_D7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton65, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 40, -1));
+        getContentPane().add(Btn_D7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 40, -1));
 
-        jButton66.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton66.setText("12");
-        jButton66.addActionListener(new java.awt.event.ActionListener() {
+        Btn_E7.setBackground(java.awt.Color.green);
+        Btn_E7.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_E7.setText("7");
+        Btn_E7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton66ActionPerformed(evt);
+                Btn_E7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton66, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 40, -1));
+        getContentPane().add(Btn_E7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 40, -1));
 
-        jButton67.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton67.setText("11");
-        getContentPane().add(jButton67, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 40, -1));
-
-        jButton68.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton68.setText("13");
-        getContentPane().add(jButton68, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 40, -1));
-
-        jButton69.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton69.setText("12");
-        getContentPane().add(jButton69, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 40, -1));
-
-        jButton70.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
-        jButton70.setText("12");
-        jButton70.addActionListener(new java.awt.event.ActionListener() {
+        Btn_A6.setBackground(java.awt.Color.green);
+        Btn_A6.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_A6.setText("6");
+        Btn_A6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton70ActionPerformed(evt);
+                Btn_A6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton70, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 40, -1));
+        getContentPane().add(Btn_A6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 40, -1));
+
+        Btn_E6.setBackground(java.awt.Color.green);
+        Btn_E6.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_E6.setText("6");
+        Btn_E6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_E6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_E6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 40, -1));
+
+        Btn_B6.setBackground(java.awt.Color.green);
+        Btn_B6.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_B6.setText("6");
+        Btn_B6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_B6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_B6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 40, -1));
+
+        Btn_C6.setBackground(java.awt.Color.green);
+        Btn_C6.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_C6.setText("6");
+        Btn_C6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_C6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_C6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 40, -1));
+
+        Btn_D6.setBackground(java.awt.Color.green);
+        Btn_D6.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_D6.setText("6");
+        Btn_D6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_D6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_D6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 40, -1));
+
+        Btn_B5.setBackground(java.awt.Color.green);
+        Btn_B5.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_B5.setText("5");
+        Btn_B5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_B5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_B5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, 40, -1));
+
+        Btn_D5.setBackground(java.awt.Color.green);
+        Btn_D5.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_D5.setText("5");
+        Btn_D5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_D5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_D5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, 40, -1));
+
+        Btn_C5.setBackground(java.awt.Color.green);
+        Btn_C5.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_C5.setText("5");
+        Btn_C5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_C5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_C5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 40, -1));
+
+        Btn_E5.setBackground(java.awt.Color.green);
+        Btn_E5.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_E5.setText("5");
+        Btn_E5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_E5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_E5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 410, 40, -1));
+
+        Btn_A5.setBackground(java.awt.Color.green);
+        Btn_A5.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_A5.setText("5");
+        Btn_A5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_A5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_A5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, 40, -1));
+
+        Btn_B4.setBackground(java.awt.Color.green);
+        Btn_B4.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_B4.setText("4");
+        Btn_B4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_B4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_B4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, 40, -1));
+
+        Btn_E4.setBackground(java.awt.Color.green);
+        Btn_E4.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_E4.setText("4");
+        Btn_E4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_E4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_E4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 40, -1));
+
+        Btn_D4.setBackground(java.awt.Color.green);
+        Btn_D4.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_D4.setText("4");
+        Btn_D4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_D4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_D4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 40, -1));
+
+        Btn_A4.setBackground(java.awt.Color.green);
+        Btn_A4.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_A4.setText("4");
+        Btn_A4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_A4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_A4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 40, -1));
+
+        Btn_C4.setBackground(java.awt.Color.green);
+        Btn_C4.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_C4.setText("4");
+        Btn_C4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_C4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_C4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 40, -1));
+
+        Btn_B3.setBackground(java.awt.Color.green);
+        Btn_B3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_B3.setText("3");
+        Btn_B3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_B3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_B3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, 40, -1));
+
+        Btn_E3.setBackground(java.awt.Color.green);
+        Btn_E3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_E3.setText("3");
+        Btn_E3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_E3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_E3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 410, 40, -1));
+
+        Btn_C3.setBackground(java.awt.Color.green);
+        Btn_C3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_C3.setText("3");
+        Btn_C3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_C3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_C3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, 40, -1));
+
+        Btn_A3.setBackground(java.awt.Color.green);
+        Btn_A3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_A3.setText("3");
+        Btn_A3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_A3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_A3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, 40, -1));
+
+        Btn_D3.setBackground(java.awt.Color.green);
+        Btn_D3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_D3.setText("3");
+        Btn_D3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_D3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_D3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 370, 40, -1));
+
+        Btn_C2.setBackground(java.awt.Color.green);
+        Btn_C2.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_C2.setText("2");
+        Btn_C2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_C2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 330, 40, -1));
+
+        Btn_D2.setBackground(java.awt.Color.green);
+        Btn_D2.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_D2.setText("2");
+        Btn_D2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_D2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 370, 40, -1));
+
+        Btn_A2.setBackground(java.awt.Color.green);
+        Btn_A2.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_A2.setText("2");
+        Btn_A2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_A2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, 40, -1));
+
+        Btn_B2.setBackground(java.awt.Color.green);
+        Btn_B2.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_B2.setText("2");
+        Btn_B2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_B2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 290, 40, -1));
+
+        Btn_E2.setBackground(java.awt.Color.green);
+        Btn_E2.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_E2.setText("2");
+        Btn_E2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_E2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_E2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 40, -1));
+
+        Btn_B1.setBackground(java.awt.Color.green);
+        Btn_B1.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_B1.setText("1");
+        Btn_B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_B1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 290, 40, -1));
+
+        Btn_D1.setBackground(java.awt.Color.green);
+        Btn_D1.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_D1.setText("1");
+        Btn_D1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_D1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 370, 40, -1));
+
+        Btn_E1.setBackground(java.awt.Color.green);
+        Btn_E1.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_E1.setText("1");
+        Btn_E1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_E1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 410, 40, -1));
+
+        Btn_C1.setBackground(java.awt.Color.green);
+        Btn_C1.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_C1.setText("1");
+        Btn_C1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_C1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 330, 40, -1));
+
+        Btn_A1.setBackground(java.awt.Color.green);
+        Btn_A1.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_A1.setText("1");
+        Btn_A1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_A1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 250, 40, -1));
+
+        Btn_A10.setBackground(java.awt.Color.green);
+        Btn_A10.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_A10.setText("10");
+        Btn_A10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_A10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_A10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 40, -1));
+
+        Btn_B10.setBackground(java.awt.Color.green);
+        Btn_B10.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_B10.setText("10");
+        Btn_B10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_B10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_B10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 40, -1));
+
+        Btn_C10.setBackground(java.awt.Color.green);
+        Btn_C10.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_C10.setText("10");
+        Btn_C10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_C10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_C10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 40, -1));
+
+        Btn_D10.setBackground(java.awt.Color.green);
+        Btn_D10.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_D10.setText("10");
+        Btn_D10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_D10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_D10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 40, -1));
+
+        Btn_E10.setBackground(java.awt.Color.green);
+        Btn_E10.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_E10.setText("10");
+        Btn_E10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_E10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_E10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 40, -1));
+
+        Btn_A9.setBackground(java.awt.Color.green);
+        Btn_A9.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_A9.setText("9");
+        Btn_A9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_A9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_A9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 40, -1));
+
+        Btn_E9.setBackground(java.awt.Color.green);
+        Btn_E9.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_E9.setText("9");
+        Btn_E9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_E9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_E9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 40, -1));
+
+        Btn_B9.setBackground(java.awt.Color.green);
+        Btn_B9.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_B9.setText("9");
+        Btn_B9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_B9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_B9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, 40, -1));
+
+        Btn_C9.setBackground(java.awt.Color.green);
+        Btn_C9.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_C9.setText("9");
+        Btn_C9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_C9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_C9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 40, -1));
+
+        Btn_D9.setBackground(java.awt.Color.green);
+        Btn_D9.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_D9.setText("9");
+        Btn_D9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_D9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_D9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 40, -1));
+
+        Btn_B8.setBackground(java.awt.Color.green);
+        Btn_B8.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_B8.setText("8");
+        Btn_B8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_B8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_B8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 40, -1));
+
+        Btn_D8.setBackground(java.awt.Color.green);
+        Btn_D8.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_D8.setText("8");
+        Btn_D8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_D8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_D8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 40, -1));
+
+        Btn_C8.setBackground(java.awt.Color.green);
+        Btn_C8.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_C8.setText("8");
+        Btn_C8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_C8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_C8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 40, -1));
+
+        Btn_E8.setBackground(java.awt.Color.green);
+        Btn_E8.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_E8.setText("8");
+        Btn_E8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_E8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_E8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, 40, -1));
+
+        Btn_A8.setBackground(java.awt.Color.green);
+        Btn_A8.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_A8.setText("8");
+        Btn_A8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_A8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_A8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 40, -1));
+
+        Btn_A13.setBackground(java.awt.Color.green);
+        Btn_A13.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_A13.setText("13");
+        Btn_A13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_A13ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_A13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 40, -1));
+
+        Btn_D13.setBackground(java.awt.Color.green);
+        Btn_D13.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_D13.setText("13");
+        Btn_D13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_D13ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_D13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 40, -1));
+
+        Btn_D11.setBackground(java.awt.Color.green);
+        Btn_D11.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_D11.setText("11");
+        Btn_D11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_D11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_D11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 40, -1));
+
+        Btn_C11.setBackground(java.awt.Color.green);
+        Btn_C11.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_C11.setText("11");
+        Btn_C11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_C11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_C11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 40, -1));
+
+        Btn_D12.setBackground(java.awt.Color.green);
+        Btn_D12.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_D12.setText("12");
+        Btn_D12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_D12ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_D12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 40, -1));
+
+        Btn_E12.setBackground(java.awt.Color.green);
+        Btn_E12.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_E12.setText("12");
+        Btn_E12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_E12ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_E12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 40, -1));
+
+        Btn_B11.setBackground(java.awt.Color.green);
+        Btn_B11.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_B11.setText("11");
+        Btn_B11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_B11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_B11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 40, -1));
+
+        Btn_E13.setBackground(java.awt.Color.green);
+        Btn_E13.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_E13.setText("13");
+        Btn_E13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_E13ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_E13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 40, -1));
+
+        Btn_B13.setBackground(java.awt.Color.green);
+        Btn_B13.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_B13.setText("13");
+        Btn_B13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_B13ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_B13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 40, -1));
+
+        Btn_A11.setBackground(java.awt.Color.green);
+        Btn_A11.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_A11.setText("11");
+        Btn_A11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_A11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_A11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 40, -1));
+
+        Btn_B12.setBackground(java.awt.Color.green);
+        Btn_B12.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_B12.setText("12");
+        Btn_B12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_B12ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_B12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 40, -1));
+
+        Btn_E11.setBackground(java.awt.Color.green);
+        Btn_E11.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_E11.setText("11");
+        Btn_E11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_E11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_E11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 40, -1));
+
+        Btn_C13.setBackground(java.awt.Color.green);
+        Btn_C13.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_C13.setText("13");
+        Btn_C13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_C13ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_C13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 40, -1));
+
+        Btn_A12.setBackground(java.awt.Color.green);
+        Btn_A12.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_A12.setText("12");
+        Btn_A12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_A12ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_A12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 40, -1));
+
+        Btn_C12.setBackground(java.awt.Color.green);
+        Btn_C12.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        Btn_C12.setText("12");
+        Btn_C12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_C12ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Btn_C12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 40, -1));
 
         jLabel13.setFont(new java.awt.Font("Abyssinica SIL", 2, 24)); // NOI18N
         jLabel13.setForeground(java.awt.Color.orange);
@@ -542,7 +970,7 @@ public class seleccionCampos extends javax.swing.JFrame {
                 txt_tipo_tiqueteActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_tipo_tiquete, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, 120, -1));
+        getContentPane().add(txt_tipo_tiquete, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, 140, -1));
 
         jPanel1.setBackground(java.awt.Color.black);
 
@@ -560,19 +988,16 @@ public class seleccionCampos extends javax.swing.JFrame {
             }
         });
 
-        jLabel21.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
         jLabel21.setForeground(java.awt.Color.white);
-        jLabel21.setText("Seleccionado: ");
-
-        txt_tipoTicket.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_tipoTicketActionPerformed(evt);
-            }
-        });
+        jLabel21.setText("Tanda de:");
 
         txt_peliculas.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
         txt_peliculas.setForeground(java.awt.Color.black);
         txt_peliculas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BladeBlade Runner - Double Feature", "Id - El payaso diabolico", "NinjaGo - Lego", "Battle of the Sexes" }));
+
+        txt_tanda.setFont(new java.awt.Font("Abyssinica SIL", 2, 12)); // NOI18N
+        txt_tanda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mañana  10:00-12:00", "Tarde      16:00-18:00", "Noche     20:00-22:00" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -584,14 +1009,14 @@ public class seleccionCampos extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel21)
-                    .addComponent(txt_tipoTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                    .addComponent(txt_tanda, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(jLabel20)
                 .addGap(54, 54, 54)
                 .addComponent(txt_peliculas, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
                 .addComponent(Btn_Pagar)
                 .addGap(109, 109, 109))
         );
@@ -599,12 +1024,12 @@ public class seleccionCampos extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel19)
+                        .addComponent(jLabel21))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addComponent(jLabel21)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_tipoTicket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(159, 159, 159)
+                        .addComponent(txt_tanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
@@ -618,54 +1043,52 @@ public class seleccionCampos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton27ActionPerformed
+    private void Btn_E3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E3ActionPerformed
+        cont++;color(Btn_E3, 4, 2,"E3");
+    }//GEN-LAST:event_Btn_E3ActionPerformed
 
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton21ActionPerformed
+    private void Btn_B4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B4ActionPerformed
+        cont++;color(Btn_B4, 1, 3, "B4");
+    }//GEN-LAST:event_Btn_B4ActionPerformed
 
-    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton33ActionPerformed
+    private void Btn_A2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A2ActionPerformed
+        cont++;color(Btn_A2, 0, 1,"A2");
+    }//GEN-LAST:event_Btn_A2ActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
+    private void Btn_B6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B6ActionPerformed
+        cont++;color(Btn_B6, 1, 5,"B6");
+    }//GEN-LAST:event_Btn_B6ActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
+    private void Btn_A5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A5ActionPerformed
+        cont++;color(Btn_A5, 0, 4,"A5");
+    }//GEN-LAST:event_Btn_A5ActionPerformed
 
-    private void jButton55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton55ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton55ActionPerformed
+    private void Btn_A8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A8ActionPerformed
+        cont++;color(Btn_A8, 0, 7,"A8");
+    }//GEN-LAST:event_Btn_A8ActionPerformed
 
-    private void jButton48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton48ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton48ActionPerformed
+    private void Btn_B9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B9ActionPerformed
+        cont++;color(Btn_B9, 1, 8,"B9");
+    }//GEN-LAST:event_Btn_B9ActionPerformed
 
-    private void jButton70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton70ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton70ActionPerformed
+    private void Btn_C12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C12ActionPerformed
+       cont++;color(Btn_C12, 2, 11,"C12");
+    }//GEN-LAST:event_Btn_C12ActionPerformed
 
-    private void jButton66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton66ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton66ActionPerformed
+    private void Btn_B12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B12ActionPerformed
+       cont++;color(Btn_B12, 1, 11,"B12");
+    }//GEN-LAST:event_Btn_B12ActionPerformed
 
-    private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton65ActionPerformed
+    private void Btn_A11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A11ActionPerformed
+        cont++;color(Btn_A11, 0, 10,"A11");
+    }//GEN-LAST:event_Btn_A11ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void Btn_B14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B14ActionPerformed
+        cont++;color(Btn_B14,1, 13,"B14");
+    }//GEN-LAST:event_Btn_B14ActionPerformed
 
     private void txt_tipo_tiqueteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tipo_tiqueteActionPerformed
         // TODO add your handling code here:
-        txt_tipoTicket.setText(txt_tipo_tiquete.getSelectedItem().toString());
-        tipoTicket = txt_tipo_tiquete.getSelectedItem().toString();
     }//GEN-LAST:event_txt_tipo_tiqueteActionPerformed
 
     private void txt_correo_electronicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_correo_electronicoActionPerformed
@@ -673,17 +1096,32 @@ public class seleccionCampos extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_correo_electronicoActionPerformed
 
     private void Btn_PagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_PagarActionPerformed
-        // TODO add your handling code here:
-        Reservacion reserva = new Reservacion();
-        
+        // TODO add your handling code here:        
         reserva.setNombre_completo(txt_nombre_completo.getText());
         reserva.setCorreo_electronico(txt_correo_electronico.getText());
         reserva.setCedula(txt_cedula.getText());
         reserva.setTelefono(txt_telefono.getText());
+        tipoTicket = txt_tipo_tiquete.getSelectedItem().toString();
         reserva.setTipo_tiquete(tipoTicket);
         reserva.setCantidad_tiquetes(txt_cantidad_tiquetes.getText());
-        tipoPelicula= txt_peliculas.getSelectedItem().toString();
+        tipoPelicula = txt_peliculas.getSelectedItem().toString();
         reserva.setPelicula(tipoPelicula);
+        tanda = txt_tanda.getSelectedItem().toString();
+        reserva.setTanda(tanda);
+        
+        String [][] campos = new String[5][13];
+        String capturaArray =" ";
+        for (int i=0; i<=campos.length-1; i++){
+           for(int j=0; j<=campos[i].length-1; j++){
+                if(reserva.getPosition(i, j) != null){
+                    capturaArray = capturaArray+reserva.getPosition(i, j)+" ";
+                }
+           }
+        }
+        /*Nota importante al momento de guardar el objeto en el arrayList
+        todas las pocisiones del reserva.setPosition estan almacenados en el array
+        del objeto reserva, como null o como el String pasado por parmetro
+        donde null seria unsinonimo de disponible.*/
         
         lista.add(reserva);
         
@@ -711,6 +1149,8 @@ public class seleccionCampos extends javax.swing.JFrame {
         ResumenReservacion.txt_tipo_tiquete.setText(tipoTicket);
         ResumenReservacion.txt_pelicula.setText(tipoPelicula);
         ResumenReservacion.txt_total.setText(totaltickets);
+        ResumenReservacion.txt_tanda.setText(tanda);
+        ResumenReservacion.txt_butacas.setText(capturaArray);
     }//GEN-LAST:event_Btn_PagarActionPerformed
 
     private void Btn_AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_AtrasActionPerformed
@@ -720,10 +1160,242 @@ public class seleccionCampos extends javax.swing.JFrame {
             this.setVisible(false);
     }//GEN-LAST:event_Btn_AtrasActionPerformed
 
-    private void txt_tipoTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tipoTicketActionPerformed
-        // TODO add your handling code here:
-            
-    }//GEN-LAST:event_txt_tipoTicketActionPerformed
+    private void Btn_A1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A1ActionPerformed
+            cont++;color(Btn_A1, 0, 0,"A1");  
+    }//GEN-LAST:event_Btn_A1ActionPerformed
+
+    private void Btn_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B1ActionPerformed
+            cont++;color(Btn_B1, 1, 0,"B1");
+    }//GEN-LAST:event_Btn_B1ActionPerformed
+
+    private void Btn_C1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C1ActionPerformed
+        cont++;color(Btn_C1, 2, 0,"C1");
+        
+    }//GEN-LAST:event_Btn_C1ActionPerformed
+
+    private void Btn_D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D1ActionPerformed
+        cont++;color(Btn_D1, 3, 0,"D1");
+    }//GEN-LAST:event_Btn_D1ActionPerformed
+
+    private void Btn_E1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E1ActionPerformed
+        cont++;color(Btn_E1, 4, 0,"E1");
+    }//GEN-LAST:event_Btn_E1ActionPerformed
+
+    private void Btn_E2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E2ActionPerformed
+        cont++;color(Btn_E2, 4, 1,"E2");
+    }//GEN-LAST:event_Btn_E2ActionPerformed
+
+    private void Btn_D2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D2ActionPerformed
+        cont++;color(Btn_D2, 3, 1,"D2");
+    }//GEN-LAST:event_Btn_D2ActionPerformed
+
+    private void Btn_C2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C2ActionPerformed
+        cont++;color(Btn_C2, 2, 1,"C2");
+    }//GEN-LAST:event_Btn_C2ActionPerformed
+
+    private void Btn_B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B2ActionPerformed
+        cont++;color(Btn_B2, 1, 1,"B2");
+    }//GEN-LAST:event_Btn_B2ActionPerformed
+
+    private void Btn_A3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A3ActionPerformed
+        cont++;color(Btn_A3, 0, 2,"A3");
+    }//GEN-LAST:event_Btn_A3ActionPerformed
+
+    private void Btn_B3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B3ActionPerformed
+        cont++;color(Btn_B3, 1, 2,"B3");
+    }//GEN-LAST:event_Btn_B3ActionPerformed
+
+    private void Btn_C3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C3ActionPerformed
+        cont++;color(Btn_C3, 2, 2,"C3");
+    }//GEN-LAST:event_Btn_C3ActionPerformed
+
+    private void Btn_D3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D3ActionPerformed
+        cont++;color(Btn_D3, 3, 2,"D3");
+    }//GEN-LAST:event_Btn_D3ActionPerformed
+
+    private void Btn_E4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E4ActionPerformed
+        cont++;color(Btn_E4, 4, 3,"E4");
+    }//GEN-LAST:event_Btn_E4ActionPerformed
+
+    private void Btn_D4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D4ActionPerformed
+        cont++;color(Btn_D4, 3, 3,"D4");
+    }//GEN-LAST:event_Btn_D4ActionPerformed
+
+    private void Btn_C4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C4ActionPerformed
+        cont++;color(Btn_C4, 2, 3,"C4");
+    }//GEN-LAST:event_Btn_C4ActionPerformed
+
+    private void Btn_A4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A4ActionPerformed
+        cont++;color(Btn_A4, 0, 3,"A4");
+    }//GEN-LAST:event_Btn_A4ActionPerformed
+
+    private void Btn_A6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A6ActionPerformed
+        cont++;color(Btn_A6, 0, 5,"A6");
+    }//GEN-LAST:event_Btn_A6ActionPerformed
+
+    private void Btn_A7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A7ActionPerformed
+        cont++;color(Btn_A7, 0, 6,"A7");
+    }//GEN-LAST:event_Btn_A7ActionPerformed
+
+    private void Btn_A9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A9ActionPerformed
+        cont++;color(Btn_A9, 0, 8,"A9");
+    }//GEN-LAST:event_Btn_A9ActionPerformed
+
+    private void Btn_A10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A10ActionPerformed
+        cont++;color(Btn_A10, 0, 9,"A10");
+    }//GEN-LAST:event_Btn_A10ActionPerformed
+
+    private void Btn_A12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A12ActionPerformed
+        cont++;color(Btn_A12, 0, 11,"A12");
+    }//GEN-LAST:event_Btn_A12ActionPerformed
+
+    private void Btn_A13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A13ActionPerformed
+        cont++;color(Btn_A13, 0, 12,"A13");
+    }//GEN-LAST:event_Btn_A13ActionPerformed
+
+    private void Btn_A14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A14ActionPerformed
+        cont++;color(Btn_A14, 0, 13,"A14");
+    }//GEN-LAST:event_Btn_A14ActionPerformed
+
+    private void Btn_B5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B5ActionPerformed
+        cont++;color(Btn_B5, 1, 4,"B5");
+    }//GEN-LAST:event_Btn_B5ActionPerformed
+
+    private void Btn_B7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B7ActionPerformed
+        cont++;color(Btn_B7, 1, 6,"B7");
+    }//GEN-LAST:event_Btn_B7ActionPerformed
+
+    private void Btn_C7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C7ActionPerformed
+        cont++;color(Btn_C7, 2, 6,"C7");
+    }//GEN-LAST:event_Btn_C7ActionPerformed
+
+    private void Btn_B8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B8ActionPerformed
+        cont++;color(Btn_B8, 1, 7,"B8");
+    }//GEN-LAST:event_Btn_B8ActionPerformed
+
+    private void Btn_C8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C8ActionPerformed
+        cont++;color(Btn_C8, 2, 7,"C8");
+    }//GEN-LAST:event_Btn_C8ActionPerformed
+
+    private void Btn_B10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B10ActionPerformed
+        cont++;color(Btn_B10, 1, 9,"B10");
+    }//GEN-LAST:event_Btn_B10ActionPerformed
+
+    private void Btn_B11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B11ActionPerformed
+        cont++;color(Btn_B11, 1, 10,"B11");
+    }//GEN-LAST:event_Btn_B11ActionPerformed
+
+    private void Btn_B13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B13ActionPerformed
+        cont++;color(Btn_B13, 1, 12,"B13");
+    }//GEN-LAST:event_Btn_B13ActionPerformed
+
+    private void Btn_C5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C5ActionPerformed
+        cont++;color(Btn_C5, 2, 4,"C5");
+    }//GEN-LAST:event_Btn_C5ActionPerformed
+
+    private void Btn_C6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C6ActionPerformed
+        cont++;color(Btn_C6, 2, 5,"C6");
+    }//GEN-LAST:event_Btn_C6ActionPerformed
+
+    private void Btn_C9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C9ActionPerformed
+        cont++;color(Btn_C9, 2, 8,"C9");
+    }//GEN-LAST:event_Btn_C9ActionPerformed
+
+    private void Btn_C10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C10ActionPerformed
+        cont++;color(Btn_C10, 2, 9,"C10");
+    }//GEN-LAST:event_Btn_C10ActionPerformed
+
+    private void Btn_C11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C11ActionPerformed
+        cont++;color(Btn_C11, 2, 10,"C11");
+    }//GEN-LAST:event_Btn_C11ActionPerformed
+
+    private void Btn_C13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C13ActionPerformed
+        cont++;color(Btn_C13, 2, 12,"C13");
+    }//GEN-LAST:event_Btn_C13ActionPerformed
+
+    private void Btn_C14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C14ActionPerformed
+        cont++;color(Btn_C14, 2, 13,"C14");
+    }//GEN-LAST:event_Btn_C14ActionPerformed
+
+    private void Btn_D5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D5ActionPerformed
+        cont++;color(Btn_D5, 3, 4,"D5");
+    }//GEN-LAST:event_Btn_D5ActionPerformed
+
+    private void Btn_D6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D6ActionPerformed
+        color(Btn_D6, 3, 5,"D6");
+    }//GEN-LAST:event_Btn_D6ActionPerformed
+
+    private void Btn_D7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D7ActionPerformed
+        cont++;color(Btn_D7, 3, 6,"D7");
+    }//GEN-LAST:event_Btn_D7ActionPerformed
+
+    private void Btn_D8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D8ActionPerformed
+        cont++;color(Btn_D8, 3, 7,"D8");
+    }//GEN-LAST:event_Btn_D8ActionPerformed
+
+    private void Btn_D9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D9ActionPerformed
+        cont++;color(Btn_D9, 3, 8,"D9");
+    }//GEN-LAST:event_Btn_D9ActionPerformed
+
+    private void Btn_D10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D10ActionPerformed
+        cont++;color(Btn_D10, 3, 9,"D10");
+    }//GEN-LAST:event_Btn_D10ActionPerformed
+
+    private void Btn_D11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D11ActionPerformed
+        cont++;color(Btn_D11, 3, 10,"D11");
+    }//GEN-LAST:event_Btn_D11ActionPerformed
+
+    private void Btn_D12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D12ActionPerformed
+        cont++;color(Btn_D12, 3, 11,"D12");
+    }//GEN-LAST:event_Btn_D12ActionPerformed
+
+    private void Btn_D13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D13ActionPerformed
+        cont++;color(Btn_D13, 3, 12,"D13");
+    }//GEN-LAST:event_Btn_D13ActionPerformed
+
+    private void Btn_D14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D14ActionPerformed
+        cont++;color(Btn_D14, 3, 13,"D14");
+    }//GEN-LAST:event_Btn_D14ActionPerformed
+
+    private void Btn_E5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E5ActionPerformed
+        cont++;color(Btn_E5, 4, 4,"E5");
+    }//GEN-LAST:event_Btn_E5ActionPerformed
+
+    private void Btn_E6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E6ActionPerformed
+        cont++;color(Btn_E6, 4, 5,"E6");
+    }//GEN-LAST:event_Btn_E6ActionPerformed
+
+    private void Btn_E7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E7ActionPerformed
+        cont++;color(Btn_E7, 4, 6,"E7");
+    }//GEN-LAST:event_Btn_E7ActionPerformed
+
+    private void Btn_E8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E8ActionPerformed
+        cont++;color(Btn_E8, 4, 7,"E8");
+    }//GEN-LAST:event_Btn_E8ActionPerformed
+
+    private void Btn_E9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E9ActionPerformed
+        cont++;color(Btn_E9, 4, 8,"E9");
+    }//GEN-LAST:event_Btn_E9ActionPerformed
+
+    private void Btn_E10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E10ActionPerformed
+        cont++;color(Btn_E10, 4, 9,"E10");
+    }//GEN-LAST:event_Btn_E10ActionPerformed
+
+    private void Btn_E11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E11ActionPerformed
+        cont++;color(Btn_E11, 4, 10,"E11");
+    }//GEN-LAST:event_Btn_E11ActionPerformed
+
+    private void Btn_E12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E12ActionPerformed
+        cont++;color(Btn_E12, 4, 11,"E12");
+    }//GEN-LAST:event_Btn_E12ActionPerformed
+
+    private void Btn_E13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E13ActionPerformed
+        cont++;color(Btn_E13, 4, 12,"E13");
+    }//GEN-LAST:event_Btn_E13ActionPerformed
+
+    private void Btn_E14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E14ActionPerformed
+        cont++;color(Btn_E14, 4, 13,"E14");
+    }//GEN-LAST:event_Btn_E14ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -761,78 +1433,78 @@ public class seleccionCampos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn_A1;
+    private javax.swing.JButton Btn_A10;
+    private javax.swing.JButton Btn_A11;
+    private javax.swing.JButton Btn_A12;
+    private javax.swing.JButton Btn_A13;
+    private javax.swing.JButton Btn_A14;
+    private javax.swing.JButton Btn_A2;
+    private javax.swing.JButton Btn_A3;
+    private javax.swing.JButton Btn_A4;
+    private javax.swing.JButton Btn_A5;
+    private javax.swing.JButton Btn_A6;
+    private javax.swing.JButton Btn_A7;
+    private javax.swing.JButton Btn_A8;
+    private javax.swing.JButton Btn_A9;
     private javax.swing.JButton Btn_Atras;
+    private javax.swing.JButton Btn_B1;
+    private javax.swing.JButton Btn_B10;
+    private javax.swing.JButton Btn_B11;
+    private javax.swing.JButton Btn_B12;
+    private javax.swing.JButton Btn_B13;
+    private javax.swing.JButton Btn_B14;
+    private javax.swing.JButton Btn_B2;
+    private javax.swing.JButton Btn_B3;
+    private javax.swing.JButton Btn_B4;
+    private javax.swing.JButton Btn_B5;
+    private javax.swing.JButton Btn_B6;
+    private javax.swing.JButton Btn_B7;
+    private javax.swing.JButton Btn_B8;
+    private javax.swing.JButton Btn_B9;
+    private javax.swing.JButton Btn_C1;
+    private javax.swing.JButton Btn_C10;
+    private javax.swing.JButton Btn_C11;
+    private javax.swing.JButton Btn_C12;
+    private javax.swing.JButton Btn_C13;
+    private javax.swing.JButton Btn_C14;
+    private javax.swing.JButton Btn_C2;
+    private javax.swing.JButton Btn_C3;
+    private javax.swing.JButton Btn_C4;
+    private javax.swing.JButton Btn_C5;
+    private javax.swing.JButton Btn_C6;
+    private javax.swing.JButton Btn_C7;
+    private javax.swing.JButton Btn_C8;
+    private javax.swing.JButton Btn_C9;
+    private javax.swing.JButton Btn_D1;
+    private javax.swing.JButton Btn_D10;
+    private javax.swing.JButton Btn_D11;
+    private javax.swing.JButton Btn_D12;
+    private javax.swing.JButton Btn_D13;
+    private javax.swing.JButton Btn_D14;
+    private javax.swing.JButton Btn_D2;
+    private javax.swing.JButton Btn_D3;
+    private javax.swing.JButton Btn_D4;
+    private javax.swing.JButton Btn_D5;
+    private javax.swing.JButton Btn_D6;
+    private javax.swing.JButton Btn_D7;
+    private javax.swing.JButton Btn_D8;
+    private javax.swing.JButton Btn_D9;
+    private javax.swing.JButton Btn_E1;
+    private javax.swing.JButton Btn_E10;
+    private javax.swing.JButton Btn_E11;
+    private javax.swing.JButton Btn_E12;
+    private javax.swing.JButton Btn_E13;
+    private javax.swing.JButton Btn_E14;
+    private javax.swing.JButton Btn_E2;
+    private javax.swing.JButton Btn_E3;
+    private javax.swing.JButton Btn_E4;
+    private javax.swing.JButton Btn_E5;
+    private javax.swing.JButton Btn_E6;
+    private javax.swing.JButton Btn_E7;
+    private javax.swing.JButton Btn_E8;
+    private javax.swing.JButton Btn_E9;
     private javax.swing.JButton Btn_Pagar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton34;
-    private javax.swing.JButton jButton35;
-    private javax.swing.JButton jButton36;
-    private javax.swing.JButton jButton37;
-    private javax.swing.JButton jButton38;
-    private javax.swing.JButton jButton39;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton40;
-    private javax.swing.JButton jButton41;
-    private javax.swing.JButton jButton42;
-    private javax.swing.JButton jButton43;
-    private javax.swing.JButton jButton44;
-    private javax.swing.JButton jButton45;
-    private javax.swing.JButton jButton46;
-    private javax.swing.JButton jButton47;
-    private javax.swing.JButton jButton48;
-    private javax.swing.JButton jButton49;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton50;
-    private javax.swing.JButton jButton51;
-    private javax.swing.JButton jButton52;
-    private javax.swing.JButton jButton53;
-    private javax.swing.JButton jButton54;
-    private javax.swing.JButton jButton55;
-    private javax.swing.JButton jButton56;
-    private javax.swing.JButton jButton57;
-    private javax.swing.JButton jButton58;
-    private javax.swing.JButton jButton59;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton60;
-    private javax.swing.JButton jButton61;
-    private javax.swing.JButton jButton62;
-    private javax.swing.JButton jButton63;
-    private javax.swing.JButton jButton64;
-    private javax.swing.JButton jButton65;
-    private javax.swing.JButton jButton66;
-    private javax.swing.JButton jButton67;
-    private javax.swing.JButton jButton68;
-    private javax.swing.JButton jButton69;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton70;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -860,8 +1532,8 @@ public class seleccionCampos extends javax.swing.JFrame {
     private javax.swing.JTextField txt_correo_electronico;
     private javax.swing.JTextField txt_nombre_completo;
     private javax.swing.JComboBox<String> txt_peliculas;
+    private javax.swing.JComboBox<String> txt_tanda;
     private javax.swing.JTextField txt_telefono;
-    private javax.swing.JTextField txt_tipoTicket;
     private javax.swing.JComboBox<String> txt_tipo_tiquete;
     // End of variables declaration//GEN-END:variables
 }
