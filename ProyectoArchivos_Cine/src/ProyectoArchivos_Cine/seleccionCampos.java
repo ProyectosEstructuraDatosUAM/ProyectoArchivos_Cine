@@ -27,15 +27,18 @@ public class seleccionCampos extends javax.swing.JFrame {
         /*Se crea el metodo para cambiar de color en los botones de verde a amarillo
         tambien setea la posicion del array de la clase reserva*/
 
-        if (evt.getBackground() == Color.yellow) {
-            evt.setBackground(Color.green);
-            CantidadTiquetesSeleccionados--;
-        } else {
+        if (evt.getBackground() == Color.green) {
+
             evt.setBackground(Color.yellow);
             reserva.setPosition(row, column, campo);
             CantidadTiquetesSeleccionados++;
 
+        } else if (evt.getBackground() == Color.yellow) {
+            evt.setBackground(Color.green);
+            CantidadTiquetesSeleccionados--;
+
         }
+        
 
         /* if (cont % 2 == 0) {//Libre
                 evt.setBackground(Color.green);
@@ -1230,8 +1233,6 @@ public class seleccionCampos extends javax.swing.JFrame {
             +"Total a pagar: "+totaltickets+"\n"
             +"Pelicula:      "+reserva.getPelicula());*/
             ResumenReservacion abrir = new ResumenReservacion();
-            abrir.setVisible(true);
-            this.setVisible(false);
 
             ResumenReservacion.txt_nombre_completo.setText(txt_nombre_completo.getText());
             ResumenReservacion.txt_correo_electronico.setText(txt_correo_electronico.getText());
@@ -1243,8 +1244,11 @@ public class seleccionCampos extends javax.swing.JFrame {
             ResumenReservacion.txt_tanda.setText(tanda);
             ResumenReservacion.txt_butacas.setText(capturaArray);
 
+            abrir.setVisible(true);
+            this.setVisible(false);
+
         } else {
-            JOptionPane.showMessageDialog(this, "Debe seleccionar solo la cantidad de tiquetes ingresada");
+            JOptionPane.showMessageDialog(this, "Debe seleccionar la cantidad de tiquetes ingresada");
         }
     }//GEN-LAST:event_Btn_PagarActionPerformed
 

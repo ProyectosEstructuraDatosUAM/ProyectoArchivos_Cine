@@ -18,6 +18,14 @@ public class Reservacion {
     private String Campo;
     private int row, column;
     
+    //Informacion de pago y tarjeta
+    private String PagoRealizado;
+    private String Tarjeta_Tipo;
+    private String Tarjeta_Habiente;
+    private String Tarjeta_Numero;
+    private String Tarjeta_Expiracion;
+    private String Tarjeta_CVV;
+
     
     public String getNombre_completo() {
         return nombre_completo;

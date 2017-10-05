@@ -52,7 +52,12 @@ public class ResumenReservacion extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         txt_butacas = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jLabel1.setText("Resumen De pago");
 
@@ -126,7 +131,7 @@ public class ResumenReservacion extends javax.swing.JFrame {
             }
         });
 
-        Btn_Salir.setText("Salir");
+        Btn_Salir.setText("Atras");
         Btn_Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_SalirActionPerformed(evt);
@@ -281,15 +286,24 @@ public class ResumenReservacion extends javax.swing.JFrame {
                pago.setVisible(true);
     
         pago.txt_nombre_completo.setText(txt_nombre_completo.getText());
-        ResumenReservacion.txt_total.setText(txt_total.getText());
+        pago.txt_total.setText(txt_total.getText()); 
+        pago.txt_totaltiquetes.setText((Integer.parseInt(txt_total.getText())/2000) + "");
        this.dispose();
        
     }//GEN-LAST:event_Btn_pagarActionPerformed
 
     private void Btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SalirActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+         seleccionCampos selcam = new seleccionCampos ();
+        selcam.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Btn_SalirActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        seleccionCampos selcam = new seleccionCampos ();
+        selcam.setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
