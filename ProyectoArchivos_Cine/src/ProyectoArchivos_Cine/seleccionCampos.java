@@ -1,4 +1,3 @@
-
 package ProyectoArchivos_Cine;
 
 /**
@@ -9,32 +8,52 @@ import java.awt.Color;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+
 public class seleccionCampos extends javax.swing.JFrame {
 
     /*Creamos el arraylist par almacenar los datos*/
-    ArrayList <Reservacion> lista = new ArrayList <Reservacion>();
+    ArrayList<Reservacion> lista = new ArrayList<Reservacion>();
     Reservacion reserva = new Reservacion();
-    String tipoTicket = " ", tipoPelicula=" ", tanda=" ";
+    String tipoTicket = " ", tipoPelicula = " ", tanda = " ";
     int cont = 0;
-    
+
     public seleccionCampos() {
         initComponents();
     }
-    
-    public void color(javax.swing.JButton evt, int row, int column, String campo){ 
+    public int CantidadTiquetes = 1;
+    public int CantidadTiquetesSeleccionados = 0;
+
+    public void color(javax.swing.JButton evt, int row, int column, String campo) {
         /*Se crea el metodo para cambiar de color en los botones de verde a amarillo
         tambien setea la posicion del array de la clase reserva*/
-            if(cont%2==0){
-               evt.setBackground(Color.green);
-               //reserva.setPosition(row, column, "Libre");
-            }else if(cont%2==1){
-               evt.setBackground(Color.yellow);
-               reserva.setPosition(row, column, campo);
+
+        if (evt.getBackground() == Color.yellow) {
+            evt.setBackground(Color.green);
+            CantidadTiquetesSeleccionados--;
+        } else {
+            evt.setBackground(Color.yellow);
+            reserva.setPosition(row, column, campo);
+            CantidadTiquetesSeleccionados++;
+
+        }
+
+        /* if (cont % 2 == 0) {//Libre
+                evt.setBackground(Color.green);
+                //reserva.setPosition(row, column, "Libre");
+                
+                CantidadTiquetesSeleccionados--;
+            } else if (cont % 2 == 1) {//ya seleccionado
+                evt.setBackground(Color.yellow);
+                reserva.setPosition(row, column, campo);
+                CantidadTiquetesSeleccionados++;
+
             }
-            if(cont>1){
-                cont=0;
-            }
+            if (cont > 1) {
+                cont = 0;
+            }*/
+        txt_CantidadSeleccionada.setText(CantidadTiquetesSeleccionados + "");
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -132,7 +151,6 @@ public class seleccionCampos extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        txt_cantidad_tiquetes = new javax.swing.JTextField();
         txt_nombre_completo = new javax.swing.JTextField();
         txt_correo_electronico = new javax.swing.JTextField();
         txt_cedula = new javax.swing.JTextField();
@@ -146,6 +164,11 @@ public class seleccionCampos extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         txt_peliculas = new javax.swing.JComboBox<>();
         txt_tanda = new javax.swing.JComboBox<>();
+        btn_masTiquetes = new javax.swing.JButton();
+        btn_menosTiquetes = new javax.swing.JButton();
+        txt_cantidad_tiquetes = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        txt_CantidadSeleccionada = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Seleccion de Butacas");
@@ -948,7 +971,6 @@ public class seleccionCampos extends javax.swing.JFrame {
         jLabel1.setForeground(java.awt.Color.orange);
         jLabel1.setText("Seleccione Butacas: ");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, -1));
-        getContentPane().add(txt_cantidad_tiquetes, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 80, -1));
         getContentPane().add(txt_nombre_completo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 270, -1));
 
         txt_correo_electronico.addActionListener(new java.awt.event.ActionListener() {
@@ -986,7 +1008,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         jLabel20.setForeground(java.awt.Color.white);
         jLabel20.setText("Seleccione Pelicula: ");
 
-        Btn_Pagar.setText("Pagar");
+        Btn_Pagar.setText("Siguiente");
         Btn_Pagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_PagarActionPerformed(evt);
@@ -1008,26 +1030,65 @@ public class seleccionCampos extends javax.swing.JFrame {
         txt_tanda.setFont(new java.awt.Font("Abyssinica SIL", 2, 12)); // NOI18N
         txt_tanda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mañana  10:00-12:00", "Tarde      16:00-18:00", "Noche     20:00-22:00" }));
 
+        btn_masTiquetes.setText("+");
+        btn_masTiquetes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_masTiquetesActionPerformed(evt);
+            }
+        });
+
+        btn_menosTiquetes.setText("-");
+        btn_menosTiquetes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_menosTiquetesActionPerformed(evt);
+            }
+        });
+
+        txt_cantidad_tiquetes.setEditable(false);
+        txt_cantidad_tiquetes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_cantidad_tiquetes.setText("1");
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("Cantidad Seleccionada: ");
+
+        txt_CantidadSeleccionada.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txt_CantidadSeleccionada.setForeground(new java.awt.Color(255, 255, 255));
+        txt_CantidadSeleccionada.setText("0");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(191, 191, 191)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel21)
-                    .addComponent(txt_tanda, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(jLabel20)
                 .addGap(54, 54, 54)
                 .addComponent(txt_peliculas, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(Btn_Pagar)
                 .addGap(109, 109, 109))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btn_menosTiquetes)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_cantidad_tiquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_masTiquetes))
+                            .addComponent(jLabel21)
+                            .addComponent(txt_tanda, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(288, 288, 288)
+                        .addComponent(jLabel22)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_CantidadSeleccionada)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1037,14 +1098,23 @@ public class seleccionCampos extends javax.swing.JFrame {
                         .addComponent(jLabel19)
                         .addComponent(jLabel21))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(159, 159, 159)
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_masTiquetes)
+                            .addComponent(btn_menosTiquetes)
+                            .addComponent(txt_cantidad_tiquetes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(87, 87, 87)
                         .addComponent(txt_tanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
                     .addComponent(Btn_Pagar)
                     .addComponent(txt_peliculas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(txt_CantidadSeleccionada))
+                .addGap(25, 25, 25))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 530));
@@ -1053,47 +1123,58 @@ public class seleccionCampos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn_E3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E3ActionPerformed
-        cont++;color(Btn_E3, 4, 2,"E3");
+        cont++;
+        color(Btn_E3, 4, 2, "E3");
     }//GEN-LAST:event_Btn_E3ActionPerformed
 
     private void Btn_B4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B4ActionPerformed
-        cont++;color(Btn_B4, 1, 3, "B4");
+        cont++;
+        color(Btn_B4, 1, 3, "B4");
     }//GEN-LAST:event_Btn_B4ActionPerformed
 
     private void Btn_A2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A2ActionPerformed
-        cont++;color(Btn_A2, 0, 1,"A2");
+        cont++;
+        color(Btn_A2, 0, 1, "A2");
     }//GEN-LAST:event_Btn_A2ActionPerformed
 
     private void Btn_B6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B6ActionPerformed
-        cont++;color(Btn_B6, 1, 5,"B6");
+        cont++;
+        color(Btn_B6, 1, 5, "B6");
     }//GEN-LAST:event_Btn_B6ActionPerformed
 
     private void Btn_A5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A5ActionPerformed
-        cont++;color(Btn_A5, 0, 4,"A5");
+        cont++;
+        color(Btn_A5, 0, 4, "A5");
     }//GEN-LAST:event_Btn_A5ActionPerformed
 
     private void Btn_A8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A8ActionPerformed
-        cont++;color(Btn_A8, 0, 7,"A8");
+        cont++;
+        color(Btn_A8, 0, 7, "A8");
     }//GEN-LAST:event_Btn_A8ActionPerformed
 
     private void Btn_B9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B9ActionPerformed
-        cont++;color(Btn_B9, 1, 8,"B9");
+        cont++;
+        color(Btn_B9, 1, 8, "B9");
     }//GEN-LAST:event_Btn_B9ActionPerformed
 
     private void Btn_C12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C12ActionPerformed
-       cont++;color(Btn_C12, 2, 11,"C12");
+        cont++;
+        color(Btn_C12, 2, 11, "C12");
     }//GEN-LAST:event_Btn_C12ActionPerformed
 
     private void Btn_B12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B12ActionPerformed
-       cont++;color(Btn_B12, 1, 11,"B12");
+        cont++;
+        color(Btn_B12, 1, 11, "B12");
     }//GEN-LAST:event_Btn_B12ActionPerformed
 
     private void Btn_A11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A11ActionPerformed
-        cont++;color(Btn_A11, 0, 10,"A11");
+        cont++;
+        color(Btn_A11, 0, 10, "A11");
     }//GEN-LAST:event_Btn_A11ActionPerformed
 
     private void Btn_B14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B14ActionPerformed
-        cont++;color(Btn_B14,1, 13,"B14");
+        cont++;
+        color(Btn_B14, 1, 13, "B14");
     }//GEN-LAST:event_Btn_B14ActionPerformed
 
     private void txt_tipo_tiqueteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tipo_tiqueteActionPerformed
@@ -1106,39 +1187,41 @@ public class seleccionCampos extends javax.swing.JFrame {
 
     private void Btn_PagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_PagarActionPerformed
         // TODO add your handling code here:        
-        reserva.setNombre_completo(txt_nombre_completo.getText());
-        reserva.setCorreo_electronico(txt_correo_electronico.getText());
-        reserva.setCedula(txt_cedula.getText());
-        reserva.setTelefono(txt_telefono.getText());
-        tipoTicket = txt_tipo_tiquete.getSelectedItem().toString();
-        reserva.setTipo_tiquete(tipoTicket);
-        reserva.setCantidad_tiquetes(txt_cantidad_tiquetes.getText());
-        tipoPelicula = txt_peliculas.getSelectedItem().toString();
-        reserva.setPelicula(tipoPelicula);
-        tanda = txt_tanda.getSelectedItem().toString();
-        reserva.setTanda(tanda);
-        
-        String [][] campos = new String[5][13];
-        String capturaArray =" ";
-        for (int i=0; i<=campos.length-1; i++){
-           for(int j=0; j<=campos[i].length-1; j++){
-                if(reserva.getPosition(i, j) != null){
-                    capturaArray = capturaArray+reserva.getPosition(i, j)+" ";
+
+        if (CantidadTiquetes == CantidadTiquetesSeleccionados) {
+            reserva.setNombre_completo(txt_nombre_completo.getText());
+            reserva.setCorreo_electronico(txt_correo_electronico.getText());
+            reserva.setCedula(txt_cedula.getText());
+            reserva.setTelefono(txt_telefono.getText());
+            tipoTicket = txt_tipo_tiquete.getSelectedItem().toString();
+            reserva.setTipo_tiquete(tipoTicket);
+            reserva.setCantidad_tiquetes(txt_cantidad_tiquetes.getText());
+            tipoPelicula = txt_peliculas.getSelectedItem().toString();
+            reserva.setPelicula(tipoPelicula);
+            tanda = txt_tanda.getSelectedItem().toString();
+            reserva.setTanda(tanda);
+
+            String[][] campos = new String[5][13];
+            String capturaArray = " ";
+            for (int i = 0; i <= campos.length - 1; i++) {
+                for (int j = 0; j <= campos[i].length - 1; j++) {
+                    if (reserva.getPosition(i, j) != null) {
+                        capturaArray = capturaArray + reserva.getPosition(i, j) + " ";
+                    }
                 }
-           }
-        }
-        /*Nota importante al momento de guardar el objeto en el arrayList
+            }
+            /*Nota importante al momento de guardar el objeto en el arrayList
         todas las pocisiones del reserva.setPosition estan almacenados en el array
         del objeto reserva, como null o como el String pasado por parmetro
         donde null seria unsinonimo de disponible.*/
-        
-        lista.add(reserva);
-        
-        int tickets = Integer.parseInt(reserva.getCantidad_tiquetes());
-        int total = tickets*2000;
-        String totaltickets = Integer.toString(total);
-        
-        /*JOptionPane.showMessageDialog(rootPane,"\nResumen de solicitud:\n"
+
+            lista.add(reserva);
+
+            int tickets = Integer.parseInt(reserva.getCantidad_tiquetes());
+            int total = tickets * 2000;
+            String totaltickets = Integer.toString(total);
+
+            /*JOptionPane.showMessageDialog(rootPane,"\nResumen de solicitud:\n"
             +"Nombre:        "+reserva.getNombre_completo()+"\n"
             +"Correo:        "+reserva.getCorreo_electronico()+"\n"
             +"Cedula:        "+reserva.getCedula()+"\n"
@@ -1146,264 +1229,325 @@ public class seleccionCampos extends javax.swing.JFrame {
             +"Tipo tiquete:  "+reserva.getTipo_tiquete()+"\n"
             +"Total a pagar: "+totaltickets+"\n"
             +"Pelicula:      "+reserva.getPelicula());*/
-                
-        ResumenReservacion abrir = new ResumenReservacion();
-        abrir.setVisible(true);
-        this.setVisible(false);        
-        
-        ResumenReservacion.txt_nombre_completo.setText(txt_nombre_completo.getText());
-        ResumenReservacion.txt_correo_electronico.setText(txt_correo_electronico.getText());
-        ResumenReservacion.txt_cedula.setText(txt_cedula.getText());
-        ResumenReservacion.txt_telefono.setText(txt_telefono.getText()); 
-        ResumenReservacion.txt_tipo_tiquete.setText(tipoTicket);
-        ResumenReservacion.txt_pelicula.setText(tipoPelicula);
-        ResumenReservacion.txt_total.setText(totaltickets);
-        ResumenReservacion.txt_tanda.setText(tanda);
-        ResumenReservacion.txt_butacas.setText(capturaArray);
+            ResumenReservacion abrir = new ResumenReservacion();
+            abrir.setVisible(true);
+            this.setVisible(false);
+
+            ResumenReservacion.txt_nombre_completo.setText(txt_nombre_completo.getText());
+            ResumenReservacion.txt_correo_electronico.setText(txt_correo_electronico.getText());
+            ResumenReservacion.txt_cedula.setText(txt_cedula.getText());
+            ResumenReservacion.txt_telefono.setText(txt_telefono.getText());
+            ResumenReservacion.txt_tipo_tiquete.setText(tipoTicket);
+            ResumenReservacion.txt_pelicula.setText(tipoPelicula);
+            ResumenReservacion.txt_total.setText(totaltickets);
+            ResumenReservacion.txt_tanda.setText(tanda);
+            ResumenReservacion.txt_butacas.setText(capturaArray);
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar solo la cantidad de tiquetes ingresada");
+        }
     }//GEN-LAST:event_Btn_PagarActionPerformed
 
     private void Btn_AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_AtrasActionPerformed
         // TODO add your handling code here:
-            principal abrir = new principal();
-            abrir.setVisible(true);
-            this.setVisible(false);
+        principal abrir = new principal();
+        abrir.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_Btn_AtrasActionPerformed
 
     private void Btn_A1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A1ActionPerformed
-            cont++;color(Btn_A1, 0, 0,"A1");  
+        cont++;
+        color(Btn_A1, 0, 0, "A1");
     }//GEN-LAST:event_Btn_A1ActionPerformed
 
     private void Btn_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B1ActionPerformed
-            cont++;color(Btn_B1, 1, 0,"B1");
+        cont++;
+        color(Btn_B1, 1, 0, "B1");
     }//GEN-LAST:event_Btn_B1ActionPerformed
 
     private void Btn_C1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C1ActionPerformed
-        cont++;color(Btn_C1, 2, 0,"C1");
-        
+        cont++;
+        color(Btn_C1, 2, 0, "C1");
+
     }//GEN-LAST:event_Btn_C1ActionPerformed
 
     private void Btn_D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D1ActionPerformed
-        cont++;color(Btn_D1, 3, 0,"D1");
+        cont++;
+        color(Btn_D1, 3, 0, "D1");
     }//GEN-LAST:event_Btn_D1ActionPerformed
 
     private void Btn_E1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E1ActionPerformed
-        cont++;color(Btn_E1, 4, 0,"E1");
+        cont++;
+        color(Btn_E1, 4, 0, "E1");
     }//GEN-LAST:event_Btn_E1ActionPerformed
 
     private void Btn_E2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E2ActionPerformed
-        cont++;color(Btn_E2, 4, 1,"E2");
+        cont++;
+        color(Btn_E2, 4, 1, "E2");
     }//GEN-LAST:event_Btn_E2ActionPerformed
 
     private void Btn_D2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D2ActionPerformed
-        cont++;color(Btn_D2, 3, 1,"D2");
+        cont++;
+        color(Btn_D2, 3, 1, "D2");
     }//GEN-LAST:event_Btn_D2ActionPerformed
 
     private void Btn_C2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C2ActionPerformed
-        cont++;color(Btn_C2, 2, 1,"C2");
+        cont++;
+        color(Btn_C2, 2, 1, "C2");
     }//GEN-LAST:event_Btn_C2ActionPerformed
 
     private void Btn_B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B2ActionPerformed
-        cont++;color(Btn_B2, 1, 1,"B2");
+        cont++;
+        color(Btn_B2, 1, 1, "B2");
     }//GEN-LAST:event_Btn_B2ActionPerformed
 
     private void Btn_A3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A3ActionPerformed
-        cont++;color(Btn_A3, 0, 2,"A3");
+        cont++;
+        color(Btn_A3, 0, 2, "A3");
     }//GEN-LAST:event_Btn_A3ActionPerformed
 
     private void Btn_B3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B3ActionPerformed
-        cont++;color(Btn_B3, 1, 2,"B3");
+        cont++;
+        color(Btn_B3, 1, 2, "B3");
     }//GEN-LAST:event_Btn_B3ActionPerformed
 
     private void Btn_C3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C3ActionPerformed
-        cont++;color(Btn_C3, 2, 2,"C3");
+        cont++;
+        color(Btn_C3, 2, 2, "C3");
     }//GEN-LAST:event_Btn_C3ActionPerformed
 
     private void Btn_D3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D3ActionPerformed
-        cont++;color(Btn_D3, 3, 2,"D3");
+        cont++;
+        color(Btn_D3, 3, 2, "D3");
     }//GEN-LAST:event_Btn_D3ActionPerformed
 
     private void Btn_E4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E4ActionPerformed
-        cont++;color(Btn_E4, 4, 3,"E4");
+        cont++;
+        color(Btn_E4, 4, 3, "E4");
     }//GEN-LAST:event_Btn_E4ActionPerformed
 
     private void Btn_D4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D4ActionPerformed
-        cont++;color(Btn_D4, 3, 3,"D4");
+        cont++;
+        color(Btn_D4, 3, 3, "D4");
     }//GEN-LAST:event_Btn_D4ActionPerformed
 
     private void Btn_C4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C4ActionPerformed
-        cont++;color(Btn_C4, 2, 3,"C4");
+        cont++;
+        color(Btn_C4, 2, 3, "C4");
     }//GEN-LAST:event_Btn_C4ActionPerformed
 
     private void Btn_A4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A4ActionPerformed
-        cont++;color(Btn_A4, 0, 3,"A4");
+        cont++;
+        color(Btn_A4, 0, 3, "A4");
     }//GEN-LAST:event_Btn_A4ActionPerformed
 
     private void Btn_A6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A6ActionPerformed
-        cont++;color(Btn_A6, 0, 5,"A6");
+        cont++;
+        color(Btn_A6, 0, 5, "A6");
     }//GEN-LAST:event_Btn_A6ActionPerformed
 
     private void Btn_A7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A7ActionPerformed
-        cont++;color(Btn_A7, 0, 6,"A7");
+        cont++;
+        color(Btn_A7, 0, 6, "A7");
     }//GEN-LAST:event_Btn_A7ActionPerformed
 
     private void Btn_A9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A9ActionPerformed
-        cont++;color(Btn_A9, 0, 8,"A9");
+        cont++;
+        color(Btn_A9, 0, 8, "A9");
     }//GEN-LAST:event_Btn_A9ActionPerformed
 
     private void Btn_A10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A10ActionPerformed
-        cont++;color(Btn_A10, 0, 9,"A10");
+        cont++;
+        color(Btn_A10, 0, 9, "A10");
     }//GEN-LAST:event_Btn_A10ActionPerformed
 
     private void Btn_A12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A12ActionPerformed
-        cont++;color(Btn_A12, 0, 11,"A12");
+        cont++;
+        color(Btn_A12, 0, 11, "A12");
     }//GEN-LAST:event_Btn_A12ActionPerformed
 
     private void Btn_A13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A13ActionPerformed
-        cont++;color(Btn_A13, 0, 12,"A13");
+        cont++;
+        color(Btn_A13, 0, 12, "A13");
     }//GEN-LAST:event_Btn_A13ActionPerformed
 
     private void Btn_A14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A14ActionPerformed
-        cont++;color(Btn_A14, 0, 13,"A14");
+        cont++;
+        color(Btn_A14, 0, 13, "A14");
     }//GEN-LAST:event_Btn_A14ActionPerformed
 
     private void Btn_B5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B5ActionPerformed
-        cont++;color(Btn_B5, 1, 4,"B5");
+        cont++;
+        color(Btn_B5, 1, 4, "B5");
     }//GEN-LAST:event_Btn_B5ActionPerformed
 
     private void Btn_B7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B7ActionPerformed
-        cont++;color(Btn_B7, 1, 6,"B7");
+        cont++;
+        color(Btn_B7, 1, 6, "B7");
     }//GEN-LAST:event_Btn_B7ActionPerformed
 
     private void Btn_C7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C7ActionPerformed
-        cont++;color(Btn_C7, 2, 6,"C7");
+        cont++;
+        color(Btn_C7, 2, 6, "C7");
     }//GEN-LAST:event_Btn_C7ActionPerformed
 
     private void Btn_B8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B8ActionPerformed
-        cont++;color(Btn_B8, 1, 7,"B8");
+        cont++;
+        color(Btn_B8, 1, 7, "B8");
     }//GEN-LAST:event_Btn_B8ActionPerformed
 
     private void Btn_C8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C8ActionPerformed
-        cont++;color(Btn_C8, 2, 7,"C8");
+        cont++;
+        color(Btn_C8, 2, 7, "C8");
     }//GEN-LAST:event_Btn_C8ActionPerformed
 
     private void Btn_B10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B10ActionPerformed
-        cont++;color(Btn_B10, 1, 9,"B10");
+        cont++;
+        color(Btn_B10, 1, 9, "B10");
     }//GEN-LAST:event_Btn_B10ActionPerformed
 
     private void Btn_B11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B11ActionPerformed
-        cont++;color(Btn_B11, 1, 10,"B11");
+        cont++;
+        color(Btn_B11, 1, 10, "B11");
     }//GEN-LAST:event_Btn_B11ActionPerformed
 
     private void Btn_B13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B13ActionPerformed
-        cont++;color(Btn_B13, 1, 12,"B13");
+        cont++;
+        color(Btn_B13, 1, 12, "B13");
     }//GEN-LAST:event_Btn_B13ActionPerformed
 
     private void Btn_C5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C5ActionPerformed
-        cont++;color(Btn_C5, 2, 4,"C5");
+        cont++;
+        color(Btn_C5, 2, 4, "C5");
     }//GEN-LAST:event_Btn_C5ActionPerformed
 
     private void Btn_C6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C6ActionPerformed
-        cont++;color(Btn_C6, 2, 5,"C6");
+        cont++;
+        color(Btn_C6, 2, 5, "C6");
     }//GEN-LAST:event_Btn_C6ActionPerformed
 
     private void Btn_C9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C9ActionPerformed
-        cont++;color(Btn_C9, 2, 8,"C9");
+        cont++;
+        color(Btn_C9, 2, 8, "C9");
     }//GEN-LAST:event_Btn_C9ActionPerformed
 
     private void Btn_C10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C10ActionPerformed
-        cont++;color(Btn_C10, 2, 9,"C10");
+        cont++;
+        color(Btn_C10, 2, 9, "C10");
     }//GEN-LAST:event_Btn_C10ActionPerformed
 
     private void Btn_C11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C11ActionPerformed
-        cont++;color(Btn_C11, 2, 10,"C11");
+        cont++;
+        color(Btn_C11, 2, 10, "C11");
     }//GEN-LAST:event_Btn_C11ActionPerformed
 
     private void Btn_C13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C13ActionPerformed
-        cont++;color(Btn_C13, 2, 12,"C13");
+        cont++;
+        color(Btn_C13, 2, 12, "C13");
     }//GEN-LAST:event_Btn_C13ActionPerformed
 
     private void Btn_C14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C14ActionPerformed
-        cont++;color(Btn_C14, 2, 13,"C14");
+        cont++;
+        color(Btn_C14, 2, 13, "C14");
     }//GEN-LAST:event_Btn_C14ActionPerformed
 
     private void Btn_D5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D5ActionPerformed
-        cont++;color(Btn_D5, 3, 4,"D5");
+        cont++;
+        color(Btn_D5, 3, 4, "D5");
     }//GEN-LAST:event_Btn_D5ActionPerformed
 
     private void Btn_D6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D6ActionPerformed
-        color(Btn_D6, 3, 5,"D6");
+        color(Btn_D6, 3, 5, "D6");
     }//GEN-LAST:event_Btn_D6ActionPerformed
 
     private void Btn_D7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D7ActionPerformed
-        cont++;color(Btn_D7, 3, 6,"D7");
+        cont++;
+        color(Btn_D7, 3, 6, "D7");
     }//GEN-LAST:event_Btn_D7ActionPerformed
 
     private void Btn_D8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D8ActionPerformed
-        cont++;color(Btn_D8, 3, 7,"D8");
+        cont++;
+        color(Btn_D8, 3, 7, "D8");
     }//GEN-LAST:event_Btn_D8ActionPerformed
 
     private void Btn_D9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D9ActionPerformed
-        cont++;color(Btn_D9, 3, 8,"D9");
+        cont++;
+        color(Btn_D9, 3, 8, "D9");
     }//GEN-LAST:event_Btn_D9ActionPerformed
 
     private void Btn_D10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D10ActionPerformed
-        cont++;color(Btn_D10, 3, 9,"D10");
+        cont++;
+        color(Btn_D10, 3, 9, "D10");
     }//GEN-LAST:event_Btn_D10ActionPerformed
 
     private void Btn_D11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D11ActionPerformed
-        cont++;color(Btn_D11, 3, 10,"D11");
+        cont++;
+        color(Btn_D11, 3, 10, "D11");
     }//GEN-LAST:event_Btn_D11ActionPerformed
 
     private void Btn_D12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D12ActionPerformed
-        cont++;color(Btn_D12, 3, 11,"D12");
+        cont++;
+        color(Btn_D12, 3, 11, "D12");
     }//GEN-LAST:event_Btn_D12ActionPerformed
 
     private void Btn_D13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D13ActionPerformed
-        cont++;color(Btn_D13, 3, 12,"D13");
+        cont++;
+        color(Btn_D13, 3, 12, "D13");
     }//GEN-LAST:event_Btn_D13ActionPerformed
 
     private void Btn_D14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D14ActionPerformed
-        cont++;color(Btn_D14, 3, 13,"D14");
+        cont++;
+        color(Btn_D14, 3, 13, "D14");
     }//GEN-LAST:event_Btn_D14ActionPerformed
 
     private void Btn_E5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E5ActionPerformed
-        cont++;color(Btn_E5, 4, 4,"E5");
+        cont++;
+        color(Btn_E5, 4, 4, "E5");
     }//GEN-LAST:event_Btn_E5ActionPerformed
 
     private void Btn_E6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E6ActionPerformed
-        cont++;color(Btn_E6, 4, 5,"E6");
+        cont++;
+        color(Btn_E6, 4, 5, "E6");
     }//GEN-LAST:event_Btn_E6ActionPerformed
 
     private void Btn_E7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E7ActionPerformed
-        cont++;color(Btn_E7, 4, 6,"E7");
+        cont++;
+        color(Btn_E7, 4, 6, "E7");
     }//GEN-LAST:event_Btn_E7ActionPerformed
 
     private void Btn_E8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E8ActionPerformed
-        cont++;color(Btn_E8, 4, 7,"E8");
+        cont++;
+        color(Btn_E8, 4, 7, "E8");
     }//GEN-LAST:event_Btn_E8ActionPerformed
 
     private void Btn_E9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E9ActionPerformed
-        cont++;color(Btn_E9, 4, 8,"E9");
+        cont++;
+        color(Btn_E9, 4, 8, "E9");
     }//GEN-LAST:event_Btn_E9ActionPerformed
 
     private void Btn_E10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E10ActionPerformed
-        cont++;color(Btn_E10, 4, 9,"E10");
+        cont++;
+        color(Btn_E10, 4, 9, "E10");
     }//GEN-LAST:event_Btn_E10ActionPerformed
 
     private void Btn_E11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E11ActionPerformed
-        cont++;color(Btn_E11, 4, 10,"E11");
+        cont++;
+        color(Btn_E11, 4, 10, "E11");
     }//GEN-LAST:event_Btn_E11ActionPerformed
 
     private void Btn_E12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E12ActionPerformed
-        cont++;color(Btn_E12, 4, 11,"E12");
+        cont++;
+        color(Btn_E12, 4, 11, "E12");
     }//GEN-LAST:event_Btn_E12ActionPerformed
 
     private void Btn_E13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E13ActionPerformed
-        cont++;color(Btn_E13, 4, 12,"E13");
+        cont++;
+        color(Btn_E13, 4, 12, "E13");
     }//GEN-LAST:event_Btn_E13ActionPerformed
 
     private void Btn_E14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E14ActionPerformed
-        cont++;color(Btn_E14, 4, 13,"E14");
+        cont++;
+        color(Btn_E14, 4, 13, "E14");
     }//GEN-LAST:event_Btn_E14ActionPerformed
 
     private void txt_peliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_peliculasActionPerformed
@@ -1415,6 +1559,26 @@ public class seleccionCampos extends javax.swing.JFrame {
         principal princ = new principal();
         princ.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
+
+    private void btn_menosTiquetesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_menosTiquetesActionPerformed
+        // TODO add your handling code here:
+
+        CantidadTiquetes--;
+        if (CantidadTiquetes < 1) {
+            CantidadTiquetes = 1;
+        }
+        txt_cantidad_tiquetes.setText(CantidadTiquetes + "");
+
+    }//GEN-LAST:event_btn_menosTiquetesActionPerformed
+
+    private void btn_masTiquetesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_masTiquetesActionPerformed
+        // TODO add your handling code here:
+
+        CantidadTiquetes++;
+
+        txt_cantidad_tiquetes.setText(CantidadTiquetes + "");
+
+    }//GEN-LAST:event_btn_masTiquetesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1524,6 +1688,8 @@ public class seleccionCampos extends javax.swing.JFrame {
     private javax.swing.JButton Btn_E8;
     private javax.swing.JButton Btn_E9;
     private javax.swing.JButton Btn_Pagar;
+    private javax.swing.JButton btn_masTiquetes;
+    private javax.swing.JButton btn_menosTiquetes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1538,6 +1704,7 @@ public class seleccionCampos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1546,6 +1713,7 @@ public class seleccionCampos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel txt_CantidadSeleccionada;
     private javax.swing.JTextField txt_cantidad_tiquetes;
     private javax.swing.JTextField txt_cedula;
     private javax.swing.JTextField txt_correo_electronico;
