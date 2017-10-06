@@ -13,6 +13,7 @@ public class seleccionCampos extends javax.swing.JFrame {
 
     /*Creamos el arraylist par almacenar los datos*/
     ArrayList<Reservacion> lista = new ArrayList<Reservacion>();
+    ArrayList<String> TiquetesSeleccionados = new ArrayList<String>();
     Reservacion reserva = new Reservacion();
     String tipoTicket = " ", tanda = " ";
     int cont = 0;
@@ -31,14 +32,15 @@ public class seleccionCampos extends javax.swing.JFrame {
 
             evt.setBackground(Color.yellow);
             reserva.setPosition(row, column, campo);
+            TiquetesSeleccionados.add(row + "," + column);
             CantidadTiquetesSeleccionados++;
 
         } else if (evt.getBackground() == Color.yellow) {
             evt.setBackground(Color.green);
+            TiquetesSeleccionados.remove(row + "," + column);
             CantidadTiquetesSeleccionados--;
 
         }
-        
 
         /* if (cont % 2 == 0) {//Libre
                 evt.setBackground(Color.green);
@@ -1213,7 +1215,13 @@ public class seleccionCampos extends javax.swing.JFrame {
         todas las pocisiones del reserva.setPosition estan almacenados en el array
         del objeto reserva, como null o como el String pasado por parmetro
         donde null seria unsinonimo de disponible.*/
+            String tiquetes = "";
 
+            for (int i = 0; i < TiquetesSeleccionados.size(); i++) {
+                tiquetes = tiquetes + TiquetesSeleccionados.get(i) + "+";
+            }
+
+            
             lista.add(reserva);
 
             int tickets = Integer.parseInt(reserva.getCantidad_tiquetes());
@@ -1230,16 +1238,17 @@ public class seleccionCampos extends javax.swing.JFrame {
             +"Pelicula:      "+reserva.getPelicula());*/
             ResumenReservacion abrir = new ResumenReservacion();
 
-            ResumenReservacion.txt_nombre_completo.setText(txt_nombre_completo.getText());
-            ResumenReservacion.txt_correo_electronico.setText(txt_correo_electronico.getText());
-            ResumenReservacion.txt_cedula.setText(txt_cedula.getText());
-            ResumenReservacion.txt_telefono.setText(txt_telefono.getText());
-            ResumenReservacion.txt_tipo_tiquete.setText(tipoTicket);
-            ResumenReservacion.txt_pelicula.setText(reserva.getPelicula());
-            ResumenReservacion.txt_total.setText(totaltickets);
-            ResumenReservacion.txt_tanda.setText(tanda);
-            ResumenReservacion.txt_butacas.setText(capturaArray);
-
+            abrir.txt_nombre_completo.setText(txt_nombre_completo.getText());
+            abrir.txt_correo_electronico.setText(txt_correo_electronico.getText());
+            abrir.txt_cedula.setText(txt_cedula.getText());
+            abrir.txt_telefono.setText(txt_telefono.getText());
+            abrir.txt_tipo_tiquete.setText(tipoTicket);
+            abrir.txt_pelicula.setText(reserva.getPelicula());
+            abrir.txt_total.setText(totaltickets);
+            abrir.txt_tanda.setText(tanda);
+            abrir.txt_butacas.setText(capturaArray);
+            abrir.tiquetes = tiquetes;
+            
             abrir.setVisible(true);
             this.setVisible(false);
 

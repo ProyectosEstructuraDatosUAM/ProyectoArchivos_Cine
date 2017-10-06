@@ -51,25 +51,22 @@ public class UsoArchivos {
         BufferedWriter buffer = new BufferedWriter(escribir);
         String registro
                 = //Informacion General del cliente y compra
-                Usuario.getIDCompra() + ";"
-                + Usuario.getNombreComprador() + ";"
-                + Usuario.getApellidosComprador() + ";"
+                Usuario.getNombreComprador() + ";"
                 + Usuario.getTelefonoComprador() + ";"
-                + Usuario.getDireccionComprador() + ";"
+                + Usuario.getCedulaComprador() + ";"
                 + Usuario.getEmailComprador() + ";"
                 //Informacion de pago y tarjeta
-                + Usuario.getPagoRealizado() + ";"
-                + Usuario.getTarjeta_Tipo() + ";"
                 + Usuario.getTarjeta_Habiente() + ";"
+                + Usuario.getTarjeta_Tipo() + ";"
                 + Usuario.getTarjeta_Numero() + ";"
                 + Usuario.getTarjeta_Expiracion() + ";"
-                + Usuario.getTarjeta_CSC() + ";"
+                + Usuario.getTarjeta_CVV() + ";"
+                + Usuario.getPagoRealizado() + ";"
                 //Informacion de los tiquetes
                 + Usuario.getTipoTiquetes() + ";"
                 + Usuario.getCantidadTiquetes() + ";"
                 + Usuario.getAsientosSeleccionados() + ";"
                 + Usuario.getPeliculaSeleccionada() + ";"
-                + Usuario.getDiaSeleccionado() + ";"
                 + Usuario.getFuncionSeleccionada() + "\r\n"; //Ultimo dato de la línea
 
         buffer.write(registro);

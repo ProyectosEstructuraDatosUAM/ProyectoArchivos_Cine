@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package ProyectoArchivos_Cine;
 
 import javax.swing.JOptionPane;
@@ -13,10 +12,12 @@ import javax.swing.JOptionPane;
  * @author infinitus
  */
 public class ResumenReservacion extends javax.swing.JFrame {
+
     Reservacion reserva = new Reservacion();
     /*Declaramos un objeto reservacion*/
-    
-    
+
+    public String tiquetes = "";
+
     public ResumenReservacion() {
         initComponents();
     }
@@ -282,26 +283,42 @@ public class ResumenReservacion extends javax.swing.JFrame {
 
     private void Btn_pagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_pagarActionPerformed
         // TODO add your handling code here:
-       VentanaPagar pago = new VentanaPagar ();
-               pago.setVisible(true);
-    
+        VentanaPagar pago = new VentanaPagar();
+        pago.setVisible(true);
+
         pago.txt_nombre_completo.setText(txt_nombre_completo.getText());
-        pago.txt_total.setText(txt_total.getText()); 
-        pago.txt_totaltiquetes.setText((Integer.parseInt(txt_total.getText())/2000) + "");
-       this.dispose();
+        pago.txt_total.setText(txt_total.getText());
+        String TotalTiquetes = (Integer.parseInt(txt_total.getText()) / 2000) + "";
+        pago.txt_totaltiquetes.setText(TotalTiquetes);
+
        
+        pago.registro.setNombreComprador(txt_nombre_completo.getText());
+        pago.registro.setEmailComprador(txt_correo_electronico.getText());
+        pago.registro.setCedulaComprador(txt_cedula.getText());
+        pago.registro.setTelefonoComprador(txt_telefono.getText());
+        pago.registro.setTipoTiquetes(txt_tipo_tiquete.getText());
+        pago.registro.setPeliculaSeleccionada(reserva.getPelicula());
+        pago.registro.setCantidadTiquetes(TotalTiquetes);
+        pago.registro.setFuncionSeleccionada(txt_tanda.getText());
+        pago.registro.setAsientosSeleccionados(tiquetes);
+        
+        pago.setVisible(true);
+        this.setVisible(false);
+
+        this.dispose();
+
     }//GEN-LAST:event_Btn_pagarActionPerformed
 
     private void Btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SalirActionPerformed
         // TODO add your handling code here:
-         seleccionCampos selcam = new seleccionCampos ();
+        principal selcam = new principal();
         selcam.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Btn_SalirActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
-        seleccionCampos selcam = new seleccionCampos ();
+        principal selcam = new principal();
         selcam.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 

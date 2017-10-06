@@ -15,7 +15,7 @@ public class RegistroCompra {
     private String IDCompra;
     private String NombreComprador;
     private String ApellidosComprador;
-    private String DireccionComprador;
+    private String CedulaComprador;
     private String EmailComprador;
     private String TelefonoComprador;
     
@@ -25,7 +25,7 @@ public class RegistroCompra {
     private String Tarjeta_Habiente;
     private String Tarjeta_Numero;
     private String Tarjeta_Expiracion;
-    private String Tarjeta_CSC;
+    private String Tarjeta_CVV;
 
     //Informacion de los tiquetes
     private String CantidadTiquetes;
@@ -59,12 +59,12 @@ public class RegistroCompra {
         this.ApellidosComprador = ApellidosComprador;
     }
 
-    public String getDireccionComprador() {
-        return DireccionComprador;
+    public String getCedulaComprador() {
+        return CedulaComprador;
     }
 
-    public void setDireccionComprador(String DireccionComprador) {
-        this.DireccionComprador = DireccionComprador;
+    public void setCedulaComprador(String CedulaComprador) {
+        this.CedulaComprador = CedulaComprador;
     }
 
     public String getEmailComprador() {
@@ -115,12 +115,12 @@ public class RegistroCompra {
         this.Tarjeta_Expiracion = Tarjeta_Expiracion;
     }
 
-    public String getTarjeta_CSC() {
-        return Tarjeta_CSC;
+    public String getTarjeta_CVV() {
+        return Tarjeta_CVV;
     }
 
-    public void setTarjeta_CSC(String Tarjeta_CSC) {
-        this.Tarjeta_CSC = Tarjeta_CSC;
+    public void setTarjeta_CVV(String Tarjeta_CVV) {
+        this.Tarjeta_CVV = Tarjeta_CVV;
     }
 
     public String getCantidadTiquetes() {

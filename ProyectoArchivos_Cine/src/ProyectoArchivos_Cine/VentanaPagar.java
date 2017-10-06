@@ -5,6 +5,9 @@
  */
 package ProyectoArchivos_Cine;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +22,9 @@ public class VentanaPagar extends javax.swing.JFrame {
     public VentanaPagar() {
         initComponents();
     }
+    
+    public RegistroCompra registro = new RegistroCompra();
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -107,7 +113,7 @@ public class VentanaPagar extends javax.swing.JFrame {
 
         jLabel2.setText("Nombre del Tarjeta-Habiente: ");
 
-        txt_tipo_tarjeta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "American Express", "MasterCard", "Visa", " " }));
+        txt_tipo_tarjeta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "American Express", "MasterCard", "Visa" }));
 
         jLabel6.setText("Tipo de tarjeta:");
 
@@ -226,6 +232,20 @@ public class VentanaPagar extends javax.swing.JFrame {
         if(!(txt_numero_tarjeta.getText().equals(""))&& !(txt_nombre_completo.getText().equals(""))&&!(txt_cvv.getText().equals("")))
         
         {
+            registro.setTarjeta_Habiente(txt_nombre_completo.getText());
+            registro.setTarjeta_Numero(txt_numero_tarjeta.getText());
+            registro.setTarjeta_Expiracion(cb_mes_ven.getSelectedItem() + "/" + cb_ano_ven.getSelectedItem());
+            registro.setTarjeta_CVV(txt_cvv.getText());
+            registro.setTarjeta_Tipo(txt_tipo_tarjeta.getSelectedItem()+"");
+            
+            UsoArchivos reservacion = new UsoArchivos();
+            
+            try {
+                reservacion.GuardarCompra(registro);
+            } catch (IOException ex) {
+                Logger.getLogger(VentanaPagar.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
             JOptionPane.showMessageDialog(rootPane, "Su reservacion se realizo con exito");
             seleccionCampos abrir = new seleccionCampos();
             abrir.setVisible(true);
