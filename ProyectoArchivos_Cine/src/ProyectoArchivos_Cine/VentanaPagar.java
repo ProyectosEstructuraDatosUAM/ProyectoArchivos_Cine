@@ -247,7 +247,7 @@ public class VentanaPagar extends javax.swing.JFrame {
             }
             
             JOptionPane.showMessageDialog(rootPane, "Su reservacion se realizo con exito");
-            seleccionCampos abrir = new seleccionCampos();
+            principal abrir = new principal();
             abrir.setVisible(true);
             this.setVisible(false);
         }else{

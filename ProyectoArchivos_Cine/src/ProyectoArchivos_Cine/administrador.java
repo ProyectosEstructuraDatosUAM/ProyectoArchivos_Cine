@@ -5,7 +5,13 @@
  */
 package ProyectoArchivos_Cine;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -41,8 +47,8 @@ public class administrador extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         txtPelicula = new javax.swing.JTextField();
-        txtCantidadBoletos = new javax.swing.JTextField();
-        txtCostoBoletos = new javax.swing.JTextField();
+        txtCantidadTiquetes = new javax.swing.JTextField();
+        txtCostoTiquetes = new javax.swing.JTextField();
         txtTipoTarjeta = new javax.swing.JTextField();
         txtNumeroTarjeta = new javax.swing.JTextField();
         txtVencimiento = new javax.swing.JTextField();
@@ -89,9 +95,9 @@ public class administrador extends javax.swing.JFrame {
 
         txtPelicula.setEnabled(false);
 
-        txtCantidadBoletos.setEnabled(false);
+        txtCantidadTiquetes.setEnabled(false);
 
-        txtCostoBoletos.setEnabled(false);
+        txtCostoTiquetes.setEnabled(false);
 
         txtTipoTarjeta.setEnabled(false);
 
@@ -136,6 +142,11 @@ public class administrador extends javax.swing.JFrame {
         });
 
         btnCargar.setText("Cargar Base de datos");
+        btnCargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarActionPerformed(evt);
+            }
+        });
 
         btnRegistrar.setText("Registrar Nuevo Usuario Administrador");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -174,8 +185,8 @@ public class administrador extends javax.swing.JFrame {
                                     .addComponent(txtNombreTarjetaHabiente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtNumeroTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtTipoTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCostoBoletos, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCantidadBoletos, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCostoTiquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCantidadTiquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(txtCVV, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
@@ -210,17 +221,15 @@ public class administrador extends javax.swing.JFrame {
                                     .addComponent(txtPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel3))
-                            .addComponent(txtCantidadBoletos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCantidadTiquetes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4))
-                    .addComponent(txtCostoBoletos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCostoTiquetes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel10))
+                    .addComponent(jLabel10)
                     .addComponent(txtNombreTarjetaHabiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -258,38 +267,26 @@ public class administrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private ArrayList<RegistroCompra> ComprasRegistradas = new ArrayList<RegistroCompra>();
+    private RegistroCompra registro = new RegistroCompra();
+    private int IndiceLista = 0;
 
-    private int IndiceRegistro = -1;
-
-    private void MostrarContacto(RegistroCompra obcontacto) {
-
-        try {
-            /*   lblIndice.setText(IndiceRegistro+"");
-            txtNombre.setText(obcontacto.getNombre());
-            txtApellidos.setText(obcontacto.getApellido());
-            txtTelefono.setText(obcontacto.getTelefono());
-             */
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "No hay contactos.");
-        }
-    }
 
     private void btnPrimeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimeroActionPerformed
         // TODO add your handling code here:
-        IndiceRegistro = 0;
-        MostrarContacto(ComprasRegistradas.get(IndiceRegistro));
+        IndiceLista = 0;
+        MostrarDatos(ComprasRegistradas.get(IndiceLista));
     }//GEN-LAST:event_btnPrimeroActionPerformed
 
     private void btnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnteriorActionPerformed
         // TODO add your handling code here:
 
-        if (IndiceRegistro < 1) {
-            IndiceRegistro = 0;
+        if (IndiceLista < 1) {
+            IndiceLista = 0;
         } else {
-            IndiceRegistro--;
+            IndiceLista--;
         }
         try {
-            MostrarContacto(ComprasRegistradas.get(IndiceRegistro));
+            MostrarDatos(ComprasRegistradas.get(IndiceLista));
         } catch (Exception e) {
 
         }
@@ -298,13 +295,13 @@ public class administrador extends javax.swing.JFrame {
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
         // TODO add your handling code here:
 
-        if (IndiceRegistro >= (ComprasRegistradas.size() - 1)) {
-            IndiceRegistro = ComprasRegistradas.size() - 1;
+        if (IndiceLista >= (ComprasRegistradas.size() - 1)) {
+            IndiceLista = ComprasRegistradas.size() - 1;
         } else {
-            IndiceRegistro++;
+            IndiceLista++;
         }
         try {
-            MostrarContacto(ComprasRegistradas.get(IndiceRegistro));
+            MostrarDatos(ComprasRegistradas.get(IndiceLista));
         } catch (Exception e) {
 
         }
@@ -312,25 +309,92 @@ public class administrador extends javax.swing.JFrame {
 
     private void btnUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUltimoActionPerformed
         // TODO add your handling code here:
-        IndiceRegistro = ComprasRegistradas.size() - 1;
-        MostrarContacto(ComprasRegistradas.get(IndiceRegistro));
+        IndiceLista = ComprasRegistradas.size() - 1;
+        MostrarDatos(ComprasRegistradas.get(IndiceLista));
     }//GEN-LAST:event_btnUltimoActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
-        
-        Registrar nuevo= new Registrar();
+
+        Registrar nuevo = new Registrar();
         nuevo.setVisible(true);
-        
+
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
-        principal princ = new principal ();
+        principal princ = new principal();
         princ.setVisible(true);
-        
+
     }//GEN-LAST:event_formWindowClosing
 
+    private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
+        // TODO add your handling code here:
+
+        String linea;
+        FileReader f = null;
+        try {
+            f = new FileReader("Informacion de Compra.txt");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(administrador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try (BufferedReader b = new BufferedReader(f)) {
+            while ((linea = b.readLine()) != null) {
+                String DatosCompra[] = linea.split(";");
+
+                registro.setNombreComprador(DatosCompra[0]);
+                registro.setTelefonoComprador(DatosCompra[1]);
+                registro.setCedulaComprador(DatosCompra[2]);
+                registro.setEmailComprador(DatosCompra[3]);
+
+                registro.setTarjeta_Habiente(DatosCompra[4]);
+                registro.setTarjeta_Tipo(DatosCompra[5]);
+                registro.setTarjeta_Numero(DatosCompra[6]);
+                registro.setTarjeta_Expiracion(DatosCompra[7]);
+                registro.setTarjeta_CVV(DatosCompra[8]);
+                registro.setPagoRealizado(DatosCompra[9]);
+
+                registro.setTipoTiquetes(DatosCompra[10]);
+                registro.setCantidadTiquetes(DatosCompra[11]);
+                registro.setPeliculaSeleccionada(DatosCompra[12]);
+                registro.setFuncionSeleccionada(DatosCompra[13]);
+                registro.setAsientosSeleccionados(DatosCompra[14]);
+
+                ComprasRegistradas.add(registro);
+
+                btnPrimero.setEnabled(true);
+                btnUltimo.setEnabled(true);
+                btnSiguiente.setEnabled(true);
+                btnAnterior.setEnabled(true);
+                
+            }
+
+        } catch (IOException e) {
+            //lblResultado.setText("Error al leer el archivo");
+        }
+        
+        IndiceLista = 0;
+        
+        MostrarDatos(ComprasRegistradas.get(IndiceLista));
+
+    }//GEN-LAST:event_btnCargarActionPerformed
+
+    private void MostrarDatos (RegistroCompra ob)
+            
+    {
+        txtPelicula.setText(ob.getPeliculaSeleccionada());
+        txtCantidadTiquetes.setText(ob.getCantidadTiquetes());
+        txtCostoTiquetes.setText(ob.getPagoRealizado());
+        
+        txtNombreTarjetaHabiente.setText(ob.getTarjeta_Habiente());
+        txtTipoTarjeta.setText(ob.getTarjeta_Tipo());
+        txtNumeroTarjeta.setText(ob.getTarjeta_Numero());
+        txtVencimiento.setText(ob.getTarjeta_Expiracion());
+        txtCVV.setText(ob.getTarjeta_CVV());
+        
+        
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -384,8 +448,8 @@ public class administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField txtCVV;
-    private javax.swing.JTextField txtCantidadBoletos;
-    private javax.swing.JTextField txtCostoBoletos;
+    private javax.swing.JTextField txtCantidadTiquetes;
+    private javax.swing.JTextField txtCostoTiquetes;
     private javax.swing.JTextField txtNombreTarjetaHabiente;
     private javax.swing.JTextField txtNumeroTarjeta;
     private javax.swing.JTextField txtPelicula;

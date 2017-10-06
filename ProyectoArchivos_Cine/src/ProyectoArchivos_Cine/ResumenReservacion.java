@@ -284,8 +284,7 @@ public class ResumenReservacion extends javax.swing.JFrame {
     private void Btn_pagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_pagarActionPerformed
         // TODO add your handling code here:
         VentanaPagar pago = new VentanaPagar();
-        pago.setVisible(true);
-
+        
         pago.txt_nombre_completo.setText(txt_nombre_completo.getText());
         pago.txt_total.setText(txt_total.getText());
         String TotalTiquetes = (Integer.parseInt(txt_total.getText()) / 2000) + "";
@@ -297,10 +296,11 @@ public class ResumenReservacion extends javax.swing.JFrame {
         pago.registro.setCedulaComprador(txt_cedula.getText());
         pago.registro.setTelefonoComprador(txt_telefono.getText());
         pago.registro.setTipoTiquetes(txt_tipo_tiquete.getText());
-        pago.registro.setPeliculaSeleccionada(reserva.getPelicula());
+        pago.registro.setPeliculaSeleccionada(txt_pelicula.getText());
         pago.registro.setCantidadTiquetes(TotalTiquetes);
         pago.registro.setFuncionSeleccionada(txt_tanda.getText());
         pago.registro.setAsientosSeleccionados(tiquetes);
+        pago.registro.setPagoRealizado(txt_total.getText());
         
         pago.setVisible(true);
         this.setVisible(false);

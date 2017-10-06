@@ -65,9 +65,9 @@ public class UsoArchivos {
                 //Informacion de los tiquetes
                 + Usuario.getTipoTiquetes() + ";"
                 + Usuario.getCantidadTiquetes() + ";"
-                + Usuario.getAsientosSeleccionados() + ";"
                 + Usuario.getPeliculaSeleccionada() + ";"
-                + Usuario.getFuncionSeleccionada() + "\r\n"; //Ultimo dato de la línea
+                + Usuario.getFuncionSeleccionada() + ";"
+                + Usuario.getAsientosSeleccionados() + "\r\n"; //Ultimo dato de la línea
 
         buffer.write(registro);
         buffer.close();
