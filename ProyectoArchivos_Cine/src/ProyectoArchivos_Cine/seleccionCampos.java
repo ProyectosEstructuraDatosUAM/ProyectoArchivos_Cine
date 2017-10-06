@@ -14,7 +14,7 @@ public class seleccionCampos extends javax.swing.JFrame {
     /*Creamos el arraylist par almacenar los datos*/
     ArrayList<Reservacion> lista = new ArrayList<Reservacion>();
     Reservacion reserva = new Reservacion();
-    String tipoTicket = " ", tipoPelicula = " ", tanda = " ";
+    String tipoTicket = " ", tanda = " ";
     int cont = 0;
 
     public seleccionCampos() {
@@ -165,13 +165,13 @@ public class seleccionCampos extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         Btn_Pagar = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
-        txt_peliculas = new javax.swing.JComboBox<>();
         txt_tanda = new javax.swing.JComboBox<>();
         btn_masTiquetes = new javax.swing.JButton();
         btn_menosTiquetes = new javax.swing.JButton();
         txt_cantidad_tiquetes = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         txt_CantidadSeleccionada = new javax.swing.JLabel();
+        txt_peliculas = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Seleccion de Butacas");
@@ -1022,14 +1022,6 @@ public class seleccionCampos extends javax.swing.JFrame {
         jLabel21.setForeground(java.awt.Color.white);
         jLabel21.setText("Tanda de:");
 
-        txt_peliculas.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
-        txt_peliculas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BladeBlade Runner - Double Feature", "It - El payaso diabolico", "NinjaGo - Lego", "Battle of the Sexes" }));
-        txt_peliculas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_peliculasActionPerformed(evt);
-            }
-        });
-
         txt_tanda.setFont(new java.awt.Font("Abyssinica SIL", 2, 12)); // NOI18N
         txt_tanda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mañana  10:00-12:00", "Tarde      16:00-18:00", "Noche     20:00-22:00" }));
 
@@ -1059,23 +1051,31 @@ public class seleccionCampos extends javax.swing.JFrame {
         txt_CantidadSeleccionada.setForeground(new java.awt.Color(255, 255, 255));
         txt_CantidadSeleccionada.setText("0");
 
+        txt_peliculas.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
+        txt_peliculas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_peliculas.setEnabled(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel20)
-                .addGap(54, 54, 54)
-                .addComponent(txt_peliculas, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(Btn_Pagar)
-                .addGap(109, 109, 109))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(191, 191, 191)
-                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(326, 326, 326)
+                        .addComponent(jLabel22)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txt_CantidadSeleccionada))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(191, 191, 191)
+                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addComponent(jLabel20)
+                                .addGap(75, 75, 75)
+                                .addComponent(txt_peliculas, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1085,13 +1085,9 @@ public class seleccionCampos extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn_masTiquetes))
                             .addComponent(jLabel21)
-                            .addComponent(txt_tanda, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(288, 288, 288)
-                        .addComponent(jLabel22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_CantidadSeleccionada)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txt_tanda, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Btn_Pagar))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1108,10 +1104,10 @@ public class seleccionCampos extends javax.swing.JFrame {
                             .addComponent(txt_cantidad_tiquetes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(87, 87, 87)
                         .addComponent(txt_tanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(Btn_Pagar)
+                    .addComponent(Btn_Pagar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_peliculas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1199,8 +1195,8 @@ public class seleccionCampos extends javax.swing.JFrame {
             tipoTicket = txt_tipo_tiquete.getSelectedItem().toString();
             reserva.setTipo_tiquete(tipoTicket);
             reserva.setCantidad_tiquetes(txt_cantidad_tiquetes.getText());
-            tipoPelicula = txt_peliculas.getSelectedItem().toString();
-            reserva.setPelicula(tipoPelicula);
+            //tipoPelicula = txt_peliculas.getSelectedItem().toString();
+            reserva.setPelicula(txt_peliculas.getText());
             tanda = txt_tanda.getSelectedItem().toString();
             reserva.setTanda(tanda);
 
@@ -1239,7 +1235,7 @@ public class seleccionCampos extends javax.swing.JFrame {
             ResumenReservacion.txt_cedula.setText(txt_cedula.getText());
             ResumenReservacion.txt_telefono.setText(txt_telefono.getText());
             ResumenReservacion.txt_tipo_tiquete.setText(tipoTicket);
-            ResumenReservacion.txt_pelicula.setText(tipoPelicula);
+            ResumenReservacion.txt_pelicula.setText(reserva.getPelicula());
             ResumenReservacion.txt_total.setText(totaltickets);
             ResumenReservacion.txt_tanda.setText(tanda);
             ResumenReservacion.txt_butacas.setText(capturaArray);
@@ -1554,10 +1550,6 @@ public class seleccionCampos extends javax.swing.JFrame {
         color(Btn_E14, 4, 13, "E14");
     }//GEN-LAST:event_Btn_E14ActionPerformed
 
-    private void txt_peliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_peliculasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_peliculasActionPerformed
-
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
         principal princ = new principal();
@@ -1722,7 +1714,7 @@ public class seleccionCampos extends javax.swing.JFrame {
     private javax.swing.JTextField txt_cedula;
     private javax.swing.JTextField txt_correo_electronico;
     private javax.swing.JTextField txt_nombre_completo;
-    private javax.swing.JComboBox<String> txt_peliculas;
+    public static javax.swing.JTextField txt_peliculas;
     private javax.swing.JComboBox<String> txt_tanda;
     private javax.swing.JTextField txt_telefono;
     private javax.swing.JComboBox<String> txt_tipo_tiquete;

@@ -119,6 +119,7 @@ public class principal extends javax.swing.JFrame {
     private void Btn_Pelicula1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pelicula1ActionPerformed
         // Pelicula 1
         seleccionCampos abrir = new seleccionCampos();
+        seleccionCampos.txt_peliculas.setText("Blade Runner - Double Feature");
         abrir.setVisible(true);
         //this.setVisible(false);
         this.dispose();
@@ -162,6 +163,7 @@ public class principal extends javax.swing.JFrame {
     private void Btn_Pelicula2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pelicula2ActionPerformed
         // Peicula 2
         seleccionCampos abrir = new seleccionCampos();
+        seleccionCampos.txt_peliculas.setText("It - El payaso diabolico");
         abrir.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Btn_Pelicula2ActionPerformed
@@ -169,6 +171,7 @@ public class principal extends javax.swing.JFrame {
     private void Btn_Pelicula3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pelicula3ActionPerformed
         // Pelicula 3
         seleccionCampos abrir = new seleccionCampos();
+        seleccionCampos.txt_peliculas.setText("NinjaGo - Lego");
         abrir.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Btn_Pelicula3ActionPerformed
@@ -176,6 +179,7 @@ public class principal extends javax.swing.JFrame {
     private void Btn_Pelicula4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pelicula4ActionPerformed
         // pelicula 4
         seleccionCampos abrir = new seleccionCampos();
+        seleccionCampos.txt_peliculas.setText("Battle of the Sexes");
         abrir.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Btn_Pelicula4ActionPerformed
