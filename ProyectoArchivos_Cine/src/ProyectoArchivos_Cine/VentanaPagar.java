@@ -56,6 +56,7 @@ public class VentanaPagar extends javax.swing.JFrame {
         txt_totaltiquetes = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Realizar Pago y Reservación.");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -120,7 +121,7 @@ public class VentanaPagar extends javax.swing.JFrame {
         cb_mes_ven.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
         cb_mes_ven.setToolTipText("Mes");
 
-        cb_ano_ven.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30" }));
+        cb_ano_ven.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030" }));
         cb_ano_ven.setToolTipText("Año (20xx)");
 
         jLabel7.setText("/");
