@@ -340,61 +340,60 @@ public class administrador extends javax.swing.JFrame {
         }
         try (BufferedReader b = new BufferedReader(f)) {
             while ((linea = b.readLine()) != null) {
+
+                RegistroCompra temp = new RegistroCompra();
                 String DatosCompra[] = linea.split(";");
+                temp.setNombreComprador(DatosCompra[0]);
+                temp.setTelefonoComprador(DatosCompra[1]);
+                temp.setCedulaComprador(DatosCompra[2]);
+                temp.setEmailComprador(DatosCompra[3]);
 
-                registro.setNombreComprador(DatosCompra[0]);
-                registro.setTelefonoComprador(DatosCompra[1]);
-                registro.setCedulaComprador(DatosCompra[2]);
-                registro.setEmailComprador(DatosCompra[3]);
+                temp.setTarjeta_Habiente(DatosCompra[4]);
+                temp.setTarjeta_Tipo(DatosCompra[5]);
+                temp.setTarjeta_Numero(DatosCompra[6]);
+                temp.setTarjeta_Expiracion(DatosCompra[7]);
+                temp.setTarjeta_CVV(DatosCompra[8]);
+                temp.setPagoRealizado(DatosCompra[9]);
 
-                registro.setTarjeta_Habiente(DatosCompra[4]);
-                registro.setTarjeta_Tipo(DatosCompra[5]);
-                registro.setTarjeta_Numero(DatosCompra[6]);
-                registro.setTarjeta_Expiracion(DatosCompra[7]);
-                registro.setTarjeta_CVV(DatosCompra[8]);
-                registro.setPagoRealizado(DatosCompra[9]);
+                temp.setTipoTiquetes(DatosCompra[10]);
+                temp.setCantidadTiquetes(DatosCompra[11]);
+                temp.setPeliculaSeleccionada(DatosCompra[12]);
+                temp.setFuncionSeleccionada(DatosCompra[13]);
+                temp.setAsientosSeleccionados(DatosCompra[14]);
 
-                registro.setTipoTiquetes(DatosCompra[10]);
-                registro.setCantidadTiquetes(DatosCompra[11]);
-                registro.setPeliculaSeleccionada(DatosCompra[12]);
-                registro.setFuncionSeleccionada(DatosCompra[13]);
-                registro.setAsientosSeleccionados(DatosCompra[14]);
+                ComprasRegistradas.add(temp);
 
-                ComprasRegistradas.add(registro);
-
-                btnPrimero.setEnabled(true);
-                btnUltimo.setEnabled(true);
-                btnSiguiente.setEnabled(true);
-                btnAnterior.setEnabled(true);
-                
             }
 
         } catch (IOException e) {
             //lblResultado.setText("Error al leer el archivo");
         }
-        
+
         IndiceLista = 0;
-        
+
+        btnPrimero.setEnabled(true);
+        btnUltimo.setEnabled(true);
+        btnSiguiente.setEnabled(true);
+        btnAnterior.setEnabled(true);
+        btnCargar.setEnabled(false);
+
         MostrarDatos(ComprasRegistradas.get(IndiceLista));
 
     }//GEN-LAST:event_btnCargarActionPerformed
 
-    private void MostrarDatos (RegistroCompra ob)
-            
-    {
+    private void MostrarDatos(RegistroCompra ob) {
         txtPelicula.setText(ob.getPeliculaSeleccionada());
         txtCantidadTiquetes.setText(ob.getCantidadTiquetes());
         txtCostoTiquetes.setText(ob.getPagoRealizado());
-        
+
         txtNombreTarjetaHabiente.setText(ob.getTarjeta_Habiente());
         txtTipoTarjeta.setText(ob.getTarjeta_Tipo());
         txtNumeroTarjeta.setText(ob.getTarjeta_Numero());
         txtVencimiento.setText(ob.getTarjeta_Expiracion());
         txtCVV.setText(ob.getTarjeta_CVV());
-        
-        
+
     }
-    
+
     /**
      * @param args the command line arguments
      */
