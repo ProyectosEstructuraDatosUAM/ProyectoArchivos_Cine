@@ -267,7 +267,6 @@ public class administrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private ArrayList<RegistroCompra> ComprasRegistradas = new ArrayList<RegistroCompra>();
-    private RegistroCompra registro = new RegistroCompra();
     private int IndiceLista = 0;
 
 
