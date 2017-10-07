@@ -200,7 +200,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txt_nombre_completo">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_nombre_completoActionPerformed"/>
@@ -211,7 +211,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txt_correo_electronico">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_correo_electronicoActionPerformed"/>
@@ -222,7 +222,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txt_telefono">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_telefonoActionPerformed"/>
@@ -233,7 +233,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txt_cedula">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_cedulaActionPerformed"/>
@@ -244,7 +244,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txt_tipo_tiquete">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_tipo_tiqueteActionPerformed"/>
@@ -255,7 +255,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txt_pelicula">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_peliculaActionPerformed"/>
@@ -266,7 +266,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txt_total">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_totalActionPerformed"/>
@@ -293,7 +293,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txt_tanda">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -311,7 +311,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txt_butacas">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>

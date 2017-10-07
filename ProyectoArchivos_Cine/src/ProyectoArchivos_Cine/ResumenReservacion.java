@@ -76,49 +76,49 @@ public class ResumenReservacion extends javax.swing.JFrame {
 
         jLabel8.setText("Total:");
 
-        txt_nombre_completo.setEnabled(false);
+        txt_nombre_completo.setEditable(false);
         txt_nombre_completo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_nombre_completoActionPerformed(evt);
             }
         });
 
-        txt_correo_electronico.setEnabled(false);
+        txt_correo_electronico.setEditable(false);
         txt_correo_electronico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_correo_electronicoActionPerformed(evt);
             }
         });
 
-        txt_telefono.setEnabled(false);
+        txt_telefono.setEditable(false);
         txt_telefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_telefonoActionPerformed(evt);
             }
         });
 
-        txt_cedula.setEnabled(false);
+        txt_cedula.setEditable(false);
         txt_cedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_cedulaActionPerformed(evt);
             }
         });
 
-        txt_tipo_tiquete.setEnabled(false);
+        txt_tipo_tiquete.setEditable(false);
         txt_tipo_tiquete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_tipo_tiqueteActionPerformed(evt);
             }
         });
 
-        txt_pelicula.setEnabled(false);
+        txt_pelicula.setEditable(false);
         txt_pelicula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_peliculaActionPerformed(evt);
             }
         });
 
-        txt_total.setEnabled(false);
+        txt_total.setEditable(false);
         txt_total.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_totalActionPerformed(evt);
@@ -139,13 +139,13 @@ public class ResumenReservacion extends javax.swing.JFrame {
             }
         });
 
-        txt_tanda.setEnabled(false);
+        txt_tanda.setEditable(false);
 
         jLabel9.setText("Tanda:");
 
         jLabel10.setText("Campos Adquiridos:");
 
-        txt_butacas.setEnabled(false);
+        txt_butacas.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

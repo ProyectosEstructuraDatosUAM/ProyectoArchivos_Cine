@@ -56,8 +56,8 @@
                                   <Component id="txtNombreTarjetaHabiente" alignment="1" min="-2" pref="245" max="-2" attributes="0"/>
                                   <Component id="txtNumeroTarjeta" min="-2" pref="245" max="-2" attributes="0"/>
                                   <Component id="txtTipoTarjeta" min="-2" pref="245" max="-2" attributes="0"/>
-                                  <Component id="txtCostoBoletos" min="-2" pref="245" max="-2" attributes="0"/>
-                                  <Component id="txtCantidadBoletos" min="-2" pref="245" max="-2" attributes="0"/>
+                                  <Component id="txtCostoTiquetes" min="-2" pref="245" max="-2" attributes="0"/>
+                                  <Component id="txtCantidadTiquetes" min="-2" pref="245" max="-2" attributes="0"/>
                                   <Component id="txtPelicula" min="-2" pref="245" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="txtCVV" alignment="0" pref="126" max="32767" attributes="0"/>
@@ -104,21 +104,18 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="txtCantidadBoletos" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCantidadTiquetes" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="txtCostoBoletos" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCostoTiquetes" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabel5" min="-2" pref="44" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="txtNombreTarjetaHabiente" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -224,42 +221,42 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtPelicula">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtCantidadBoletos">
+    <Component class="javax.swing.JTextField" name="txtCantidadTiquetes">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtCostoBoletos">
+    <Component class="javax.swing.JTextField" name="txtCostoTiquetes">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTipoTarjeta">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNumeroTarjeta">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtVencimiento">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCVV">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNombreTarjetaHabiente">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnPrimero">
@@ -302,6 +299,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cargar Base de datos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCargarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnRegistrar">
       <Properties>

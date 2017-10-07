@@ -93,21 +93,21 @@ public class administrador extends javax.swing.JFrame {
 
         jLabel10.setText("Nombre del Tarjeta-Habiente");
 
-        txtPelicula.setEnabled(false);
+        txtPelicula.setEditable(false);
 
-        txtCantidadTiquetes.setEnabled(false);
+        txtCantidadTiquetes.setEditable(false);
 
-        txtCostoTiquetes.setEnabled(false);
+        txtCostoTiquetes.setEditable(false);
 
-        txtTipoTarjeta.setEnabled(false);
+        txtTipoTarjeta.setEditable(false);
 
-        txtNumeroTarjeta.setEnabled(false);
+        txtNumeroTarjeta.setEditable(false);
 
-        txtVencimiento.setEnabled(false);
+        txtVencimiento.setEditable(false);
 
-        txtCVV.setEnabled(false);
+        txtCVV.setEditable(false);
 
-        txtNombreTarjetaHabiente.setEnabled(false);
+        txtNombreTarjetaHabiente.setEditable(false);
 
         btnPrimero.setText("|<");
         btnPrimero.setEnabled(false);
