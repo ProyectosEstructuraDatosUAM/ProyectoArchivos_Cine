@@ -166,14 +166,13 @@ public class seleccionCampos extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         Btn_Pagar = new javax.swing.JButton();
-        jLabel21 = new javax.swing.JLabel();
-        txt_tanda = new javax.swing.JComboBox<>();
         btn_masTiquetes = new javax.swing.JButton();
         btn_menosTiquetes = new javax.swing.JButton();
         txt_cantidad_tiquetes = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         txt_CantidadSeleccionada = new javax.swing.JLabel();
         txt_peliculas = new javax.swing.JTextField();
+        txt_tanda = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Seleccion de Butacas");
@@ -1020,13 +1019,6 @@ public class seleccionCampos extends javax.swing.JFrame {
             }
         });
 
-        jLabel21.setFont(new java.awt.Font("Abyssinica SIL", 2, 18)); // NOI18N
-        jLabel21.setForeground(java.awt.Color.white);
-        jLabel21.setText("Tanda de:");
-
-        txt_tanda.setFont(new java.awt.Font("Abyssinica SIL", 2, 12)); // NOI18N
-        txt_tanda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mañana  10:00-12:00", "Tarde      16:00-18:00", "Noche     20:00-22:00" }));
-
         btn_masTiquetes.setText("+");
         btn_masTiquetes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1057,6 +1049,10 @@ public class seleccionCampos extends javax.swing.JFrame {
         txt_peliculas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_peliculas.setEnabled(false);
 
+        txt_tanda.setEditable(false);
+        txt_tanda.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
+        txt_tanda.setEnabled(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1086,27 +1082,24 @@ public class seleccionCampos extends javax.swing.JFrame {
                                 .addComponent(txt_cantidad_tiquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn_masTiquetes))
-                            .addComponent(jLabel21)
-                            .addComponent(txt_tanda, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Btn_Pagar))))
-                .addContainerGap(27, Short.MAX_VALUE))
+                            .addComponent(Btn_Pagar)
+                            .addComponent(txt_tanda, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel19)
-                        .addComponent(jLabel21))
+                    .addComponent(jLabel19)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(49, 49, 49)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_masTiquetes)
                             .addComponent(btn_menosTiquetes)
                             .addComponent(txt_cantidad_tiquetes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(87, 87, 87)
+                        .addGap(57, 57, 57)
                         .addComponent(txt_tanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
                     .addComponent(Btn_Pagar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1199,8 +1192,8 @@ public class seleccionCampos extends javax.swing.JFrame {
             reserva.setCantidad_tiquetes(txt_cantidad_tiquetes.getText());
             //tipoPelicula = txt_peliculas.getSelectedItem().toString();
             reserva.setPelicula(txt_peliculas.getText());
-            tanda = txt_tanda.getSelectedItem().toString();
-            reserva.setTanda(tanda);
+
+            reserva.setTanda(txt_tanda.getText());
 
             String[][] campos = new String[5][13];
             String capturaArray = " ";
@@ -1245,7 +1238,7 @@ public class seleccionCampos extends javax.swing.JFrame {
             abrir.txt_tipo_tiquete.setText(tipoTicket);
             abrir.txt_pelicula.setText(reserva.getPelicula());
             abrir.txt_total.setText(totaltickets);
-            abrir.txt_tanda.setText(tanda);
+            abrir.txt_tanda.setText(txt_tanda.getText());
             abrir.txt_butacas.setText(capturaArray);
             abrir.tiquetes = tiquetes;
             
@@ -1708,7 +1701,6 @@ public class seleccionCampos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1724,7 +1716,7 @@ public class seleccionCampos extends javax.swing.JFrame {
     private javax.swing.JTextField txt_correo_electronico;
     private javax.swing.JTextField txt_nombre_completo;
     public static javax.swing.JTextField txt_peliculas;
-    private javax.swing.JComboBox<String> txt_tanda;
+    public static javax.swing.JTextField txt_tanda;
     private javax.swing.JTextField txt_telefono;
     private javax.swing.JComboBox<String> txt_tipo_tiquete;
     // End of variables declaration//GEN-END:variables

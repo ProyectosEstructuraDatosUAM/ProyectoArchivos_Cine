@@ -1,3 +1,4 @@
 Rafa Diaz Galeano;879672760;155817357309;rdiazgaleano@outlook.com;Rafa Diaz Galeano;Visa;655365536553;04/21;165;null;Joven;5;null;Noche     20:00-22:00;4,8+4,7+4,6+4,5+4,9+
 Ingrid Diaz;84262149;155817357132;massiel@hotmail.com;Ingrid Diaz;MasterCard;788778877887;11/21;777;null;Joven;2;null;Mañana  10:00-12:00;3,6+3,7+
 ingrid;84262149;155817357132;ingriddiazgal@hotmail.com;ingrid;Visa;356655;05/22;6767;4000;Adulto;2;It - El payaso diabolico;Noche     20:00-22:00;0,7+0,6+
+fgfg;gfsdgfd;fgsdgfd;gfsdsgd;fgfg;MasterCard;fdsf;01/2019;fdgf;12000;Adulto Mayor;6;Blade Runner - Double Feature;Mañana 10:00-12:00;3,9+3,8+3,7+3,6+3,5+3,4+
