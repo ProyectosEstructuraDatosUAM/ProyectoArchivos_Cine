@@ -5,6 +5,7 @@
  */
 package ProyectoArchivos_Cine;
 
+import static ProyectoArchivos_Cine.seleccionCampos.txt_tanda;
 import javax.swing.JOptionPane;
 
 /**
@@ -39,6 +40,7 @@ public class principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         Btn_Salir = new javax.swing.JButton();
+        txt_Selecciontanda = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Principal - Reservaciones");
@@ -114,6 +116,15 @@ public class principal extends javax.swing.JFrame {
         });
         getContentPane().add(Btn_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 70, -1));
 
+        txt_Selecciontanda.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
+        txt_Selecciontanda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mañana 10:00-12:00", "Tarde 16:00-18:00", "Noche 20:00-22:00" }));
+        txt_Selecciontanda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_SelecciontandaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_Selecciontanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 420, 180, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -121,6 +132,7 @@ public class principal extends javax.swing.JFrame {
         // Pelicula 1
         seleccionCampos abrir = new seleccionCampos();
         seleccionCampos.txt_peliculas.setText("Blade Runner - Double Feature");
+        seleccionCampos.txt_tanda.setText(txt_Selecciontanda.getSelectedItem().toString());
         abrir.setVisible(true);
         //this.setVisible(false);
         this.dispose();
@@ -165,6 +177,7 @@ public class principal extends javax.swing.JFrame {
         // Peicula 2
         seleccionCampos abrir = new seleccionCampos();
         seleccionCampos.txt_peliculas.setText("It - El payaso diabolico");
+        seleccionCampos.txt_tanda.setText(txt_Selecciontanda.getSelectedItem().toString());
         abrir.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Btn_Pelicula2ActionPerformed
@@ -173,6 +186,7 @@ public class principal extends javax.swing.JFrame {
         // Pelicula 3
         seleccionCampos abrir = new seleccionCampos();
         seleccionCampos.txt_peliculas.setText("NinjaGo - Lego");
+        seleccionCampos.txt_tanda.setText(txt_Selecciontanda.getSelectedItem().toString());
         abrir.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Btn_Pelicula3ActionPerformed
@@ -181,9 +195,14 @@ public class principal extends javax.swing.JFrame {
         // pelicula 4
         seleccionCampos abrir = new seleccionCampos();
         seleccionCampos.txt_peliculas.setText("Battle of the Sexes");
+        seleccionCampos.txt_tanda.setText(txt_Selecciontanda.getSelectedItem().toString());
         abrir.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Btn_Pelicula4ActionPerformed
+
+    private void txt_SelecciontandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_SelecciontandaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_SelecciontandaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,5 +250,6 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JComboBox<String> txt_Selecciontanda;
     // End of variables declaration//GEN-END:variables
 }

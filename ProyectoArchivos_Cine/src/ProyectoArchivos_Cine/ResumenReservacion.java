@@ -142,6 +142,11 @@ public class ResumenReservacion extends javax.swing.JFrame {
         });
 
         txt_tanda.setEditable(false);
+        txt_tanda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_tandaActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("Tanda:");
 
@@ -323,6 +328,10 @@ public class ResumenReservacion extends javax.swing.JFrame {
         principal selcam = new principal();
         selcam.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
+
+    private void txt_tandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tandaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_tandaActionPerformed
 
     /**
      * @param args the command line arguments
