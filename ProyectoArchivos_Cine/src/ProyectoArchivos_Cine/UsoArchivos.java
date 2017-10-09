@@ -74,5 +74,25 @@ public class UsoArchivos {
         escribir.close();
 
     }
+    
+    public void GuardarCambios(String cambios) throws IOException {
+        File nuevo = new File("Informacion de Compra.txt");
+        
+        nuevo.delete();
+        if (!nuevo.exists()) {
+            CrearArchivo(nuevo);
+        }
+        
+        
+
+        FileWriter escribir = new FileWriter(nuevo, true);
+        BufferedWriter buffer = new BufferedWriter(escribir);
+        String registro = cambios; //Ultimo dato de la línea
+
+        buffer.write(registro);
+        buffer.close();
+        escribir.close();
+
+    }
 
 }

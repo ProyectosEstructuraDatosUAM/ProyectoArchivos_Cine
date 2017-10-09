@@ -60,6 +60,8 @@ public class administrador extends javax.swing.JFrame {
         btnUltimo = new javax.swing.JButton();
         btnCargar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
+        btnDenegar = new javax.swing.JButton();
+        btnAceptarCambios = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("IMAX - TICKET MANAGEMENT");
@@ -155,17 +157,28 @@ public class administrador extends javax.swing.JFrame {
             }
         });
 
+        btnDenegar.setText("Denegar");
+        btnDenegar.setEnabled(false);
+        btnDenegar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDenegarActionPerformed(evt);
+            }
+        });
+
+        btnAceptarCambios.setText("Aceptar Cambios");
+        btnAceptarCambios.setEnabled(false);
+        btnAceptarCambios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarCambiosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnRegistrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -192,6 +205,9 @@ public class administrador extends javax.swing.JFrame {
                                         .addComponent(txtCVV, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
                                         .addComponent(txtVencimiento, javax.swing.GroupLayout.Alignment.LEADING))))
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(87, 87, 87)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGap(131, 131, 131)
                                 .addComponent(btnPrimero, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -201,17 +217,24 @@ public class administrador extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnUltimo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(87, 87, 87)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 80, Short.MAX_VALUE)))
+                                .addGap(123, 123, 123)
+                                .addComponent(btnDenegar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(75, 75, 75)
+                                .addComponent(btnAceptarCambios)))
+                        .addGap(0, 80, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnRegistrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                .addGap(60, 60, 60)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,17 +279,22 @@ public class administrador extends javax.swing.JFrame {
                     .addComponent(btnAnterior)
                     .addComponent(btnSiguiente)
                     .addComponent(btnUltimo))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(btnCargar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDenegar)
+                    .addComponent(btnAceptarCambios))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private ArrayList<RegistroCompra> ComprasRegistradas = new ArrayList<RegistroCompra>();
+    private ArrayList<String> RegistrosActuales = new ArrayList<String>();
     private int IndiceLista = 0;
 
 
@@ -360,6 +388,7 @@ public class administrador extends javax.swing.JFrame {
                 temp.setFuncionSeleccionada(DatosCompra[13]);
                 temp.setAsientosSeleccionados(DatosCompra[14]);
 
+                RegistrosActuales.add(linea);
                 ComprasRegistradas.add(temp);
 
             }
@@ -375,10 +404,70 @@ public class administrador extends javax.swing.JFrame {
         btnSiguiente.setEnabled(true);
         btnAnterior.setEnabled(true);
         btnCargar.setEnabled(false);
+        btnDenegar.setEnabled(true);
 
         MostrarDatos(ComprasRegistradas.get(IndiceLista));
 
     }//GEN-LAST:event_btnCargarActionPerformed
+
+    private void btnDenegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDenegarActionPerformed
+        // TODO add your handling code here:
+
+        try {
+            ComprasRegistradas.remove(IndiceLista);
+            RegistrosActuales.remove(IndiceLista);
+            btnAceptarCambios.setEnabled(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "No hay mas registros");
+        }
+
+        IndiceLista--;
+
+        if (IndiceLista < 0) {
+            IndiceLista = 0;
+        }
+
+        if (!ComprasRegistradas.isEmpty()) {
+            MostrarDatos(ComprasRegistradas.get(IndiceLista));
+        }
+        
+        else
+        {
+            btnDenegar.setEnabled(false);
+            
+            RegistroCompra ob = new RegistroCompra ();
+            ob.setPeliculaSeleccionada("");
+            ob.setCantidadTiquetes("");
+            ob.setPagoRealizado("");
+            ob.setTarjeta_Habiente("");
+            
+            ob.setTarjeta_Tipo("");
+            ob.setTarjeta_Numero("");
+            ob.setTarjeta_Expiracion("");
+            ob.setTarjeta_CVV("");
+            MostrarDatos(ob);
+        }
+
+    }//GEN-LAST:event_btnDenegarActionPerformed
+
+    private void btnAceptarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarCambiosActionPerformed
+        // TODO add your handling code here:
+        String linea="";
+        
+        for (int i = 0; i <  RegistrosActuales.size(); i++) {
+            linea = linea + RegistrosActuales.get(i) + "\r\n";
+        }
+        
+        UsoArchivos archivo = new UsoArchivos();
+        try {
+            archivo.GuardarCambios(linea);
+        } catch (IOException ex) {
+            Logger.getLogger(administrador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        btnAceptarCambios.setEnabled(false);
+            
+        
+    }//GEN-LAST:event_btnAceptarCambiosActionPerformed
 
     private void MostrarDatos(RegistroCompra ob) {
         txtPelicula.setText(ob.getPeliculaSeleccionada());
@@ -429,8 +518,10 @@ public class administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAceptarCambios;
     private javax.swing.JButton btnAnterior;
     private javax.swing.JButton btnCargar;
+    private javax.swing.JButton btnDenegar;
     private javax.swing.JButton btnPrimero;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSiguiente;
