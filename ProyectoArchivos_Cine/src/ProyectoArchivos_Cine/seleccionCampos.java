@@ -6,6 +6,11 @@ package ProyectoArchivos_Cine;
  */
 import java.awt.Color;
 import java.awt.event.MouseListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -57,6 +62,44 @@ public class seleccionCampos extends javax.swing.JFrame {
                 cont = 0;
             }*/
         txt_CantidadSeleccionada.setText(CantidadTiquetesSeleccionados + "");
+        
+        File file = new File("Reservados.txt");
+  
+        if(!file.exists()){
+            try{
+                file.createNewFile(); 
+            }catch(IOException ex){
+            ex.printStackTrace();
+            }
+        }else{
+            if(evt.getBackground() == java.awt.Color.yellow){
+               try{		
+            FileWriter escribiendo = new FileWriter(file, true);				
+                escribiendo.append(evt.getName()+"\n");
+            escribiendo.close();
+                }catch(IOException ex){
+                    ex.printStackTrace();
+                } 
+            }
+        } 
+    }
+    public void DesactBoton(javax.swing.JButton evt){
+        try{
+            BufferedReader buffer = new BufferedReader(new FileReader("Reservados.txt"));
+            String temp = " "; 
+            while(temp !=null){
+                temp = buffer.readLine();
+                if(evt.getName().equals(temp)){
+                    evt.setBackground(Color.red);
+                }
+                if(temp==null){
+                    break;
+                }
+            }
+
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
     }
 
     /**
@@ -179,6 +222,9 @@ public class seleccionCampos extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(60, 51, 87));
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
@@ -238,6 +284,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_E14.setBackground(java.awt.Color.green);
         Btn_E14.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_E14.setText("14");
+        Btn_E14.setName("Btn_E14"); // NOI18N
         Btn_E14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_E14ActionPerformed(evt);
@@ -248,6 +295,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A14.setBackground(java.awt.Color.green);
         Btn_A14.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A14.setText("14");
+        Btn_A14.setName("Btn_A14"); // NOI18N
         Btn_A14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A14ActionPerformed(evt);
@@ -258,6 +306,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_B14.setBackground(java.awt.Color.green);
         Btn_B14.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_B14.setText("14");
+        Btn_B14.setName("Btn_B14"); // NOI18N
         Btn_B14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_B14ActionPerformed(evt);
@@ -268,6 +317,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_C14.setBackground(java.awt.Color.green);
         Btn_C14.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_C14.setText("14");
+        Btn_C14.setName("Btn_C14"); // NOI18N
         Btn_C14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_C14ActionPerformed(evt);
@@ -278,6 +328,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_D14.setBackground(java.awt.Color.green);
         Btn_D14.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_D14.setText("14");
+        Btn_D14.setName("Btn_D14"); // NOI18N
         Btn_D14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_D14ActionPerformed(evt);
@@ -288,6 +339,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A7.setBackground(java.awt.Color.green);
         Btn_A7.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A7.setText("7");
+        Btn_A7.setName("Btn_A7"); // NOI18N
         Btn_A7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A7ActionPerformed(evt);
@@ -298,6 +350,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_B7.setBackground(java.awt.Color.green);
         Btn_B7.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_B7.setText("7");
+        Btn_B7.setName("Btn_B7"); // NOI18N
         Btn_B7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_B7ActionPerformed(evt);
@@ -308,6 +361,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_C7.setBackground(java.awt.Color.green);
         Btn_C7.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_C7.setText("7");
+        Btn_C7.setName("Btn_C7"); // NOI18N
         Btn_C7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_C7ActionPerformed(evt);
@@ -318,6 +372,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_D7.setBackground(java.awt.Color.green);
         Btn_D7.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_D7.setText("7");
+        Btn_D7.setName("Btn_D7"); // NOI18N
         Btn_D7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_D7ActionPerformed(evt);
@@ -328,6 +383,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_E7.setBackground(java.awt.Color.green);
         Btn_E7.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_E7.setText("7");
+        Btn_E7.setName("Btn_E7"); // NOI18N
         Btn_E7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_E7ActionPerformed(evt);
@@ -338,6 +394,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A6.setBackground(java.awt.Color.green);
         Btn_A6.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A6.setText("6");
+        Btn_A6.setName("Btn_A6"); // NOI18N
         Btn_A6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A6ActionPerformed(evt);
@@ -348,6 +405,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_E6.setBackground(java.awt.Color.green);
         Btn_E6.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_E6.setText("6");
+        Btn_E6.setName("Btn_E6"); // NOI18N
         Btn_E6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_E6ActionPerformed(evt);
@@ -358,6 +416,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_B6.setBackground(java.awt.Color.green);
         Btn_B6.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_B6.setText("6");
+        Btn_B6.setName("Btn_B6"); // NOI18N
         Btn_B6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_B6ActionPerformed(evt);
@@ -368,6 +427,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_C6.setBackground(java.awt.Color.green);
         Btn_C6.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_C6.setText("6");
+        Btn_C6.setName("Btn_C6"); // NOI18N
         Btn_C6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_C6ActionPerformed(evt);
@@ -378,6 +438,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_D6.setBackground(java.awt.Color.green);
         Btn_D6.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_D6.setText("6");
+        Btn_D6.setName("Btn_D6"); // NOI18N
         Btn_D6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_D6ActionPerformed(evt);
@@ -388,6 +449,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_B5.setBackground(java.awt.Color.green);
         Btn_B5.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_B5.setText("5");
+        Btn_B5.setName("Btn_B5"); // NOI18N
         Btn_B5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_B5ActionPerformed(evt);
@@ -398,6 +460,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_D5.setBackground(java.awt.Color.green);
         Btn_D5.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_D5.setText("5");
+        Btn_D5.setName("Btn_D5"); // NOI18N
         Btn_D5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_D5ActionPerformed(evt);
@@ -408,6 +471,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_C5.setBackground(java.awt.Color.green);
         Btn_C5.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_C5.setText("5");
+        Btn_C5.setName("Btn_C5"); // NOI18N
         Btn_C5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_C5ActionPerformed(evt);
@@ -418,6 +482,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_E5.setBackground(java.awt.Color.green);
         Btn_E5.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_E5.setText("5");
+        Btn_E5.setName("Btn_E5"); // NOI18N
         Btn_E5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_E5ActionPerformed(evt);
@@ -428,6 +493,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A5.setBackground(java.awt.Color.green);
         Btn_A5.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A5.setText("5");
+        Btn_A5.setName("Btn_A5"); // NOI18N
         Btn_A5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A5ActionPerformed(evt);
@@ -438,6 +504,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_B4.setBackground(java.awt.Color.green);
         Btn_B4.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_B4.setText("4");
+        Btn_B4.setName("Btn_B4"); // NOI18N
         Btn_B4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_B4ActionPerformed(evt);
@@ -448,6 +515,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_E4.setBackground(java.awt.Color.green);
         Btn_E4.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_E4.setText("4");
+        Btn_E4.setName("Btn_E4"); // NOI18N
         Btn_E4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_E4ActionPerformed(evt);
@@ -458,6 +526,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_D4.setBackground(java.awt.Color.green);
         Btn_D4.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_D4.setText("4");
+        Btn_D4.setName("Btn_D4"); // NOI18N
         Btn_D4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_D4ActionPerformed(evt);
@@ -468,6 +537,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A4.setBackground(java.awt.Color.green);
         Btn_A4.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A4.setText("4");
+        Btn_A4.setName("Btn_A4"); // NOI18N
         Btn_A4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A4ActionPerformed(evt);
@@ -478,6 +548,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_C4.setBackground(java.awt.Color.green);
         Btn_C4.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_C4.setText("4");
+        Btn_C4.setName("Btn_C4"); // NOI18N
         Btn_C4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_C4ActionPerformed(evt);
@@ -488,6 +559,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_B3.setBackground(java.awt.Color.green);
         Btn_B3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_B3.setText("3");
+        Btn_B3.setName("Btn_B3"); // NOI18N
         Btn_B3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_B3ActionPerformed(evt);
@@ -498,6 +570,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_E3.setBackground(java.awt.Color.green);
         Btn_E3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_E3.setText("3");
+        Btn_E3.setName("Btn_E3"); // NOI18N
         Btn_E3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_E3ActionPerformed(evt);
@@ -508,6 +581,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_C3.setBackground(java.awt.Color.green);
         Btn_C3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_C3.setText("3");
+        Btn_C3.setName("Btn_C3"); // NOI18N
         Btn_C3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_C3ActionPerformed(evt);
@@ -518,6 +592,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A3.setBackground(java.awt.Color.green);
         Btn_A3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A3.setText("3");
+        Btn_A3.setName("Btn_A3"); // NOI18N
         Btn_A3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A3ActionPerformed(evt);
@@ -528,6 +603,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_D3.setBackground(java.awt.Color.green);
         Btn_D3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_D3.setText("3");
+        Btn_D3.setName("Btn_D3"); // NOI18N
         Btn_D3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_D3ActionPerformed(evt);
@@ -538,6 +614,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_C2.setBackground(java.awt.Color.green);
         Btn_C2.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_C2.setText("2");
+        Btn_C2.setName("Btn_C2"); // NOI18N
         Btn_C2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_C2ActionPerformed(evt);
@@ -548,6 +625,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_D2.setBackground(java.awt.Color.green);
         Btn_D2.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_D2.setText("2");
+        Btn_D2.setName("Btn_D2"); // NOI18N
         Btn_D2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_D2ActionPerformed(evt);
@@ -558,6 +636,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A2.setBackground(java.awt.Color.green);
         Btn_A2.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A2.setText("2");
+        Btn_A2.setName("Btn_A2"); // NOI18N
         Btn_A2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A2ActionPerformed(evt);
@@ -568,6 +647,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_B2.setBackground(java.awt.Color.green);
         Btn_B2.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_B2.setText("2");
+        Btn_B2.setName("Btn_B2"); // NOI18N
         Btn_B2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_B2ActionPerformed(evt);
@@ -578,6 +658,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_E2.setBackground(java.awt.Color.green);
         Btn_E2.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_E2.setText("2");
+        Btn_E2.setName("Btn_E2"); // NOI18N
         Btn_E2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_E2ActionPerformed(evt);
@@ -588,6 +669,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_B1.setBackground(java.awt.Color.green);
         Btn_B1.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_B1.setText("1");
+        Btn_B1.setName("Btn_B1"); // NOI18N
         Btn_B1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_B1ActionPerformed(evt);
@@ -598,6 +680,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_D1.setBackground(java.awt.Color.green);
         Btn_D1.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_D1.setText("1");
+        Btn_D1.setName("Btn_D1"); // NOI18N
         Btn_D1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_D1ActionPerformed(evt);
@@ -608,6 +691,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_E1.setBackground(java.awt.Color.green);
         Btn_E1.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_E1.setText("1");
+        Btn_E1.setName("Btn_E1"); // NOI18N
         Btn_E1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_E1ActionPerformed(evt);
@@ -618,6 +702,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_C1.setBackground(java.awt.Color.green);
         Btn_C1.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_C1.setText("1");
+        Btn_C1.setName("Btn_C1"); // NOI18N
         Btn_C1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_C1ActionPerformed(evt);
@@ -628,6 +713,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A1.setBackground(java.awt.Color.green);
         Btn_A1.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A1.setText("1");
+        Btn_A1.setName("Btn_A1"); // NOI18N
         Btn_A1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A1ActionPerformed(evt);
@@ -638,6 +724,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A10.setBackground(java.awt.Color.green);
         Btn_A10.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A10.setText("10");
+        Btn_A10.setName("Btn_A10"); // NOI18N
         Btn_A10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A10ActionPerformed(evt);
@@ -648,6 +735,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_B10.setBackground(java.awt.Color.green);
         Btn_B10.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_B10.setText("10");
+        Btn_B10.setName("Btn_B10"); // NOI18N
         Btn_B10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_B10ActionPerformed(evt);
@@ -658,6 +746,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_C10.setBackground(java.awt.Color.green);
         Btn_C10.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_C10.setText("10");
+        Btn_C10.setName("Btn_C10"); // NOI18N
         Btn_C10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_C10ActionPerformed(evt);
@@ -668,6 +757,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_D10.setBackground(java.awt.Color.green);
         Btn_D10.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_D10.setText("10");
+        Btn_D10.setName("Btn_D10"); // NOI18N
         Btn_D10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_D10ActionPerformed(evt);
@@ -678,6 +768,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_E10.setBackground(java.awt.Color.green);
         Btn_E10.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_E10.setText("10");
+        Btn_E10.setName("Btn_E10"); // NOI18N
         Btn_E10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_E10ActionPerformed(evt);
@@ -688,6 +779,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A9.setBackground(java.awt.Color.green);
         Btn_A9.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A9.setText("9");
+        Btn_A9.setName("Btn_A9"); // NOI18N
         Btn_A9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A9ActionPerformed(evt);
@@ -698,6 +790,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_E9.setBackground(java.awt.Color.green);
         Btn_E9.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_E9.setText("9");
+        Btn_E9.setName("Btn_E9"); // NOI18N
         Btn_E9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_E9ActionPerformed(evt);
@@ -708,6 +801,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_B9.setBackground(java.awt.Color.green);
         Btn_B9.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_B9.setText("9");
+        Btn_B9.setName("Btn_B9"); // NOI18N
         Btn_B9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_B9ActionPerformed(evt);
@@ -718,6 +812,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_C9.setBackground(java.awt.Color.green);
         Btn_C9.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_C9.setText("9");
+        Btn_C9.setName("Btn_C9"); // NOI18N
         Btn_C9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_C9ActionPerformed(evt);
@@ -728,6 +823,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_D9.setBackground(java.awt.Color.green);
         Btn_D9.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_D9.setText("9");
+        Btn_D9.setName("Btn_D9"); // NOI18N
         Btn_D9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_D9ActionPerformed(evt);
@@ -738,6 +834,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_B8.setBackground(java.awt.Color.green);
         Btn_B8.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_B8.setText("8");
+        Btn_B8.setName("Btn_B8"); // NOI18N
         Btn_B8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_B8ActionPerformed(evt);
@@ -748,6 +845,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_D8.setBackground(java.awt.Color.green);
         Btn_D8.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_D8.setText("8");
+        Btn_D8.setName("Btn_D8"); // NOI18N
         Btn_D8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_D8ActionPerformed(evt);
@@ -758,6 +856,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_C8.setBackground(java.awt.Color.green);
         Btn_C8.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_C8.setText("8");
+        Btn_C8.setName("Btn_C8"); // NOI18N
         Btn_C8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_C8ActionPerformed(evt);
@@ -768,6 +867,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_E8.setBackground(java.awt.Color.green);
         Btn_E8.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_E8.setText("8");
+        Btn_E8.setName("Btn_E8"); // NOI18N
         Btn_E8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_E8ActionPerformed(evt);
@@ -778,6 +878,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A8.setBackground(java.awt.Color.green);
         Btn_A8.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A8.setText("8");
+        Btn_A8.setName("Btn_A"); // NOI18N
         Btn_A8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A8ActionPerformed(evt);
@@ -788,6 +889,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A13.setBackground(java.awt.Color.green);
         Btn_A13.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A13.setText("13");
+        Btn_A13.setName("Btn_A13"); // NOI18N
         Btn_A13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A13ActionPerformed(evt);
@@ -798,6 +900,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_D13.setBackground(java.awt.Color.green);
         Btn_D13.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_D13.setText("13");
+        Btn_D13.setName("Btn_D13"); // NOI18N
         Btn_D13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_D13ActionPerformed(evt);
@@ -808,6 +911,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_D11.setBackground(java.awt.Color.green);
         Btn_D11.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_D11.setText("11");
+        Btn_D11.setName("Btn_D11"); // NOI18N
         Btn_D11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_D11ActionPerformed(evt);
@@ -818,6 +922,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_C11.setBackground(java.awt.Color.green);
         Btn_C11.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_C11.setText("11");
+        Btn_C11.setName("Btn_C11"); // NOI18N
         Btn_C11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_C11ActionPerformed(evt);
@@ -828,6 +933,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_D12.setBackground(java.awt.Color.green);
         Btn_D12.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_D12.setText("12");
+        Btn_D12.setName("Btn_D12"); // NOI18N
         Btn_D12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_D12ActionPerformed(evt);
@@ -838,6 +944,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_E12.setBackground(java.awt.Color.green);
         Btn_E12.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_E12.setText("12");
+        Btn_E12.setName("Btn_E12"); // NOI18N
         Btn_E12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_E12ActionPerformed(evt);
@@ -848,6 +955,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_B11.setBackground(java.awt.Color.green);
         Btn_B11.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_B11.setText("11");
+        Btn_B11.setName("Btn_B11"); // NOI18N
         Btn_B11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_B11ActionPerformed(evt);
@@ -858,6 +966,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_E13.setBackground(java.awt.Color.green);
         Btn_E13.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_E13.setText("13");
+        Btn_E13.setName("Btn_E13"); // NOI18N
         Btn_E13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_E13ActionPerformed(evt);
@@ -868,6 +977,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_B13.setBackground(java.awt.Color.green);
         Btn_B13.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_B13.setText("13");
+        Btn_B13.setName("Btn_B13"); // NOI18N
         Btn_B13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_B13ActionPerformed(evt);
@@ -878,6 +988,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A11.setBackground(java.awt.Color.green);
         Btn_A11.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A11.setText("11");
+        Btn_A11.setName("Btn_A11"); // NOI18N
         Btn_A11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A11ActionPerformed(evt);
@@ -888,6 +999,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_B12.setBackground(java.awt.Color.green);
         Btn_B12.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_B12.setText("12");
+        Btn_B12.setName("Btn_B12"); // NOI18N
         Btn_B12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_B12ActionPerformed(evt);
@@ -898,6 +1010,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_E11.setBackground(java.awt.Color.green);
         Btn_E11.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_E11.setText("11");
+        Btn_E11.setName("Btn_E11"); // NOI18N
         Btn_E11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_E11ActionPerformed(evt);
@@ -908,6 +1021,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_C13.setBackground(java.awt.Color.green);
         Btn_C13.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_C13.setText("13");
+        Btn_C13.setName("Btn_C13"); // NOI18N
         Btn_C13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_C13ActionPerformed(evt);
@@ -918,6 +1032,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A12.setBackground(java.awt.Color.green);
         Btn_A12.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A12.setText("12");
+        Btn_A12.setName("Btn_A12"); // NOI18N
         Btn_A12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A12ActionPerformed(evt);
@@ -928,6 +1043,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_C12.setBackground(java.awt.Color.green);
         Btn_C12.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_C12.setText("12");
+        Btn_C12.setName("Btn_C12"); // NOI18N
         Btn_C12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_C12ActionPerformed(evt);
@@ -1577,6 +1693,26 @@ public class seleccionCampos extends javax.swing.JFrame {
         txt_cantidad_tiquetes.setText(CantidadTiquetes + "");
 
     }//GEN-LAST:event_btn_masTiquetesActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // Aqui debe ejecutarse el metodo DesactivaBoton
+        DesactBoton(Btn_A1);DesactBoton(Btn_A2);DesactBoton(Btn_A3);DesactBoton(Btn_A4);DesactBoton(Btn_A5);
+        DesactBoton(Btn_A6);DesactBoton(Btn_A7);DesactBoton(Btn_A8);DesactBoton(Btn_A9);DesactBoton(Btn_A10);
+        DesactBoton(Btn_A11);DesactBoton(Btn_A12);DesactBoton(Btn_A13);DesactBoton(Btn_A14);
+        DesactBoton(Btn_B1);DesactBoton(Btn_B2);DesactBoton(Btn_B3);DesactBoton(Btn_B4);DesactBoton(Btn_B5);
+        DesactBoton(Btn_B6);DesactBoton(Btn_B7);DesactBoton(Btn_B8);DesactBoton(Btn_B9);DesactBoton(Btn_B10);
+        DesactBoton(Btn_B11);DesactBoton(Btn_B12);DesactBoton(Btn_B13);DesactBoton(Btn_B14);
+        DesactBoton(Btn_C1);DesactBoton(Btn_C2);DesactBoton(Btn_C3);DesactBoton(Btn_C4);DesactBoton(Btn_C5);
+        DesactBoton(Btn_C6);DesactBoton(Btn_C7);DesactBoton(Btn_C8);DesactBoton(Btn_C9);DesactBoton(Btn_C10);
+        DesactBoton(Btn_C11);DesactBoton(Btn_C12);DesactBoton(Btn_C13);DesactBoton(Btn_C14);
+        DesactBoton(Btn_D1);DesactBoton(Btn_D2);DesactBoton(Btn_D3);DesactBoton(Btn_D4);DesactBoton(Btn_D5);
+        DesactBoton(Btn_D6);DesactBoton(Btn_D7);DesactBoton(Btn_D8);DesactBoton(Btn_D9);DesactBoton(Btn_D10);
+        DesactBoton(Btn_D11);DesactBoton(Btn_D12);DesactBoton(Btn_D13);DesactBoton(Btn_D14);
+        DesactBoton(Btn_E1);DesactBoton(Btn_E2);DesactBoton(Btn_E3);DesactBoton(Btn_E4);DesactBoton(Btn_E5);
+        DesactBoton(Btn_E6);DesactBoton(Btn_A7);DesactBoton(Btn_E8);DesactBoton(Btn_E9);DesactBoton(Btn_E10);
+        DesactBoton(Btn_E11);DesactBoton(Btn_E12);DesactBoton(Btn_E13);DesactBoton(Btn_E14);
+        
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments

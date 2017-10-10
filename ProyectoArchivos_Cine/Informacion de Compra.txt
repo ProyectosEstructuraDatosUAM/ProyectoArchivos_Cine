@@ -1,3 +1,7 @@
 Ingrid Diaz;84262149;155817357132;massiel@hotmail.com;Ingrid Diaz;MasterCard;788778877887;11/21;777;null;Joven;2;null;Mañana  10:00-12:00;3,6+3,7+
 ingrid;84262149;155817357132;ingriddiazgal@hotmail.com;ingrid;Visa;356655;05/22;6767;4000;Adulto;2;It - El payaso diabolico;Noche     20:00-22:00;0,7+0,6+
 John;87646543;155155155;juanito@uam.com;John Mayer;Visa;1662778383;04/2023;165;4000;Niño;2;It - El payaso diabolico;Mañana 10:00-12:00;3,7+3,6+
+;;;;gsfd;American Express;gsfd;01/2017;gfsd;2000;Adulto Mayor;1;Battle of the Sexes;Mañana 10:00-12:00;0,0+
+;;;;rfd;American Express;ffads;01/2017;fdfads;2000;Adulto Mayor;1;Battle of the Sexes;Mañana 10:00-12:00;0,1+
+;;;;AF;American Express;FDS;01/2017;FSD;12000;Adulto Mayor;6;NinjaGo - Lego;Mañana 10:00-12:00;0,9+1,8+2,7+3,6+4,5+4,4+
+;;;;FDGS;American Express;GFDGDS;01/2017;GFSDGFD;4000;Adulto Mayor;2;Battle of the Sexes;Mañana 10:00-12:00;1,2+1,1+
