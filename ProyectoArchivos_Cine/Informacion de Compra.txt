@@ -1,4 +1,3 @@
-Ingrid Diaz;84262149;155817357132;massiel@hotmail.com;Ingrid Diaz;MasterCard;788778877887;11/21;777;null;Joven;2;null;Mañana  10:00-12:00;3,6+3,7+
 ingrid;84262149;155817357132;ingriddiazgal@hotmail.com;ingrid;Visa;356655;05/22;6767;4000;Adulto;2;It - El payaso diabolico;Noche     20:00-22:00;0,7+0,6+
 John;87646543;155155155;juanito@uam.com;John Mayer;Visa;1662778383;04/2023;165;4000;Niño;2;It - El payaso diabolico;Mañana 10:00-12:00;3,7+3,6+
 ;;;;gsfd;American Express;gsfd;01/2017;gfsd;2000;Adulto Mayor;1;Battle of the Sexes;Mañana 10:00-12:00;0,0+
@@ -11,3 +10,5 @@ Julio;999999;999999;jkjfj@klkfkf;Julio;MasterCard;636363636;01/2017;1212;4000;Ad
 Marcos;fsdfsd;fdsfds;fdsfds;Marcos;American Express;321234;01/2017;8989;4000;Adulto Mayor;2;Blade Runner - Double Feature;Noche 20:00-22:00;1,12+1,11+
 Sandro Juventud;85696345;204580963;SandroJuventud@ice.cr;Sandro Juventud;American Express;10002580369;01/2017;789;8000;Adulto;4;NinjaGo - Lego;Mañana 10:00-12:00;0,7+0,6+0,5+0,8+
 Rafael;8796;155817;rdi@camp.com;Rafael Diaz;American Express;65556555655655;01/2017;1556;4000;Joven;2;Blade Runner - Double Feature;Mañana 10:00-12:00;2,7+2,6+
+Rafael Dia;8788878878;14213;raffarafa@hdahd.com;Rafael Dia;American Express;16565756565756;01/2017;1566;6000;Joven;3;Blade Runner - Double Feature;Mañana 10:00-12:00;Btn_D9Btn_D8Btn_D7
+rafa;312412;asfasd1;rads;rafa;MasterCard;15161146156;01/2017;155;4000;Adulto;2;It - El payaso diabolico;Tarde 16:00-18:00;4,74,6

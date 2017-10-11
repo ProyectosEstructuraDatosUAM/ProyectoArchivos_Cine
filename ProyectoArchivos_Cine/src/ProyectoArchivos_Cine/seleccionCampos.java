@@ -8,10 +8,13 @@ import java.awt.Color;
 import java.awt.event.MouseListener;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class seleccionCampos extends javax.swing.JFrame {
@@ -22,6 +25,10 @@ public class seleccionCampos extends javax.swing.JFrame {
     Reservacion reserva = new Reservacion();
     String tipoTicket = " ", tanda = " ";
     int cont = 0;
+
+    String TiquetesYaReservados = "";
+    String TandaYaReservada = "";
+    String PeliculaYaReservada = "";
 
     public seleccionCampos() {
         initComponents();
@@ -37,18 +44,18 @@ public class seleccionCampos extends javax.swing.JFrame {
         //######################################################################
         //Blade Runner - Double Feature
         //Blade Runner - Double Feature - Mañana 10:00-12:00
-        if(pelicula.equalsIgnoreCase("Blade Runner - Double Feature") && 
-                tanda.equalsIgnoreCase("Mañana 10:00-12:00")){
+        if (pelicula.equalsIgnoreCase("Blade Runner - Double Feature")
+                && tanda.equalsIgnoreCase("Mañana 10:00-12:00")) {
             if (evt.getBackground() == Color.green) {
 
-            evt.setBackground(Color.yellow);
-            reserva.setPosition(row, column, campo);
-            TiquetesSeleccionados.add(row + "," + column);
-            CantidadTiquetesSeleccionados++;
+                evt.setBackground(Color.yellow);
+                reserva.setPosition(row, column, campo);
+                TiquetesSeleccionados.add(evt.getName());
+                CantidadTiquetesSeleccionados++;
 
             } else if (evt.getBackground() == Color.yellow) {
                 evt.setBackground(Color.green);
-                TiquetesSeleccionados.remove(row + "," + column);
+                TiquetesSeleccionados.remove(evt.getName());
                 CantidadTiquetesSeleccionados--;
 
             }
@@ -56,33 +63,33 @@ public class seleccionCampos extends javax.swing.JFrame {
 
             File file = new File("reservados/Pelicula1/ReservadosBladeManana.txt");
 
-            if(!file.exists()){
-                try{
-                    file.createNewFile(); 
-                }catch(IOException ex){
-                ex.printStackTrace();
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
-            }else{
-                if(evt.getBackground() == java.awt.Color.yellow){
-                    try{		
-                     FileWriter escribiendo = new FileWriter(file, true);				
-                        escribiendo.append(evt.getName()+"\n");
+            } else {
+                if (evt.getBackground() == java.awt.Color.yellow) {
+                    try {
+                        FileWriter escribiendo = new FileWriter(file, true);
+                        escribiendo.append(evt.getName() + "\n");
                         escribiendo.close();
-                    }catch(IOException ex){
+                    } catch (IOException ex) {
                         ex.printStackTrace();
-                    } 
+                    }
                 }
-            } 
+            }
         }
         //Blade Runner - Double Feature - Tarde 16:00-18:00
-        if(pelicula.equalsIgnoreCase("Blade Runner - Double Feature") && 
-                tanda.equalsIgnoreCase("Tarde 16:00-18:00")){
+        if (pelicula.equalsIgnoreCase("Blade Runner - Double Feature")
+                && tanda.equalsIgnoreCase("Tarde 16:00-18:00")) {
             if (evt.getBackground() == Color.green) {
 
-            evt.setBackground(Color.yellow);
-            reserva.setPosition(row, column, campo);
-            TiquetesSeleccionados.add(row + "," + column);
-            CantidadTiquetesSeleccionados++;
+                evt.setBackground(Color.yellow);
+                reserva.setPosition(row, column, campo);
+                TiquetesSeleccionados.add(row + "," + column);
+                CantidadTiquetesSeleccionados++;
 
             } else if (evt.getBackground() == Color.yellow) {
                 evt.setBackground(Color.green);
@@ -94,33 +101,33 @@ public class seleccionCampos extends javax.swing.JFrame {
 
             File file = new File("reservados/Pelicula1/ReservadosBladeTarde.txt");
 
-            if(!file.exists()){
-                try{
-                    file.createNewFile(); 
-                }catch(IOException ex){
-                ex.printStackTrace();
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
-            }else{
-                if(evt.getBackground() == java.awt.Color.yellow){
-                    try{		
-                     FileWriter escribiendo = new FileWriter(file, true);				
-                        escribiendo.append(evt.getName()+"\n");
+            } else {
+                if (evt.getBackground() == java.awt.Color.yellow) {
+                    try {
+                        FileWriter escribiendo = new FileWriter(file, true);
+                        escribiendo.append(evt.getName() + "\n");
                         escribiendo.close();
-                    }catch(IOException ex){
+                    } catch (IOException ex) {
                         ex.printStackTrace();
-                    } 
+                    }
                 }
-            } 
+            }
         }
         //Blade Runner - Double Feature - Noche 20:00-22:00
-        if(pelicula.equalsIgnoreCase("Blade Runner - Double Feature") && 
-                tanda.equalsIgnoreCase("Noche 20:00-22:00")){
+        if (pelicula.equalsIgnoreCase("Blade Runner - Double Feature")
+                && tanda.equalsIgnoreCase("Noche 20:00-22:00")) {
             if (evt.getBackground() == Color.green) {
 
-            evt.setBackground(Color.yellow);
-            reserva.setPosition(row, column, campo);
-            TiquetesSeleccionados.add(row + "," + column);
-            CantidadTiquetesSeleccionados++;
+                evt.setBackground(Color.yellow);
+                reserva.setPosition(row, column, campo);
+                TiquetesSeleccionados.add(row + "," + column);
+                CantidadTiquetesSeleccionados++;
 
             } else if (evt.getBackground() == Color.yellow) {
                 evt.setBackground(Color.green);
@@ -132,35 +139,35 @@ public class seleccionCampos extends javax.swing.JFrame {
 
             File file = new File("reservados/Pelicula1/ReservadosBladeNoche.txt");
 
-            if(!file.exists()){
-                try{
-                    file.createNewFile(); 
-                }catch(IOException ex){
-                ex.printStackTrace();
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
-            }else{
-                if(evt.getBackground() == java.awt.Color.yellow){
-                    try{		
-                     FileWriter escribiendo = new FileWriter(file, true);				
-                        escribiendo.append(evt.getName()+"\n");
+            } else {
+                if (evt.getBackground() == java.awt.Color.yellow) {
+                    try {
+                        FileWriter escribiendo = new FileWriter(file, true);
+                        escribiendo.append(evt.getName() + "\n");
                         escribiendo.close();
-                    }catch(IOException ex){
+                    } catch (IOException ex) {
                         ex.printStackTrace();
-                    } 
+                    }
                 }
-            } 
+            }
         }
         //######################################################################
         //It - El payaso diabolico
         //It - El payaso diabolico - Mañana 10:00-12:00
-        if(pelicula.equalsIgnoreCase("It - El payaso diabolico") && 
-                tanda.equalsIgnoreCase("Mañana 10:00-12:00")){
+        if (pelicula.equalsIgnoreCase("It - El payaso diabolico")
+                && tanda.equalsIgnoreCase("Mañana 10:00-12:00")) {
             if (evt.getBackground() == Color.green) {
 
-            evt.setBackground(Color.yellow);
-            reserva.setPosition(row, column, campo);
-            TiquetesSeleccionados.add(row + "," + column);
-            CantidadTiquetesSeleccionados++;
+                evt.setBackground(Color.yellow);
+                reserva.setPosition(row, column, campo);
+                TiquetesSeleccionados.add(row + "," + column);
+                CantidadTiquetesSeleccionados++;
 
             } else if (evt.getBackground() == Color.yellow) {
                 evt.setBackground(Color.green);
@@ -172,33 +179,33 @@ public class seleccionCampos extends javax.swing.JFrame {
 
             File file = new File("reservados/Pelicula2/ReservadosItManana.txt");
 
-            if(!file.exists()){
-                try{
-                    file.createNewFile(); 
-                }catch(IOException ex){
-                ex.printStackTrace();
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
-            }else{
-                if(evt.getBackground() == java.awt.Color.yellow){
-                    try{		
-                     FileWriter escribiendo = new FileWriter(file, true);				
-                        escribiendo.append(evt.getName()+"\n");
+            } else {
+                if (evt.getBackground() == java.awt.Color.yellow) {
+                    try {
+                        FileWriter escribiendo = new FileWriter(file, true);
+                        escribiendo.append(evt.getName() + "\n");
                         escribiendo.close();
-                    }catch(IOException ex){
+                    } catch (IOException ex) {
                         ex.printStackTrace();
-                    } 
+                    }
                 }
-            } 
+            }
         }
         //It - El payaso diabolico - Tarde 16:00-18:00
-        if(pelicula.equalsIgnoreCase("It - El payaso diabolico") && 
-                tanda.equalsIgnoreCase("Tarde 16:00-18:00")){
+        if (pelicula.equalsIgnoreCase("It - El payaso diabolico")
+                && tanda.equalsIgnoreCase("Tarde 16:00-18:00")) {
             if (evt.getBackground() == Color.green) {
 
-            evt.setBackground(Color.yellow);
-            reserva.setPosition(row, column, campo);
-            TiquetesSeleccionados.add(row + "," + column);
-            CantidadTiquetesSeleccionados++;
+                evt.setBackground(Color.yellow);
+                reserva.setPosition(row, column, campo);
+                TiquetesSeleccionados.add(row + "," + column);
+                CantidadTiquetesSeleccionados++;
 
             } else if (evt.getBackground() == Color.yellow) {
                 evt.setBackground(Color.green);
@@ -210,33 +217,33 @@ public class seleccionCampos extends javax.swing.JFrame {
 
             File file = new File("reservados/Pelicula2/ReservadosItTarde.txt");
 
-            if(!file.exists()){
-                try{
-                    file.createNewFile(); 
-                }catch(IOException ex){
-                ex.printStackTrace();
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
-            }else{
-                if(evt.getBackground() == java.awt.Color.yellow){
-                    try{		
-                     FileWriter escribiendo = new FileWriter(file, true);				
-                        escribiendo.append(evt.getName()+"\n");
+            } else {
+                if (evt.getBackground() == java.awt.Color.yellow) {
+                    try {
+                        FileWriter escribiendo = new FileWriter(file, true);
+                        escribiendo.append(evt.getName() + "\n");
                         escribiendo.close();
-                    }catch(IOException ex){
+                    } catch (IOException ex) {
                         ex.printStackTrace();
-                    } 
+                    }
                 }
-            } 
+            }
         }
         //It - El payaso diabolico - Noche 20:00-22:00
-        if(pelicula.equalsIgnoreCase("It - El payaso diabolico") && 
-                tanda.equalsIgnoreCase("Noche 20:00-22:00")){
+        if (pelicula.equalsIgnoreCase("It - El payaso diabolico")
+                && tanda.equalsIgnoreCase("Noche 20:00-22:00")) {
             if (evt.getBackground() == Color.green) {
 
-            evt.setBackground(Color.yellow);
-            reserva.setPosition(row, column, campo);
-            TiquetesSeleccionados.add(row + "," + column);
-            CantidadTiquetesSeleccionados++;
+                evt.setBackground(Color.yellow);
+                reserva.setPosition(row, column, campo);
+                TiquetesSeleccionados.add(row + "," + column);
+                CantidadTiquetesSeleccionados++;
 
             } else if (evt.getBackground() == Color.yellow) {
                 evt.setBackground(Color.green);
@@ -248,35 +255,35 @@ public class seleccionCampos extends javax.swing.JFrame {
 
             File file = new File("reservados/Pelicula2/ReservadosItNoche.txt");
 
-            if(!file.exists()){
-                try{
-                    file.createNewFile(); 
-                }catch(IOException ex){
-                ex.printStackTrace();
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
-            }else{
-                if(evt.getBackground() == java.awt.Color.yellow){
-                    try{		
-                     FileWriter escribiendo = new FileWriter(file, true);				
-                        escribiendo.append(evt.getName()+"\n");
+            } else {
+                if (evt.getBackground() == java.awt.Color.yellow) {
+                    try {
+                        FileWriter escribiendo = new FileWriter(file, true);
+                        escribiendo.append(evt.getName() + "\n");
                         escribiendo.close();
-                    }catch(IOException ex){
+                    } catch (IOException ex) {
                         ex.printStackTrace();
-                    } 
+                    }
                 }
-            } 
+            }
         }
         //######################################################################
         //NinjaGo - Lego
         //NinjaGo - Lego - Mañana 10:00-12:00
-        if(pelicula.equalsIgnoreCase("NinjaGo - Lego") && 
-                tanda.equalsIgnoreCase("Mañana 10:00-12:00")){
+        if (pelicula.equalsIgnoreCase("NinjaGo - Lego")
+                && tanda.equalsIgnoreCase("Mañana 10:00-12:00")) {
             if (evt.getBackground() == Color.green) {
 
-            evt.setBackground(Color.yellow);
-            reserva.setPosition(row, column, campo);
-            TiquetesSeleccionados.add(row + "," + column);
-            CantidadTiquetesSeleccionados++;
+                evt.setBackground(Color.yellow);
+                reserva.setPosition(row, column, campo);
+                TiquetesSeleccionados.add(row + "," + column);
+                CantidadTiquetesSeleccionados++;
 
             } else if (evt.getBackground() == Color.yellow) {
                 evt.setBackground(Color.green);
@@ -288,33 +295,33 @@ public class seleccionCampos extends javax.swing.JFrame {
 
             File file = new File("reservados/Pelicula3/ReservadoslegoManana.txt");
 
-            if(!file.exists()){
-                try{
-                    file.createNewFile(); 
-                }catch(IOException ex){
-                ex.printStackTrace();
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
-            }else{
-                if(evt.getBackground() == java.awt.Color.yellow){
-                    try{		
-                     FileWriter escribiendo = new FileWriter(file, true);				
-                        escribiendo.append(evt.getName()+"\n");
+            } else {
+                if (evt.getBackground() == java.awt.Color.yellow) {
+                    try {
+                        FileWriter escribiendo = new FileWriter(file, true);
+                        escribiendo.append(evt.getName() + "\n");
                         escribiendo.close();
-                    }catch(IOException ex){
+                    } catch (IOException ex) {
                         ex.printStackTrace();
-                    } 
+                    }
                 }
-            } 
+            }
         }
         //NinjaGo - Lego - Tarde 16:00-18:00
-        if(pelicula.equalsIgnoreCase("NinjaGo - Lego") && 
-                tanda.equalsIgnoreCase("Tarde 16:00-18:00")){
+        if (pelicula.equalsIgnoreCase("NinjaGo - Lego")
+                && tanda.equalsIgnoreCase("Tarde 16:00-18:00")) {
             if (evt.getBackground() == Color.green) {
 
-            evt.setBackground(Color.yellow);
-            reserva.setPosition(row, column, campo);
-            TiquetesSeleccionados.add(row + "," + column);
-            CantidadTiquetesSeleccionados++;
+                evt.setBackground(Color.yellow);
+                reserva.setPosition(row, column, campo);
+                TiquetesSeleccionados.add(row + "," + column);
+                CantidadTiquetesSeleccionados++;
 
             } else if (evt.getBackground() == Color.yellow) {
                 evt.setBackground(Color.green);
@@ -326,33 +333,33 @@ public class seleccionCampos extends javax.swing.JFrame {
 
             File file = new File("reservados/Pelicula3/ReservadoslegoTarde.txt");
 
-            if(!file.exists()){
-                try{
-                    file.createNewFile(); 
-                }catch(IOException ex){
-                ex.printStackTrace();
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
-            }else{
-                if(evt.getBackground() == java.awt.Color.yellow){
-                    try{		
-                     FileWriter escribiendo = new FileWriter(file, true);				
-                        escribiendo.append(evt.getName()+"\n");
+            } else {
+                if (evt.getBackground() == java.awt.Color.yellow) {
+                    try {
+                        FileWriter escribiendo = new FileWriter(file, true);
+                        escribiendo.append(evt.getName() + "\n");
                         escribiendo.close();
-                    }catch(IOException ex){
+                    } catch (IOException ex) {
                         ex.printStackTrace();
-                    } 
+                    }
                 }
-            } 
+            }
         }
         //NinjaGo - Lego - Noche 20:00-22:00
-        if(pelicula.equalsIgnoreCase("NinjaGo - Lego") && 
-                tanda.equalsIgnoreCase("Noche 20:00-22:00")){
+        if (pelicula.equalsIgnoreCase("NinjaGo - Lego")
+                && tanda.equalsIgnoreCase("Noche 20:00-22:00")) {
             if (evt.getBackground() == Color.green) {
 
-            evt.setBackground(Color.yellow);
-            reserva.setPosition(row, column, campo);
-            TiquetesSeleccionados.add(row + "," + column);
-            CantidadTiquetesSeleccionados++;
+                evt.setBackground(Color.yellow);
+                reserva.setPosition(row, column, campo);
+                TiquetesSeleccionados.add(row + "," + column);
+                CantidadTiquetesSeleccionados++;
 
             } else if (evt.getBackground() == Color.yellow) {
                 evt.setBackground(Color.green);
@@ -364,35 +371,35 @@ public class seleccionCampos extends javax.swing.JFrame {
 
             File file = new File("reservados/Pelicula3/ReservadoslegoNoche.txt");
 
-            if(!file.exists()){
-                try{
-                    file.createNewFile(); 
-                }catch(IOException ex){
-                ex.printStackTrace();
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
-            }else{
-                if(evt.getBackground() == java.awt.Color.yellow){
-                    try{		
-                     FileWriter escribiendo = new FileWriter(file, true);				
-                        escribiendo.append(evt.getName()+"\n");
+            } else {
+                if (evt.getBackground() == java.awt.Color.yellow) {
+                    try {
+                        FileWriter escribiendo = new FileWriter(file, true);
+                        escribiendo.append(evt.getName() + "\n");
                         escribiendo.close();
-                    }catch(IOException ex){
+                    } catch (IOException ex) {
                         ex.printStackTrace();
-                    } 
+                    }
                 }
-            } 
+            }
         }
         //######################################################################
         //Battle of the Sexes
         //Battle of the Sexes - Mañana 10:00-12:00
-        if(pelicula.equalsIgnoreCase("Battle of the Sexes") && 
-                tanda.equalsIgnoreCase("Mañana 10:00-12:00")){
+        if (pelicula.equalsIgnoreCase("Battle of the Sexes")
+                && tanda.equalsIgnoreCase("Mañana 10:00-12:00")) {
             if (evt.getBackground() == Color.green) {
 
-            evt.setBackground(Color.yellow);
-            reserva.setPosition(row, column, campo);
-            TiquetesSeleccionados.add(row + "," + column);
-            CantidadTiquetesSeleccionados++;
+                evt.setBackground(Color.yellow);
+                reserva.setPosition(row, column, campo);
+                TiquetesSeleccionados.add(row + "," + column);
+                CantidadTiquetesSeleccionados++;
 
             } else if (evt.getBackground() == Color.yellow) {
                 evt.setBackground(Color.green);
@@ -404,33 +411,33 @@ public class seleccionCampos extends javax.swing.JFrame {
 
             File file = new File("reservados/Pelicula4/ReservadosBattleManana.txt");
 
-            if(!file.exists()){
-                try{
-                    file.createNewFile(); 
-                }catch(IOException ex){
-                ex.printStackTrace();
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
-            }else{
-                if(evt.getBackground() == java.awt.Color.yellow){
-                    try{		
-                     FileWriter escribiendo = new FileWriter(file, true);				
-                        escribiendo.append(evt.getName()+"\n");
+            } else {
+                if (evt.getBackground() == java.awt.Color.yellow) {
+                    try {
+                        FileWriter escribiendo = new FileWriter(file, true);
+                        escribiendo.append(evt.getName() + "\n");
                         escribiendo.close();
-                    }catch(IOException ex){
+                    } catch (IOException ex) {
                         ex.printStackTrace();
-                    } 
+                    }
                 }
-            } 
+            }
         }
         //Battle of the Sexes - Tarde 16:00-18:00
-        if(pelicula.equalsIgnoreCase("Battle of the Sexes") && 
-                tanda.equalsIgnoreCase("Tarde 16:00-18:00")){
+        if (pelicula.equalsIgnoreCase("Battle of the Sexes")
+                && tanda.equalsIgnoreCase("Tarde 16:00-18:00")) {
             if (evt.getBackground() == Color.green) {
 
-            evt.setBackground(Color.yellow);
-            reserva.setPosition(row, column, campo);
-            TiquetesSeleccionados.add(row + "," + column);
-            CantidadTiquetesSeleccionados++;
+                evt.setBackground(Color.yellow);
+                reserva.setPosition(row, column, campo);
+                TiquetesSeleccionados.add(row + "," + column);
+                CantidadTiquetesSeleccionados++;
 
             } else if (evt.getBackground() == Color.yellow) {
                 evt.setBackground(Color.green);
@@ -442,33 +449,33 @@ public class seleccionCampos extends javax.swing.JFrame {
 
             File file = new File("reservados/Pelicula4/ReservadosBattleTarde.txt");
 
-            if(!file.exists()){
-                try{
-                    file.createNewFile(); 
-                }catch(IOException ex){
-                ex.printStackTrace();
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
-            }else{
-                if(evt.getBackground() == java.awt.Color.yellow){
-                    try{		
-                     FileWriter escribiendo = new FileWriter(file, true);				
-                        escribiendo.append(evt.getName()+"\n");
+            } else {
+                if (evt.getBackground() == java.awt.Color.yellow) {
+                    try {
+                        FileWriter escribiendo = new FileWriter(file, true);
+                        escribiendo.append(evt.getName() + "\n");
                         escribiendo.close();
-                    }catch(IOException ex){
+                    } catch (IOException ex) {
                         ex.printStackTrace();
-                    } 
+                    }
                 }
-            } 
+            }
         }
         //Battle of the Sexes - Noche 20:00-22:00
-        if(pelicula.equalsIgnoreCase("Battle of the Sexes") && 
-                tanda.equalsIgnoreCase("Noche 20:00-22:00")){
+        if (pelicula.equalsIgnoreCase("Battle of the Sexes")
+                && tanda.equalsIgnoreCase("Noche 20:00-22:00")) {
             if (evt.getBackground() == Color.green) {
 
-            evt.setBackground(Color.yellow);
-            reserva.setPosition(row, column, campo);
-            TiquetesSeleccionados.add(row + "," + column);
-            CantidadTiquetesSeleccionados++;
+                evt.setBackground(Color.yellow);
+                reserva.setPosition(row, column, campo);
+                TiquetesSeleccionados.add(row + "," + column);
+                CantidadTiquetesSeleccionados++;
 
             } else if (evt.getBackground() == Color.yellow) {
                 evt.setBackground(Color.green);
@@ -480,251 +487,274 @@ public class seleccionCampos extends javax.swing.JFrame {
 
             File file = new File("reservados/Pelicula4/ReservadosBattleNoche.txt");
 
-            if(!file.exists()){
-                try{
-                    file.createNewFile(); 
-                }catch(IOException ex){
-                ex.printStackTrace();
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
-            }else{
-                if(evt.getBackground() == java.awt.Color.yellow){
-                    try{		
-                     FileWriter escribiendo = new FileWriter(file, true);				
-                        escribiendo.append(evt.getName()+"\n");
+            } else {
+                if (evt.getBackground() == java.awt.Color.yellow) {
+                    try {
+                        FileWriter escribiendo = new FileWriter(file, true);
+                        escribiendo.append(evt.getName() + "\n");
                         escribiendo.close();
-                    }catch(IOException ex){
+                    } catch (IOException ex) {
                         ex.printStackTrace();
-                    } 
+                    }
                 }
-            } 
+            }
         }
         //######################################################################
-        
+
     }
-    public void DesactBoton(javax.swing.JButton evt){
+
+    public void DesactBoton(javax.swing.JButton evt) {
         String pelicula = txt_peliculas.getText();
         String tanda = txt_tanda.getText();
         //######################################################################
         //Blade Runner - Double Feature
-        if(pelicula.equalsIgnoreCase("Blade Runner - Double Feature") && 
-                tanda.equalsIgnoreCase("Mañana 10:00-12:00")){
-            try{
+
+        /*
+        if (pelicula.equalsIgnoreCase(PeliculaYaReservada)
+                && tanda.equalsIgnoreCase(TandaYaReservada)) {
+            try {
+                BufferedReader buffer = new BufferedReader(TiquetesYaReservados);
+                String temp = " ";
+                while (temp != null) {
+                    temp = buffer.readLine();
+                    
+                temp = TiquetesYaReservados;
+                    if (evt.getName().equals(temp)) {
+                        evt.setBackground(Color.red);
+                    }
+                    if (temp == null) {
+                        break;
+                    }
+                }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+         */
+        if (pelicula.equalsIgnoreCase("Blade Runner - Double Feature")
+                && tanda.equalsIgnoreCase("Mañana 10:00-12:00")) {
+            try {
                 BufferedReader buffer = new BufferedReader(new FileReader("reservados/Pelicula1/ReservadosBladeManana.txt"));
-                String temp = " "; 
-                while(temp !=null){
+                String temp = " ";
+                while (temp != null) {
                     temp = buffer.readLine();
-                    if(evt.getName().equals(temp)){
+                    if (evt.getName().equals(temp)) {
                         evt.setBackground(Color.red);
                     }
-                    if(temp==null){
+                    if (temp == null) {
                         break;
                     }
                 }
-            }catch(IOException ex){
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
-            
-        }else if(pelicula.equalsIgnoreCase("Blade Runner - Double Feature") && 
-                tanda.equalsIgnoreCase("Tarde 16:00-18:00")){
-            try{
+
+        } else if (pelicula.equalsIgnoreCase("Blade Runner - Double Feature")
+                && tanda.equalsIgnoreCase("Tarde 16:00-18:00")) {
+            try {
                 BufferedReader buffer = new BufferedReader(new FileReader("reservados/Pelicula1/ReservadosBladeTarde.txt"));
-                String temp = " "; 
-                while(temp !=null){
+                String temp = " ";
+                while (temp != null) {
                     temp = buffer.readLine();
-                    if(evt.getName().equals(temp)){
+                    if (evt.getName().equals(temp)) {
                         evt.setBackground(Color.red);
                     }
-                    if(temp==null){
+                    if (temp == null) {
                         break;
                     }
                 }
-            }catch(IOException ex){
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
-        
-        }else if(pelicula.equalsIgnoreCase("Blade Runner - Double Feature") && 
-                tanda.equalsIgnoreCase("Noche 20:00-22:00")){
-            try{
+
+        } else if (pelicula.equalsIgnoreCase("Blade Runner - Double Feature")
+                && tanda.equalsIgnoreCase("Noche 20:00-22:00")) {
+            try {
                 BufferedReader buffer = new BufferedReader(new FileReader("reservados/Pelicula1/ReservadosBladeNoche.txt"));
-                String temp = " "; 
-                while(temp !=null){
+                String temp = " ";
+                while (temp != null) {
                     temp = buffer.readLine();
-                    if(evt.getName().equals(temp)){
+                    if (evt.getName().equals(temp)) {
                         evt.setBackground(Color.red);
                     }
-                    if(temp==null){
+                    if (temp == null) {
                         break;
                     }
                 }
-            }catch(IOException ex){
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
         //######################################################################
         //It - El payaso diabolico
-        if(pelicula.equalsIgnoreCase("It - El payaso diabolico") && 
-                tanda.equalsIgnoreCase("Mañana 10:00-12:00")){
-            try{
+        if (pelicula.equalsIgnoreCase("It - El payaso diabolico")
+                && tanda.equalsIgnoreCase("Mañana 10:00-12:00")) {
+            try {
                 BufferedReader buffer = new BufferedReader(new FileReader("reservados/Pelicula2/ReservadosItManana.txt"));
-                String temp = " "; 
-                while(temp !=null){
+                String temp = " ";
+                while (temp != null) {
                     temp = buffer.readLine();
-                    if(evt.getName().equals(temp)){
+                    if (evt.getName().equals(temp)) {
                         evt.setBackground(Color.red);
                     }
-                    if(temp==null){
+                    if (temp == null) {
                         break;
                     }
                 }
-            }catch(IOException ex){
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
-            
-        }else if(pelicula.equalsIgnoreCase("It - El payaso diabolico") && 
-                tanda.equalsIgnoreCase("Tarde 16:00-18:00")){
-            try{
+
+        } else if (pelicula.equalsIgnoreCase("It - El payaso diabolico")
+                && tanda.equalsIgnoreCase("Tarde 16:00-18:00")) {
+            try {
                 BufferedReader buffer = new BufferedReader(new FileReader("reservados/Pelicula2/ReservadosItTarde.txt"));
-                String temp = " "; 
-                while(temp !=null){
+                String temp = " ";
+                while (temp != null) {
                     temp = buffer.readLine();
-                    if(evt.getName().equals(temp)){
+                    if (evt.getName().equals(temp)) {
                         evt.setBackground(Color.red);
                     }
-                    if(temp==null){
+                    if (temp == null) {
                         break;
                     }
                 }
-            }catch(IOException ex){
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
-        
-        }else if(pelicula.equalsIgnoreCase("It - El payaso diabolico") && 
-                tanda.equalsIgnoreCase("Noche 20:00-22:00")){
-            try{
+
+        } else if (pelicula.equalsIgnoreCase("It - El payaso diabolico")
+                && tanda.equalsIgnoreCase("Noche 20:00-22:00")) {
+            try {
                 BufferedReader buffer = new BufferedReader(new FileReader("reservados/Pelicula2/ReservadosItNoche.txt"));
-                String temp = " "; 
-                while(temp !=null){
+                String temp = " ";
+                while (temp != null) {
                     temp = buffer.readLine();
-                    if(evt.getName().equals(temp)){
+                    if (evt.getName().equals(temp)) {
                         evt.setBackground(Color.red);
                     }
-                    if(temp==null){
+                    if (temp == null) {
                         break;
                     }
                 }
-            }catch(IOException ex){
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
         //######################################################################
         //NinjaGo - Lego
-        if(pelicula.equalsIgnoreCase("NinjaGo - Lego") && 
-                tanda.equalsIgnoreCase("Mañana 10:00-12:00")){
-            try{
+        if (pelicula.equalsIgnoreCase("NinjaGo - Lego")
+                && tanda.equalsIgnoreCase("Mañana 10:00-12:00")) {
+            try {
                 BufferedReader buffer = new BufferedReader(new FileReader("reservados/Pelicula3/ReservadoslegoManana.txt"));
-                String temp = " "; 
-                while(temp !=null){
+                String temp = " ";
+                while (temp != null) {
                     temp = buffer.readLine();
-                    if(evt.getName().equals(temp)){
+                    if (evt.getName().equals(temp)) {
                         evt.setBackground(Color.red);
                     }
-                    if(temp==null){
+                    if (temp == null) {
                         break;
                     }
                 }
-            }catch(IOException ex){
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
-            
-        }else if(pelicula.equalsIgnoreCase("NinjaGo - Lego") && 
-                tanda.equalsIgnoreCase("Tarde 16:00-18:00")){
-            try{
+
+        } else if (pelicula.equalsIgnoreCase("NinjaGo - Lego")
+                && tanda.equalsIgnoreCase("Tarde 16:00-18:00")) {
+            try {
                 BufferedReader buffer = new BufferedReader(new FileReader("reservados/Pelicula3/ReservadoslegoTarde.txt"));
-                String temp = " "; 
-                while(temp !=null){
+                String temp = " ";
+                while (temp != null) {
                     temp = buffer.readLine();
-                    if(evt.getName().equals(temp)){
+                    if (evt.getName().equals(temp)) {
                         evt.setBackground(Color.red);
                     }
-                    if(temp==null){
+                    if (temp == null) {
                         break;
                     }
                 }
-            }catch(IOException ex){
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
-        
-        }else if(pelicula.equalsIgnoreCase("NinjaGo - Lego") && 
-                tanda.equalsIgnoreCase("Noche 20:00-22:00")){
-            try{
+
+        } else if (pelicula.equalsIgnoreCase("NinjaGo - Lego")
+                && tanda.equalsIgnoreCase("Noche 20:00-22:00")) {
+            try {
                 BufferedReader buffer = new BufferedReader(new FileReader("reservados/Pelicula3/ReservadoslegoNoche.txt"));
-                String temp = " "; 
-                while(temp !=null){
+                String temp = " ";
+                while (temp != null) {
                     temp = buffer.readLine();
-                    if(evt.getName().equals(temp)){
+                    if (evt.getName().equals(temp)) {
                         evt.setBackground(Color.red);
                     }
-                    if(temp==null){
+                    if (temp == null) {
                         break;
                     }
                 }
-            }catch(IOException ex){
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
         //######################################################################
         //Battle of the Sexes
-        if(pelicula.equalsIgnoreCase("Battle of the Sexes") && 
-                tanda.equalsIgnoreCase("Mañana 10:00-12:00")){
-            try{
+        if (pelicula.equalsIgnoreCase("Battle of the Sexes")
+                && tanda.equalsIgnoreCase("Mañana 10:00-12:00")) {
+            try {
                 BufferedReader buffer = new BufferedReader(new FileReader("reservados/Pelicula4/ReservadosBattleManana.txt"));
-                String temp = " "; 
-                while(temp !=null){
+                String temp = " ";
+                while (temp != null) {
                     temp = buffer.readLine();
-                    if(evt.getName().equals(temp)){
+                    if (evt.getName().equals(temp)) {
                         evt.setBackground(Color.red);
                     }
-                    if(temp==null){
+                    if (temp == null) {
                         break;
                     }
                 }
-            }catch(IOException ex){
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
-            
-        }else if(pelicula.equalsIgnoreCase("Battle of the Sexes") && 
-                tanda.equalsIgnoreCase("Tarde 16:00-18:00")){
-            try{
+
+        } else if (pelicula.equalsIgnoreCase("Battle of the Sexes")
+                && tanda.equalsIgnoreCase("Tarde 16:00-18:00")) {
+            try {
                 BufferedReader buffer = new BufferedReader(new FileReader("reservados/Pelicula4/ReservadosBattleTarde.txt"));
-                String temp = " "; 
-                while(temp !=null){
+                String temp = " ";
+                while (temp != null) {
                     temp = buffer.readLine();
-                    if(evt.getName().equals(temp)){
+                    if (evt.getName().equals(temp)) {
                         evt.setBackground(Color.red);
                     }
-                    if(temp==null){
+                    if (temp == null) {
                         break;
                     }
                 }
-            }catch(IOException ex){
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
-        
-        }else if(pelicula.equalsIgnoreCase("Battle of the Sexes") && 
-                tanda.equalsIgnoreCase("Noche 20:00-22:00")){
-            try{
+
+        } else if (pelicula.equalsIgnoreCase("Battle of the Sexes")
+                && tanda.equalsIgnoreCase("Noche 20:00-22:00")) {
+            try {
                 BufferedReader buffer = new BufferedReader(new FileReader("reservados/Pelicula4/ReservadosBattleNoche.txt"));
-                String temp = " "; 
-                while(temp !=null){
+                String temp = " ";
+                while (temp != null) {
                     temp = buffer.readLine();
-                    if(evt.getName().equals(temp)){
+                    if (evt.getName().equals(temp)) {
                         evt.setBackground(Color.red);
                     }
-                    if(temp==null){
+                    if (temp == null) {
                         break;
                     }
                 }
-            }catch(IOException ex){
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
@@ -1972,10 +2002,9 @@ public class seleccionCampos extends javax.swing.JFrame {
             String tiquetes = "";
 
             for (int i = 0; i < TiquetesSeleccionados.size(); i++) {
-                tiquetes = tiquetes + TiquetesSeleccionados.get(i) + "+";
+                tiquetes = tiquetes + TiquetesSeleccionados.get(i);
             }
 
-            
             lista.add(reserva);
 
             int tickets = Integer.parseInt(reserva.getCantidad_tiquetes());
@@ -2002,7 +2031,7 @@ public class seleccionCampos extends javax.swing.JFrame {
             abrir.txt_tanda.setText(txt_tanda.getText());
             abrir.txt_butacas.setText(capturaArray);
             abrir.tiquetes = tiquetes;
-            
+
             abrir.setVisible(true);
             this.setVisible(false);
 
@@ -2341,22 +2370,108 @@ public class seleccionCampos extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // Aqui debe ejecutarse el metodo DesactivaBoton
-        DesactBoton(Btn_A1);DesactBoton(Btn_A2);DesactBoton(Btn_A3);DesactBoton(Btn_A4);DesactBoton(Btn_A5);
-        DesactBoton(Btn_A6);DesactBoton(Btn_A7);DesactBoton(Btn_A8);DesactBoton(Btn_A9);DesactBoton(Btn_A10);
-        DesactBoton(Btn_A11);DesactBoton(Btn_A12);DesactBoton(Btn_A13);DesactBoton(Btn_A14);
-        DesactBoton(Btn_B1);DesactBoton(Btn_B2);DesactBoton(Btn_B3);DesactBoton(Btn_B4);DesactBoton(Btn_B5);
-        DesactBoton(Btn_B6);DesactBoton(Btn_B7);DesactBoton(Btn_B8);DesactBoton(Btn_B9);DesactBoton(Btn_B10);
-        DesactBoton(Btn_B11);DesactBoton(Btn_B12);DesactBoton(Btn_B13);DesactBoton(Btn_B14);
-        DesactBoton(Btn_C1);DesactBoton(Btn_C2);DesactBoton(Btn_C3);DesactBoton(Btn_C4);DesactBoton(Btn_C5);
-        DesactBoton(Btn_C6);DesactBoton(Btn_C7);DesactBoton(Btn_C8);DesactBoton(Btn_C9);DesactBoton(Btn_C10);
-        DesactBoton(Btn_C11);DesactBoton(Btn_C12);DesactBoton(Btn_C13);DesactBoton(Btn_C14);
-        DesactBoton(Btn_D1);DesactBoton(Btn_D2);DesactBoton(Btn_D3);DesactBoton(Btn_D4);DesactBoton(Btn_D5);
-        DesactBoton(Btn_D6);DesactBoton(Btn_D7);DesactBoton(Btn_D8);DesactBoton(Btn_D9);DesactBoton(Btn_D10);
-        DesactBoton(Btn_D11);DesactBoton(Btn_D12);DesactBoton(Btn_D13);DesactBoton(Btn_D14);
-        DesactBoton(Btn_E1);DesactBoton(Btn_E2);DesactBoton(Btn_E3);DesactBoton(Btn_E4);DesactBoton(Btn_E5);
-        DesactBoton(Btn_E6);DesactBoton(Btn_A7);DesactBoton(Btn_E8);DesactBoton(Btn_E9);DesactBoton(Btn_E10);
-        DesactBoton(Btn_E11);DesactBoton(Btn_E12);DesactBoton(Btn_E13);DesactBoton(Btn_E14);
-        
+
+        //************************************* se agrega codigo para leer el archivo y obtener asientos y pelicula ************
+        //Lectura del archivo para buscar la pelicula, tanda y asientos.
+        PeliculaYaReservada = txt_peliculas.getText();
+        TandaYaReservada = txt_tanda.getText();
+
+        String linea;
+        FileReader f = null;
+        try {
+            f = new FileReader("Informacion de Compra.txt");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(administrador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        BufferedReader b = new BufferedReader(f);
+        try {
+            while ((linea = b.readLine()) != null) {
+
+                String DatosCompra[] = linea.split(";");
+
+                if (((DatosCompra[12]).equals(PeliculaYaReservada)) && (DatosCompra[13].equals(TandaYaReservada))) {
+                    TiquetesYaReservados = TiquetesYaReservados + (DatosCompra[14]);
+                }
+
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(seleccionCampos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        //JOptionPane.showMessageDialog(this, TiquetesYaReservados);
+
+        //************************************************************************************************************************
+        DesactBoton(Btn_A1);
+        DesactBoton(Btn_A2);
+        DesactBoton(Btn_A3);
+        DesactBoton(Btn_A4);
+        DesactBoton(Btn_A5);
+        DesactBoton(Btn_A6);
+        DesactBoton(Btn_A7);
+        DesactBoton(Btn_A8);
+        DesactBoton(Btn_A9);
+        DesactBoton(Btn_A10);
+        DesactBoton(Btn_A11);
+        DesactBoton(Btn_A12);
+        DesactBoton(Btn_A13);
+        DesactBoton(Btn_A14);
+        DesactBoton(Btn_B1);
+        DesactBoton(Btn_B2);
+        DesactBoton(Btn_B3);
+        DesactBoton(Btn_B4);
+        DesactBoton(Btn_B5);
+        DesactBoton(Btn_B6);
+        DesactBoton(Btn_B7);
+        DesactBoton(Btn_B8);
+        DesactBoton(Btn_B9);
+        DesactBoton(Btn_B10);
+        DesactBoton(Btn_B11);
+        DesactBoton(Btn_B12);
+        DesactBoton(Btn_B13);
+        DesactBoton(Btn_B14);
+        DesactBoton(Btn_C1);
+        DesactBoton(Btn_C2);
+        DesactBoton(Btn_C3);
+        DesactBoton(Btn_C4);
+        DesactBoton(Btn_C5);
+        DesactBoton(Btn_C6);
+        DesactBoton(Btn_C7);
+        DesactBoton(Btn_C8);
+        DesactBoton(Btn_C9);
+        DesactBoton(Btn_C10);
+        DesactBoton(Btn_C11);
+        DesactBoton(Btn_C12);
+        DesactBoton(Btn_C13);
+        DesactBoton(Btn_C14);
+        DesactBoton(Btn_D1);
+        DesactBoton(Btn_D2);
+        DesactBoton(Btn_D3);
+        DesactBoton(Btn_D4);
+        DesactBoton(Btn_D5);
+        DesactBoton(Btn_D6);
+        DesactBoton(Btn_D7);
+        DesactBoton(Btn_D8);
+        DesactBoton(Btn_D9);
+        DesactBoton(Btn_D10);
+        DesactBoton(Btn_D11);
+        DesactBoton(Btn_D12);
+        DesactBoton(Btn_D13);
+        DesactBoton(Btn_D14);
+        DesactBoton(Btn_E1);
+        DesactBoton(Btn_E2);
+        DesactBoton(Btn_E3);
+        DesactBoton(Btn_E4);
+        DesactBoton(Btn_E5);
+        DesactBoton(Btn_E6);
+        DesactBoton(Btn_A7);
+        DesactBoton(Btn_E8);
+        DesactBoton(Btn_E9);
+        DesactBoton(Btn_E10);
+        DesactBoton(Btn_E11);
+        DesactBoton(Btn_E12);
+        DesactBoton(Btn_E13);
+        DesactBoton(Btn_E14);
+
     }//GEN-LAST:event_formWindowOpened
 
     /**
