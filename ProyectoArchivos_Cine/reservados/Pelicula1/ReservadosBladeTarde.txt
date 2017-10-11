@@ -1,2 +1,10 @@
 Btn_B8
 Btn_B7
+Btn_C8
+Btn_C7
+Btn_C6
+Btn_C9
+Btn_C9
+Btn_C10
+Btn_C5
+Btn_C5

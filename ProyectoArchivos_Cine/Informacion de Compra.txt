@@ -10,3 +10,4 @@ carlos;55555;555555;sfdfd@fgfdd;carlos;Visa;888888;01/2017;4545;4000;Adulto Mayo
 Julio;999999;999999;jkjfj@klkfkf;Julio;MasterCard;636363636;01/2017;1212;4000;Adulto Mayor;2;Blade Runner - Double Feature;Tarde 16:00-18:00;1,7+1,6+
 Marcos;fsdfsd;fdsfds;fdsfds;Marcos;American Express;321234;01/2017;8989;4000;Adulto Mayor;2;Blade Runner - Double Feature;Noche 20:00-22:00;1,12+1,11+
 Sandro Juventud;85696345;204580963;SandroJuventud@ice.cr;Sandro Juventud;American Express;10002580369;01/2017;789;8000;Adulto;4;NinjaGo - Lego;Mañana 10:00-12:00;0,7+0,6+0,5+0,8+
+Rafael;8796;155817;rdi@camp.com;Rafael Diaz;American Express;65556555655655;01/2017;1556;4000;Joven;2;Blade Runner - Double Feature;Mañana 10:00-12:00;2,7+2,6+
