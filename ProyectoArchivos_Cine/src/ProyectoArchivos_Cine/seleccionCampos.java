@@ -44,24 +44,24 @@ public class seleccionCampos extends javax.swing.JFrame {
         //######################################################################
         //Blade Runner - Double Feature
         //Blade Runner - Double Feature - Mañana 10:00-12:00
-        if (pelicula.equalsIgnoreCase("Blade Runner - Double Feature")
-                && tanda.equalsIgnoreCase("Mañana 10:00-12:00")) {
-            if (evt.getBackground() == Color.green) {
+        //    if (pelicula.equalsIgnoreCase("Blade Runner - Double Feature")
+        //            && tanda.equalsIgnoreCase("Mañana 10:00-12:00")) {
+        if (evt.getBackground() == Color.green) {
 
-                evt.setBackground(Color.yellow);
-                reserva.setPosition(row, column, campo);
-                TiquetesSeleccionados.add(evt.getName());
-                CantidadTiquetesSeleccionados++;
+            evt.setBackground(Color.yellow);
+            reserva.setPosition(row, column, campo);
+            TiquetesSeleccionados.add(evt.getName() + ",");
+            CantidadTiquetesSeleccionados++;
 
-            } else if (evt.getBackground() == Color.yellow) {
-                evt.setBackground(Color.green);
-                TiquetesSeleccionados.remove(evt.getName());
-                CantidadTiquetesSeleccionados--;
+        } else if (evt.getBackground() == Color.yellow) {
+            evt.setBackground(Color.green);
+            TiquetesSeleccionados.remove(evt.getName() + ",");
+            CantidadTiquetesSeleccionados--;
 
-            }
-            txt_CantidadSeleccionada.setText(CantidadTiquetesSeleccionados + "");
+        }
+        txt_CantidadSeleccionada.setText(CantidadTiquetesSeleccionados + "");
 
-            File file = new File("reservados/Pelicula1/ReservadosBladeManana.txt");
+        /*    File file = new File("reservados/Pelicula1/ReservadosBladeManana.txt");
 
             if (!file.exists()) {
                 try {
@@ -504,9 +504,10 @@ public class seleccionCampos extends javax.swing.JFrame {
                     }
                 }
             }
-        }
+            
+         */
+        //  }
         //######################################################################
-
     }
 
     public void DesactBoton(javax.swing.JButton evt) {
@@ -515,27 +516,23 @@ public class seleccionCampos extends javax.swing.JFrame {
         //######################################################################
         //Blade Runner - Double Feature
 
-        /*
-        if (pelicula.equalsIgnoreCase(PeliculaYaReservada)
-                && tanda.equalsIgnoreCase(TandaYaReservada)) {
-            try {
-                BufferedReader buffer = new BufferedReader(TiquetesYaReservados);
-                String temp = " ";
-                while (temp != null) {
-                    temp = buffer.readLine();
-                    
-                temp = TiquetesYaReservados;
-                    if (evt.getName().equals(temp)) {
-                        evt.setBackground(Color.red);
-                    }
-                    if (temp == null) {
-                        break;
-                    }
-                }
-            } catch (IOException ex) {
-                ex.printStackTrace();
+        String array[] = TiquetesYaReservados.split(",");
+        
+        for (int i = 0; i <= array.length - 1; i++) {
+
+            String temp = array[i];
+            if (evt.getName().equals(temp)) {
+                evt.setBackground(Color.red);
             }
-         */
+            if (temp == null) {
+                break;
+            }
+
+        }
+        
+
+        /**        
+                 
         if (pelicula.equalsIgnoreCase("Blade Runner - Double Feature")
                 && tanda.equalsIgnoreCase("Mañana 10:00-12:00")) {
             try {
@@ -758,6 +755,7 @@ public class seleccionCampos extends javax.swing.JFrame {
                 ex.printStackTrace();
             }
         }
+         */
         //######################################################################
         /*try{
             BufferedReader buffer = new BufferedReader(new FileReader("Reservados.txt"));
@@ -774,7 +772,8 @@ public class seleccionCampos extends javax.swing.JFrame {
 
         }catch(IOException ex){
             ex.printStackTrace();
-        }*/
+        }
+        */
     }
 
     /**
@@ -1553,7 +1552,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         Btn_A8.setBackground(java.awt.Color.green);
         Btn_A8.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         Btn_A8.setText("8");
-        Btn_A8.setName("Btn_A"); // NOI18N
+        Btn_A8.setName("Btn_A8"); // NOI18N
         Btn_A8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_A8ActionPerformed(evt);
@@ -2380,8 +2379,10 @@ public class seleccionCampos extends javax.swing.JFrame {
         FileReader f = null;
         try {
             f = new FileReader("Informacion de Compra.txt");
+
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(administrador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(administrador.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         BufferedReader b = new BufferedReader(f);
         try {
@@ -2390,15 +2391,15 @@ public class seleccionCampos extends javax.swing.JFrame {
                 String DatosCompra[] = linea.split(";");
 
                 if (((DatosCompra[12]).equals(PeliculaYaReservada)) && (DatosCompra[13].equals(TandaYaReservada))) {
-                    TiquetesYaReservados = TiquetesYaReservados + (DatosCompra[14]);
+                    TiquetesYaReservados = (DatosCompra[14]) + "," + TiquetesYaReservados;
+
                 }
 
             }
         } catch (IOException ex) {
-            Logger.getLogger(seleccionCampos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(seleccionCampos.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
-
-        //JOptionPane.showMessageDialog(this, TiquetesYaReservados);
 
         //************************************************************************************************************************
         DesactBoton(Btn_A1);
@@ -2488,16 +2489,24 @@ public class seleccionCampos extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(seleccionCampos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(seleccionCampos.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(seleccionCampos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(seleccionCampos.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(seleccionCampos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(seleccionCampos.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(seleccionCampos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(seleccionCampos.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
