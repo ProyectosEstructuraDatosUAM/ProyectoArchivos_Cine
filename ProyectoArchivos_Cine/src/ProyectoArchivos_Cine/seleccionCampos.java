@@ -24,7 +24,6 @@ public class seleccionCampos extends javax.swing.JFrame {
     ArrayList<String> TiquetesSeleccionados = new ArrayList<String>();
     Reservacion reserva = new Reservacion();
     String tipoTicket = " ", tanda = " ";
-    int cont = 0;
 
     String TiquetesYaReservados = "";
     String TandaYaReservada = "";
@@ -515,7 +514,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         String tanda = txt_tanda.getText();
         //######################################################################
         //Blade Runner - Double Feature
-
+        
         String array[] = TiquetesYaReservados.split(",");
         
         for (int i = 0; i <= array.length - 1; i++) {
@@ -529,8 +528,6 @@ public class seleccionCampos extends javax.swing.JFrame {
             }
 
         }
-        
-
         /**        
                  
         if (pelicula.equalsIgnoreCase("Blade Runner - Double Feature")
@@ -1907,57 +1904,46 @@ public class seleccionCampos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn_E3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E3ActionPerformed
-        cont++;
         color(Btn_E3, 4, 2, "E3");
     }//GEN-LAST:event_Btn_E3ActionPerformed
 
     private void Btn_B4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B4ActionPerformed
-        cont++;
         color(Btn_B4, 1, 3, "B4");
     }//GEN-LAST:event_Btn_B4ActionPerformed
 
     private void Btn_A2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A2ActionPerformed
-        cont++;
         color(Btn_A2, 0, 1, "A2");
     }//GEN-LAST:event_Btn_A2ActionPerformed
 
     private void Btn_B6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B6ActionPerformed
-        cont++;
         color(Btn_B6, 1, 5, "B6");
     }//GEN-LAST:event_Btn_B6ActionPerformed
 
     private void Btn_A5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A5ActionPerformed
-        cont++;
         color(Btn_A5, 0, 4, "A5");
     }//GEN-LAST:event_Btn_A5ActionPerformed
 
     private void Btn_A8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A8ActionPerformed
-        cont++;
         color(Btn_A8, 0, 7, "A8");
     }//GEN-LAST:event_Btn_A8ActionPerformed
 
     private void Btn_B9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B9ActionPerformed
-        cont++;
         color(Btn_B9, 1, 8, "B9");
     }//GEN-LAST:event_Btn_B9ActionPerformed
 
     private void Btn_C12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C12ActionPerformed
-        cont++;
         color(Btn_C12, 2, 11, "C12");
     }//GEN-LAST:event_Btn_C12ActionPerformed
 
     private void Btn_B12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B12ActionPerformed
-        cont++;
         color(Btn_B12, 1, 11, "B12");
     }//GEN-LAST:event_Btn_B12ActionPerformed
 
     private void Btn_A11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A11ActionPerformed
-        cont++;
         color(Btn_A11, 0, 10, "A11");
     }//GEN-LAST:event_Btn_A11ActionPerformed
 
     private void Btn_B14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B14ActionPerformed
-        cont++;
         color(Btn_B14, 1, 13, "B14");
     }//GEN-LAST:event_Btn_B14ActionPerformed
 
@@ -1971,7 +1957,6 @@ public class seleccionCampos extends javax.swing.JFrame {
 
     private void Btn_PagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_PagarActionPerformed
         // TODO add your handling code here:        
-
         if (CantidadTiquetes == CantidadTiquetesSeleccionados) {
             reserva.setNombre_completo(txt_nombre_completo.getText());
             reserva.setCorreo_electronico(txt_correo_electronico.getText());
@@ -1982,7 +1967,6 @@ public class seleccionCampos extends javax.swing.JFrame {
             reserva.setCantidad_tiquetes(txt_cantidad_tiquetes.getText());
             //tipoPelicula = txt_peliculas.getSelectedItem().toString();
             reserva.setPelicula(txt_peliculas.getText());
-
             reserva.setTanda(txt_tanda.getText());
 
             String[][] campos = new String[5][13];
@@ -2047,203 +2031,162 @@ public class seleccionCampos extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_AtrasActionPerformed
 
     private void Btn_A1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A1ActionPerformed
-        cont++;
         color(Btn_A1, 0, 0, "A1");
     }//GEN-LAST:event_Btn_A1ActionPerformed
 
     private void Btn_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B1ActionPerformed
-        cont++;
         color(Btn_B1, 1, 0, "B1");
     }//GEN-LAST:event_Btn_B1ActionPerformed
 
     private void Btn_C1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C1ActionPerformed
-        cont++;
         color(Btn_C1, 2, 0, "C1");
-
     }//GEN-LAST:event_Btn_C1ActionPerformed
 
     private void Btn_D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D1ActionPerformed
-        cont++;
         color(Btn_D1, 3, 0, "D1");
     }//GEN-LAST:event_Btn_D1ActionPerformed
 
     private void Btn_E1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E1ActionPerformed
-        cont++;
         color(Btn_E1, 4, 0, "E1");
     }//GEN-LAST:event_Btn_E1ActionPerformed
 
     private void Btn_E2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E2ActionPerformed
-        cont++;
         color(Btn_E2, 4, 1, "E2");
     }//GEN-LAST:event_Btn_E2ActionPerformed
 
     private void Btn_D2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D2ActionPerformed
-        cont++;
         color(Btn_D2, 3, 1, "D2");
     }//GEN-LAST:event_Btn_D2ActionPerformed
 
     private void Btn_C2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C2ActionPerformed
-        cont++;
         color(Btn_C2, 2, 1, "C2");
     }//GEN-LAST:event_Btn_C2ActionPerformed
 
     private void Btn_B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B2ActionPerformed
-        cont++;
         color(Btn_B2, 1, 1, "B2");
     }//GEN-LAST:event_Btn_B2ActionPerformed
 
     private void Btn_A3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A3ActionPerformed
-        cont++;
         color(Btn_A3, 0, 2, "A3");
     }//GEN-LAST:event_Btn_A3ActionPerformed
 
     private void Btn_B3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B3ActionPerformed
-        cont++;
         color(Btn_B3, 1, 2, "B3");
     }//GEN-LAST:event_Btn_B3ActionPerformed
 
     private void Btn_C3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C3ActionPerformed
-        cont++;
         color(Btn_C3, 2, 2, "C3");
     }//GEN-LAST:event_Btn_C3ActionPerformed
 
     private void Btn_D3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D3ActionPerformed
-        cont++;
         color(Btn_D3, 3, 2, "D3");
     }//GEN-LAST:event_Btn_D3ActionPerformed
 
     private void Btn_E4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E4ActionPerformed
-        cont++;
         color(Btn_E4, 4, 3, "E4");
     }//GEN-LAST:event_Btn_E4ActionPerformed
 
     private void Btn_D4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D4ActionPerformed
-        cont++;
         color(Btn_D4, 3, 3, "D4");
     }//GEN-LAST:event_Btn_D4ActionPerformed
 
     private void Btn_C4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C4ActionPerformed
-        cont++;
         color(Btn_C4, 2, 3, "C4");
     }//GEN-LAST:event_Btn_C4ActionPerformed
 
     private void Btn_A4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A4ActionPerformed
-        cont++;
         color(Btn_A4, 0, 3, "A4");
     }//GEN-LAST:event_Btn_A4ActionPerformed
 
     private void Btn_A6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A6ActionPerformed
-        cont++;
         color(Btn_A6, 0, 5, "A6");
     }//GEN-LAST:event_Btn_A6ActionPerformed
 
     private void Btn_A7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A7ActionPerformed
-        cont++;
         color(Btn_A7, 0, 6, "A7");
     }//GEN-LAST:event_Btn_A7ActionPerformed
 
     private void Btn_A9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A9ActionPerformed
-        cont++;
         color(Btn_A9, 0, 8, "A9");
     }//GEN-LAST:event_Btn_A9ActionPerformed
 
     private void Btn_A10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A10ActionPerformed
-        cont++;
         color(Btn_A10, 0, 9, "A10");
     }//GEN-LAST:event_Btn_A10ActionPerformed
 
     private void Btn_A12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A12ActionPerformed
-        cont++;
         color(Btn_A12, 0, 11, "A12");
     }//GEN-LAST:event_Btn_A12ActionPerformed
 
     private void Btn_A13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A13ActionPerformed
-        cont++;
         color(Btn_A13, 0, 12, "A13");
     }//GEN-LAST:event_Btn_A13ActionPerformed
 
     private void Btn_A14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A14ActionPerformed
-        cont++;
         color(Btn_A14, 0, 13, "A14");
     }//GEN-LAST:event_Btn_A14ActionPerformed
 
     private void Btn_B5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B5ActionPerformed
-        cont++;
         color(Btn_B5, 1, 4, "B5");
     }//GEN-LAST:event_Btn_B5ActionPerformed
 
     private void Btn_B7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B7ActionPerformed
-        cont++;
         color(Btn_B7, 1, 6, "B7");
     }//GEN-LAST:event_Btn_B7ActionPerformed
 
     private void Btn_C7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C7ActionPerformed
-        cont++;
         color(Btn_C7, 2, 6, "C7");
     }//GEN-LAST:event_Btn_C7ActionPerformed
 
     private void Btn_B8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B8ActionPerformed
-        cont++;
         color(Btn_B8, 1, 7, "B8");
     }//GEN-LAST:event_Btn_B8ActionPerformed
 
     private void Btn_C8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C8ActionPerformed
-        cont++;
         color(Btn_C8, 2, 7, "C8");
     }//GEN-LAST:event_Btn_C8ActionPerformed
 
     private void Btn_B10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B10ActionPerformed
-        cont++;
         color(Btn_B10, 1, 9, "B10");
     }//GEN-LAST:event_Btn_B10ActionPerformed
 
     private void Btn_B11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B11ActionPerformed
-        cont++;
         color(Btn_B11, 1, 10, "B11");
     }//GEN-LAST:event_Btn_B11ActionPerformed
 
     private void Btn_B13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B13ActionPerformed
-        cont++;
         color(Btn_B13, 1, 12, "B13");
     }//GEN-LAST:event_Btn_B13ActionPerformed
 
     private void Btn_C5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C5ActionPerformed
-        cont++;
         color(Btn_C5, 2, 4, "C5");
     }//GEN-LAST:event_Btn_C5ActionPerformed
 
     private void Btn_C6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C6ActionPerformed
-        cont++;
         color(Btn_C6, 2, 5, "C6");
     }//GEN-LAST:event_Btn_C6ActionPerformed
 
     private void Btn_C9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C9ActionPerformed
-        cont++;
         color(Btn_C9, 2, 8, "C9");
     }//GEN-LAST:event_Btn_C9ActionPerformed
 
     private void Btn_C10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C10ActionPerformed
-        cont++;
         color(Btn_C10, 2, 9, "C10");
     }//GEN-LAST:event_Btn_C10ActionPerformed
 
     private void Btn_C11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C11ActionPerformed
-        cont++;
         color(Btn_C11, 2, 10, "C11");
     }//GEN-LAST:event_Btn_C11ActionPerformed
 
     private void Btn_C13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C13ActionPerformed
-        cont++;
         color(Btn_C13, 2, 12, "C13");
     }//GEN-LAST:event_Btn_C13ActionPerformed
 
     private void Btn_C14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C14ActionPerformed
-        cont++;
         color(Btn_C14, 2, 13, "C14");
     }//GEN-LAST:event_Btn_C14ActionPerformed
 
     private void Btn_D5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D5ActionPerformed
-        cont++;
         color(Btn_D5, 3, 4, "D5");
     }//GEN-LAST:event_Btn_D5ActionPerformed
 
@@ -2252,92 +2195,74 @@ public class seleccionCampos extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_D6ActionPerformed
 
     private void Btn_D7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D7ActionPerformed
-        cont++;
         color(Btn_D7, 3, 6, "D7");
     }//GEN-LAST:event_Btn_D7ActionPerformed
 
     private void Btn_D8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D8ActionPerformed
-        cont++;
         color(Btn_D8, 3, 7, "D8");
     }//GEN-LAST:event_Btn_D8ActionPerformed
 
     private void Btn_D9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D9ActionPerformed
-        cont++;
         color(Btn_D9, 3, 8, "D9");
     }//GEN-LAST:event_Btn_D9ActionPerformed
 
     private void Btn_D10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D10ActionPerformed
-        cont++;
         color(Btn_D10, 3, 9, "D10");
     }//GEN-LAST:event_Btn_D10ActionPerformed
 
     private void Btn_D11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D11ActionPerformed
-        cont++;
         color(Btn_D11, 3, 10, "D11");
     }//GEN-LAST:event_Btn_D11ActionPerformed
 
     private void Btn_D12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D12ActionPerformed
-        cont++;
         color(Btn_D12, 3, 11, "D12");
     }//GEN-LAST:event_Btn_D12ActionPerformed
 
     private void Btn_D13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D13ActionPerformed
-        cont++;
         color(Btn_D13, 3, 12, "D13");
     }//GEN-LAST:event_Btn_D13ActionPerformed
 
     private void Btn_D14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D14ActionPerformed
-        cont++;
         color(Btn_D14, 3, 13, "D14");
     }//GEN-LAST:event_Btn_D14ActionPerformed
 
     private void Btn_E5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E5ActionPerformed
-        cont++;
         color(Btn_E5, 4, 4, "E5");
     }//GEN-LAST:event_Btn_E5ActionPerformed
 
     private void Btn_E6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E6ActionPerformed
-        cont++;
         color(Btn_E6, 4, 5, "E6");
     }//GEN-LAST:event_Btn_E6ActionPerformed
 
     private void Btn_E7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E7ActionPerformed
-        cont++;
         color(Btn_E7, 4, 6, "E7");
     }//GEN-LAST:event_Btn_E7ActionPerformed
 
     private void Btn_E8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E8ActionPerformed
-        cont++;
         color(Btn_E8, 4, 7, "E8");
     }//GEN-LAST:event_Btn_E8ActionPerformed
 
     private void Btn_E9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E9ActionPerformed
-        cont++;
         color(Btn_E9, 4, 8, "E9");
     }//GEN-LAST:event_Btn_E9ActionPerformed
 
     private void Btn_E10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E10ActionPerformed
-        cont++;
         color(Btn_E10, 4, 9, "E10");
     }//GEN-LAST:event_Btn_E10ActionPerformed
 
     private void Btn_E11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E11ActionPerformed
-        cont++;
         color(Btn_E11, 4, 10, "E11");
     }//GEN-LAST:event_Btn_E11ActionPerformed
 
     private void Btn_E12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E12ActionPerformed
-        cont++;
         color(Btn_E12, 4, 11, "E12");
     }//GEN-LAST:event_Btn_E12ActionPerformed
 
     private void Btn_E13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E13ActionPerformed
-        cont++;
         color(Btn_E13, 4, 12, "E13");
     }//GEN-LAST:event_Btn_E13ActionPerformed
 
     private void Btn_E14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E14ActionPerformed
-        cont++;
         color(Btn_E14, 4, 13, "E14");
     }//GEN-LAST:event_Btn_E14ActionPerformed
 
@@ -2349,27 +2274,21 @@ public class seleccionCampos extends javax.swing.JFrame {
 
     private void btn_menosTiquetesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_menosTiquetesActionPerformed
         // TODO add your handling code here:
-
         CantidadTiquetes--;
         if (CantidadTiquetes < 1) {
             CantidadTiquetes = 1;
         }
         txt_cantidad_tiquetes.setText(CantidadTiquetes + "");
-
     }//GEN-LAST:event_btn_menosTiquetesActionPerformed
 
     private void btn_masTiquetesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_masTiquetesActionPerformed
         // TODO add your handling code here:
-
         CantidadTiquetes++;
-
         txt_cantidad_tiquetes.setText(CantidadTiquetes + "");
-
     }//GEN-LAST:event_btn_masTiquetesActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // Aqui debe ejecutarse el metodo DesactivaBoton
-
         //************************************* se agrega codigo para leer el archivo y obtener asientos y pelicula ************
         //Lectura del archivo para buscar la pelicula, tanda y asientos.
         PeliculaYaReservada = txt_peliculas.getText();
@@ -2400,84 +2319,25 @@ public class seleccionCampos extends javax.swing.JFrame {
             Logger.getLogger(seleccionCampos.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
-
         //************************************************************************************************************************
-        DesactBoton(Btn_A1);
-        DesactBoton(Btn_A2);
-        DesactBoton(Btn_A3);
-        DesactBoton(Btn_A4);
-        DesactBoton(Btn_A5);
-        DesactBoton(Btn_A6);
-        DesactBoton(Btn_A7);
-        DesactBoton(Btn_A8);
-        DesactBoton(Btn_A9);
-        DesactBoton(Btn_A10);
-        DesactBoton(Btn_A11);
-        DesactBoton(Btn_A12);
-        DesactBoton(Btn_A13);
-        DesactBoton(Btn_A14);
-        DesactBoton(Btn_B1);
-        DesactBoton(Btn_B2);
-        DesactBoton(Btn_B3);
-        DesactBoton(Btn_B4);
-        DesactBoton(Btn_B5);
-        DesactBoton(Btn_B6);
-        DesactBoton(Btn_B7);
-        DesactBoton(Btn_B8);
-        DesactBoton(Btn_B9);
-        DesactBoton(Btn_B10);
-        DesactBoton(Btn_B11);
-        DesactBoton(Btn_B12);
-        DesactBoton(Btn_B13);
-        DesactBoton(Btn_B14);
-        DesactBoton(Btn_C1);
-        DesactBoton(Btn_C2);
-        DesactBoton(Btn_C3);
-        DesactBoton(Btn_C4);
-        DesactBoton(Btn_C5);
-        DesactBoton(Btn_C6);
-        DesactBoton(Btn_C7);
-        DesactBoton(Btn_C8);
-        DesactBoton(Btn_C9);
-        DesactBoton(Btn_C10);
-        DesactBoton(Btn_C11);
-        DesactBoton(Btn_C12);
-        DesactBoton(Btn_C13);
-        DesactBoton(Btn_C14);
-        DesactBoton(Btn_D1);
-        DesactBoton(Btn_D2);
-        DesactBoton(Btn_D3);
-        DesactBoton(Btn_D4);
-        DesactBoton(Btn_D5);
-        DesactBoton(Btn_D6);
-        DesactBoton(Btn_D7);
-        DesactBoton(Btn_D8);
-        DesactBoton(Btn_D9);
-        DesactBoton(Btn_D10);
-        DesactBoton(Btn_D11);
-        DesactBoton(Btn_D12);
-        DesactBoton(Btn_D13);
-        DesactBoton(Btn_D14);
-        DesactBoton(Btn_E1);
-        DesactBoton(Btn_E2);
-        DesactBoton(Btn_E3);
-        DesactBoton(Btn_E4);
-        DesactBoton(Btn_E5);
-        DesactBoton(Btn_E6);
-        DesactBoton(Btn_A7);
-        DesactBoton(Btn_E8);
-        DesactBoton(Btn_E9);
-        DesactBoton(Btn_E10);
-        DesactBoton(Btn_E11);
-        DesactBoton(Btn_E12);
-        DesactBoton(Btn_E13);
-        DesactBoton(Btn_E14);
-
+        DesactBoton(Btn_A1);DesactBoton(Btn_A2);DesactBoton(Btn_A3);DesactBoton(Btn_A4);DesactBoton(Btn_A5);
+        DesactBoton(Btn_A6);DesactBoton(Btn_A7);DesactBoton(Btn_A8);DesactBoton(Btn_A9);DesactBoton(Btn_A10);
+        DesactBoton(Btn_A11);DesactBoton(Btn_A12);DesactBoton(Btn_A13);DesactBoton(Btn_A14);
+        DesactBoton(Btn_B1);DesactBoton(Btn_B2);DesactBoton(Btn_B3);DesactBoton(Btn_B4);DesactBoton(Btn_B5);
+        DesactBoton(Btn_B6); DesactBoton(Btn_B7);DesactBoton(Btn_B8);DesactBoton(Btn_B9);DesactBoton(Btn_B10);
+        DesactBoton(Btn_B11);DesactBoton(Btn_B12);DesactBoton(Btn_B13);DesactBoton(Btn_B14);
+        DesactBoton(Btn_C1);DesactBoton(Btn_C2);DesactBoton(Btn_C3);DesactBoton(Btn_C4);DesactBoton(Btn_C5);
+        DesactBoton(Btn_C6);DesactBoton(Btn_C7);DesactBoton(Btn_C8);DesactBoton(Btn_C9);DesactBoton(Btn_C10);
+        DesactBoton(Btn_C11);DesactBoton(Btn_C12);DesactBoton(Btn_C13);DesactBoton(Btn_C14);
+        DesactBoton(Btn_D1);DesactBoton(Btn_D2);DesactBoton(Btn_D3);DesactBoton(Btn_D4);DesactBoton(Btn_D5);
+        DesactBoton(Btn_D6);DesactBoton(Btn_D7);DesactBoton(Btn_D8);DesactBoton(Btn_D9);DesactBoton(Btn_D10);
+        DesactBoton(Btn_D11);DesactBoton(Btn_D12);DesactBoton(Btn_D13);DesactBoton(Btn_D14);
+        DesactBoton(Btn_E1);DesactBoton(Btn_E2);DesactBoton(Btn_E3);DesactBoton(Btn_E4);DesactBoton(Btn_E5);
+        DesactBoton(Btn_E6);DesactBoton(Btn_A7);DesactBoton(Btn_E8);DesactBoton(Btn_E9);DesactBoton(Btn_E10);
+        DesactBoton(Btn_E11);DesactBoton(Btn_E12);DesactBoton(Btn_E13);DesactBoton(Btn_E14);
     }//GEN-LAST:event_formWindowOpened
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
