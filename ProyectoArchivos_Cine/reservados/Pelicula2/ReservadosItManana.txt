@@ -1,4 +1,0 @@
-Btn_B8
-Btn_C8
-Btn_C7
-Btn_C6

@@ -19,33 +19,28 @@ import javax.swing.JOptionPane;
 
 public class seleccionCampos extends javax.swing.JFrame {
 
-    /*Creamos el arraylist par almacenar los datos*/
+   
+
+    public seleccionCampos() {
+        initComponents();
+    }
+     /*Creamos el arraylist para almacenar los datosde botones y asientos seleccionados*/
     ArrayList<Reservacion> lista = new ArrayList<Reservacion>();
     ArrayList<String> TiquetesSeleccionados = new ArrayList<String>();
     ArrayList<String> AsientosSeleccionados = new ArrayList<String>();
-    Reservacion reserva = new Reservacion();
+    Reservacion reserva = new Reservacion(); //Esta clase almacena todos los elementos importantes
     String tipoTicket = " ", tanda = " ";
 
     String TiquetesYaReservados = "";
     String TandaYaReservada = "";
     String PeliculaYaReservada = "";
-
-    public seleccionCampos() {
-        initComponents();
-    }
     public int CantidadTiquetes = 1;
     public int CantidadTiquetesSeleccionados = 0;
 
-    public void color(javax.swing.JButton evt, int row, int column, String campo) {
+    private void color(javax.swing.JButton evt, int row, int column, String campo) {
         /*Se crea el metodo para cambiar de color en los botones de verde a amarillo
         tambien setea la posicion del array de la clase reserva*/
-        String pelicula = txt_peliculas.getText();
-        String tanda = txt_tanda.getText();
-        //######################################################################
-        //Blade Runner - Double Feature
-        //Blade Runner - Double Feature - Mañana 10:00-12:00
-        //    if (pelicula.equalsIgnoreCase("Blade Runner - Double Feature")
-        //            && tanda.equalsIgnoreCase("Mañana 10:00-12:00")) {
+     
         if (evt.getBackground() == Color.green) {
 
             evt.setBackground(Color.yellow);
@@ -62,8 +57,10 @@ public class seleccionCampos extends javax.swing.JFrame {
 
         }
         txt_CantidadSeleccionada.setText(CantidadTiquetesSeleccionados + "");
-
-        /*    File file = new File("reservados/Pelicula1/ReservadosBladeManana.txt");
+        
+        // <editor-fold defaultstate="collapsed" desc="Codigo anterior que verificaba que pelicula era">
+/* start of comment
+         File file = new File("reservados/Pelicula1/ReservadosBladeManana.txt");
 
             if (!file.exists()) {
                 try {
@@ -506,13 +503,13 @@ public class seleccionCampos extends javax.swing.JFrame {
                     }
                 }
             }
-            
-         */
-        //  }
+            //  }
         //######################################################################
+*/
+// </editor-fold>       
     }
 
-    public void DesactBoton(javax.swing.JButton evt) {
+    private void DesactBoton(javax.swing.JButton evt) {
         String pelicula = txt_peliculas.getText();
         String tanda = txt_tanda.getText();
         //######################################################################
@@ -530,9 +527,10 @@ public class seleccionCampos extends javax.swing.JFrame {
                 break;
             }
 
-        }
-        /**        
-                 
+        }        
+        // <editor-fold defaultstate="collapsed" desc="Codigo anterior que verificaba que peliculas se habían seleccionado en el txt">
+
+        /**                         
         if (pelicula.equalsIgnoreCase("Blade Runner - Double Feature")
                 && tanda.equalsIgnoreCase("Mañana 10:00-12:00")) {
             try {
@@ -774,6 +772,7 @@ public class seleccionCampos extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         */
+        // </editor-fold>   
     }
 
     /**
