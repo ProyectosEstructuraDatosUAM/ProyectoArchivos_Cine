@@ -22,6 +22,7 @@ public class seleccionCampos extends javax.swing.JFrame {
     /*Creamos el arraylist par almacenar los datos*/
     ArrayList<Reservacion> lista = new ArrayList<Reservacion>();
     ArrayList<String> TiquetesSeleccionados = new ArrayList<String>();
+    ArrayList<String> AsientosSeleccionados = new ArrayList<String>();
     Reservacion reserva = new Reservacion();
     String tipoTicket = " ", tanda = " ";
 
@@ -50,11 +51,13 @@ public class seleccionCampos extends javax.swing.JFrame {
             evt.setBackground(Color.yellow);
             reserva.setPosition(row, column, campo);
             TiquetesSeleccionados.add(evt.getName() + ",");
+            AsientosSeleccionados.add(campo);
             CantidadTiquetesSeleccionados++;
 
         } else if (evt.getBackground() == Color.yellow) {
             evt.setBackground(Color.green);
             TiquetesSeleccionados.remove(evt.getName() + ",");
+             AsientosSeleccionados.remove(campo);
             CantidadTiquetesSeleccionados--;
 
         }
@@ -1831,6 +1834,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         txt_CantidadSeleccionada.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txt_CantidadSeleccionada.setForeground(new java.awt.Color(255, 255, 255));
         txt_CantidadSeleccionada.setText("0");
+        txt_CantidadSeleccionada.setEnabled(false);
 
         txt_peliculas.setFont(new java.awt.Font("Abyssinica SIL", 2, 14)); // NOI18N
         txt_peliculas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -1957,7 +1961,19 @@ public class seleccionCampos extends javax.swing.JFrame {
 
     private void Btn_PagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_PagarActionPerformed
         // TODO add your handling code here:        
-        if (CantidadTiquetes == CantidadTiquetesSeleccionados) {
+        
+        //Se verifica que los espacios estén llenos
+        boolean Infocorrecta = false;
+        
+        if (txt_nombre_completo.getText().equals("") || txt_cedula.getText().equals("") || txt_telefono.getText().equals("") || txt_correo_electronico.getText().equals(""))
+        {
+            Infocorrecta = false;
+        }
+        else{
+            Infocorrecta = true;
+        }
+        
+        if (CantidadTiquetes == CantidadTiquetesSeleccionados && Infocorrecta) {
             reserva.setNombre_completo(txt_nombre_completo.getText());
             reserva.setCorreo_electronico(txt_correo_electronico.getText());
             reserva.setCedula(txt_cedula.getText());
@@ -1987,7 +2003,13 @@ public class seleccionCampos extends javax.swing.JFrame {
             for (int i = 0; i < TiquetesSeleccionados.size(); i++) {
                 tiquetes = tiquetes + TiquetesSeleccionados.get(i);
             }
-
+            
+            //////////////////////
+            capturaArray = "";
+            for (int i = 0; i < AsientosSeleccionados.size(); i++) {
+                capturaArray = capturaArray + " " + AsientosSeleccionados.get(i);
+            }
+            /////////////////////
             lista.add(reserva);
 
             int tickets = Integer.parseInt(reserva.getCantidad_tiquetes());
@@ -2019,7 +2041,18 @@ public class seleccionCampos extends javax.swing.JFrame {
             this.setVisible(false);
 
         } else {
-            JOptionPane.showMessageDialog(this, "Debe seleccionar la cantidad de tiquetes ingresada");
+           
+            if (Infocorrecta) 
+            {
+                JOptionPane.showMessageDialog(this, "Debe seleccionar la cantidad de tiquetes ingresada");            
+            }
+            
+            else
+            {
+                 JOptionPane.showMessageDialog(this, "Debe colocar toda su información.");
+            }
+           
+            
         }
     }//GEN-LAST:event_Btn_PagarActionPerformed
 
@@ -2291,6 +2324,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         // Aqui debe ejecutarse el metodo DesactivaBoton
         //************************************* se agrega codigo para leer el archivo y obtener asientos y pelicula ************
         //Lectura del archivo para buscar la pelicula, tanda y asientos.
+        
         PeliculaYaReservada = txt_peliculas.getText();
         TandaYaReservada = txt_tanda.getText();
 
@@ -2311,6 +2345,7 @@ public class seleccionCampos extends javax.swing.JFrame {
 
                 if (((DatosCompra[12]).equals(PeliculaYaReservada)) && (DatosCompra[13].equals(TandaYaReservada))) {
                     TiquetesYaReservados = (DatosCompra[14]) + "," + TiquetesYaReservados;
+                    //Se extrae el archivo con comma de separador
 
                 }
 

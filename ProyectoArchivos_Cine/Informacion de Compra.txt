@@ -2,3 +2,4 @@
 Luis;878976;16716726672;luis@uam.com;Luis;Visa;61576771676761;01/2017;155;6000;Adulto Mayor;3;Blade Runner - Double Feature;Tarde 16:00-18:00;Btn_A9,Btn_D8,Btn_D7,
 ;;;;fdsgf;American Express;fgdgs;01/2017;fgdgfd;4000;Adulto Mayor;2;It - El payaso diabolico;Mañana 10:00-12:00;Btn_A9,Btn_A8,
 fgsh;gfdfg;gfdhg;gfgf;fgsh;American Express;df;01/2017;fg;4000;Adulto Mayor;2;NinjaGo - Lego;Mañana 10:00-12:00;Btn_A8,Btn_A7,
+Rafael;87967260;155817357309;rdi@outlook.com;Rafael Diaz Galeano;MasterCard;65656556566565;04/2021;155;6000;Adulto;3;It - El payaso diabolico;Noche 20:00-22:00;Btn_D7,Btn_D8,Btn_D9,
