@@ -2367,7 +2367,7 @@ public class seleccionCampos extends javax.swing.JFrame {
         DesactBoton(Btn_D6);DesactBoton(Btn_D7);DesactBoton(Btn_D8);DesactBoton(Btn_D9);DesactBoton(Btn_D10);
         DesactBoton(Btn_D11);DesactBoton(Btn_D12);DesactBoton(Btn_D13);DesactBoton(Btn_D14);
         DesactBoton(Btn_E1);DesactBoton(Btn_E2);DesactBoton(Btn_E3);DesactBoton(Btn_E4);DesactBoton(Btn_E5);
-        DesactBoton(Btn_E6);DesactBoton(Btn_A7);DesactBoton(Btn_E8);DesactBoton(Btn_E9);DesactBoton(Btn_E10);
+        DesactBoton(Btn_E6);DesactBoton(Btn_E7);DesactBoton(Btn_E8);DesactBoton(Btn_E9);DesactBoton(Btn_E10);
         DesactBoton(Btn_E11);DesactBoton(Btn_E12);DesactBoton(Btn_E13);DesactBoton(Btn_E14);
     }//GEN-LAST:event_formWindowOpened
 
