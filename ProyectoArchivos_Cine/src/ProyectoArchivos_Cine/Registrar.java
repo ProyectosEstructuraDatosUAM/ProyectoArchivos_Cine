@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProyectoArchivos_Cine;
 
 import java.io.*;
@@ -10,8 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author Diaz
+For para registrar los nuevos usuarios en el sistema
  */
 public class Registrar extends javax.swing.JFrame {
 

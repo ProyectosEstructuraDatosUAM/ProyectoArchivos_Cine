@@ -1,8 +1,7 @@
 
 package ProyectoArchivos_Cine;
 /**
- *
- * @author infinitus
+Clase encargada de manejar la informacion de los tiquetes y las peliculas
  */
 public class Reservacion {
     String [][] campos = new String[5][13];
@@ -92,6 +91,8 @@ public class Reservacion {
     }
      
     public void setPosition(int row, int column, String campo){
+        /*guarda la posicion de los botones para poder setear el numero de campo en a solicitud de
+        compra*/
         this.row=row;
         this.column=column;
         this.Campo=campo;

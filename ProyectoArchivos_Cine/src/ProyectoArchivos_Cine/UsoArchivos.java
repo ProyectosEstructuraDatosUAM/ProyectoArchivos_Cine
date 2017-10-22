@@ -8,8 +8,7 @@ package ProyectoArchivos_Cine;
 import java.io.*;
 
 /**
- *
- * @author Diaz
+maneja os archivos del sistema para el almacenamiento de la informacion
  */
 public class UsoArchivos {
 

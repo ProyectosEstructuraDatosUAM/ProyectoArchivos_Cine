@@ -169,7 +169,7 @@ public class InicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreUsuarioActionPerformed
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
-        // TODO add your handling code here:
+        // metodo de validacion de los usuarios para el inicio de sesion
         ValidacionesContrasenas validarinicio = new ValidacionesContrasenas();
         UsoArchivos archivos = new UsoArchivos();
         Administradores usuario = new Administradores();

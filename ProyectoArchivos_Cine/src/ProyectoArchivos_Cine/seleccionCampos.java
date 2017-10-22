@@ -1,8 +1,8 @@
 package ProyectoArchivos_Cine;
-
 /**
- *
- * @author yogg-saron
+Proyeto realizado por:
+Rafa
+Carlos
  */
 import java.awt.Color;
 import java.awt.event.MouseListener;
@@ -1907,47 +1907,47 @@ public class seleccionCampos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn_E3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E3ActionPerformed
-        color(Btn_E3, 4, 2, "E3");
+        color(Btn_E3, 4, 2, "E3"); //Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_E3ActionPerformed
 
     private void Btn_B4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B4ActionPerformed
-        color(Btn_B4, 1, 3, "B4");
+        color(Btn_B4, 1, 3, "B4");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_B4ActionPerformed
 
     private void Btn_A2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A2ActionPerformed
-        color(Btn_A2, 0, 1, "A2");
+        color(Btn_A2, 0, 1, "A2");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_A2ActionPerformed
 
     private void Btn_B6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B6ActionPerformed
-        color(Btn_B6, 1, 5, "B6");
+        color(Btn_B6, 1, 5, "B6");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_B6ActionPerformed
 
     private void Btn_A5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A5ActionPerformed
-        color(Btn_A5, 0, 4, "A5");
+        color(Btn_A5, 0, 4, "A5");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_A5ActionPerformed
 
     private void Btn_A8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A8ActionPerformed
-        color(Btn_A8, 0, 7, "A8");
+        color(Btn_A8, 0, 7, "A8");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_A8ActionPerformed
 
     private void Btn_B9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B9ActionPerformed
-        color(Btn_B9, 1, 8, "B9");
+        color(Btn_B9, 1, 8, "B9");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_B9ActionPerformed
 
     private void Btn_C12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C12ActionPerformed
-        color(Btn_C12, 2, 11, "C12");
+        color(Btn_C12, 2, 11, "C12");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_C12ActionPerformed
 
     private void Btn_B12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B12ActionPerformed
-        color(Btn_B12, 1, 11, "B12");
+        color(Btn_B12, 1, 11, "B12");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_B12ActionPerformed
 
     private void Btn_A11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A11ActionPerformed
-        color(Btn_A11, 0, 10, "A11");
+        color(Btn_A11, 0, 10, "A11");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_A11ActionPerformed
 
     private void Btn_B14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B14ActionPerformed
-        color(Btn_B14, 1, 13, "B14");
+        color(Btn_B14, 1, 13, "B14");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_B14ActionPerformed
 
     private void txt_tipo_tiqueteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tipo_tiqueteActionPerformed
@@ -2056,256 +2056,256 @@ public class seleccionCampos extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_PagarActionPerformed
 
     private void Btn_AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_AtrasActionPerformed
-        // TODO add your handling code here:
+        // Regresa a principal
         principal abrir = new principal();
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_Btn_AtrasActionPerformed
 
     private void Btn_A1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A1ActionPerformed
-        color(Btn_A1, 0, 0, "A1");
+        color(Btn_A1, 0, 0, "A1");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_A1ActionPerformed
 
     private void Btn_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B1ActionPerformed
-        color(Btn_B1, 1, 0, "B1");
+        color(Btn_B1, 1, 0, "B1");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_B1ActionPerformed
 
     private void Btn_C1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C1ActionPerformed
-        color(Btn_C1, 2, 0, "C1");
+        color(Btn_C1, 2, 0, "C1");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_C1ActionPerformed
 
     private void Btn_D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D1ActionPerformed
-        color(Btn_D1, 3, 0, "D1");
+        color(Btn_D1, 3, 0, "D1");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_D1ActionPerformed
 
     private void Btn_E1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E1ActionPerformed
-        color(Btn_E1, 4, 0, "E1");
+        color(Btn_E1, 4, 0, "E1");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_E1ActionPerformed
 
     private void Btn_E2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E2ActionPerformed
-        color(Btn_E2, 4, 1, "E2");
+        color(Btn_E2, 4, 1, "E2");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_E2ActionPerformed
 
     private void Btn_D2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D2ActionPerformed
-        color(Btn_D2, 3, 1, "D2");
+        color(Btn_D2, 3, 1, "D2");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_D2ActionPerformed
 
     private void Btn_C2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C2ActionPerformed
-        color(Btn_C2, 2, 1, "C2");
+        color(Btn_C2, 2, 1, "C2");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_C2ActionPerformed
 
     private void Btn_B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B2ActionPerformed
-        color(Btn_B2, 1, 1, "B2");
+        color(Btn_B2, 1, 1, "B2");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_B2ActionPerformed
 
     private void Btn_A3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A3ActionPerformed
-        color(Btn_A3, 0, 2, "A3");
+        color(Btn_A3, 0, 2, "A3");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_A3ActionPerformed
 
     private void Btn_B3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B3ActionPerformed
-        color(Btn_B3, 1, 2, "B3");
+        color(Btn_B3, 1, 2, "B3");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_B3ActionPerformed
 
     private void Btn_C3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C3ActionPerformed
-        color(Btn_C3, 2, 2, "C3");
+        color(Btn_C3, 2, 2, "C3");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_C3ActionPerformed
 
     private void Btn_D3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D3ActionPerformed
-        color(Btn_D3, 3, 2, "D3");
+        color(Btn_D3, 3, 2, "D3");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_D3ActionPerformed
 
     private void Btn_E4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E4ActionPerformed
-        color(Btn_E4, 4, 3, "E4");
+        color(Btn_E4, 4, 3, "E4");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_E4ActionPerformed
 
     private void Btn_D4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D4ActionPerformed
-        color(Btn_D4, 3, 3, "D4");
+        color(Btn_D4, 3, 3, "D4");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_D4ActionPerformed
 
     private void Btn_C4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C4ActionPerformed
-        color(Btn_C4, 2, 3, "C4");
+        color(Btn_C4, 2, 3, "C4");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_C4ActionPerformed
 
     private void Btn_A4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A4ActionPerformed
-        color(Btn_A4, 0, 3, "A4");
+        color(Btn_A4, 0, 3, "A4");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_A4ActionPerformed
 
     private void Btn_A6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A6ActionPerformed
-        color(Btn_A6, 0, 5, "A6");
+        color(Btn_A6, 0, 5, "A6");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_A6ActionPerformed
 
     private void Btn_A7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A7ActionPerformed
-        color(Btn_A7, 0, 6, "A7");
+        color(Btn_A7, 0, 6, "A7");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_A7ActionPerformed
 
     private void Btn_A9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A9ActionPerformed
-        color(Btn_A9, 0, 8, "A9");
+        color(Btn_A9, 0, 8, "A9");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_A9ActionPerformed
 
     private void Btn_A10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A10ActionPerformed
-        color(Btn_A10, 0, 9, "A10");
+        color(Btn_A10, 0, 9, "A10");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_A10ActionPerformed
 
     private void Btn_A12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A12ActionPerformed
-        color(Btn_A12, 0, 11, "A12");
+        color(Btn_A12, 0, 11, "A12");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_A12ActionPerformed
 
     private void Btn_A13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A13ActionPerformed
-        color(Btn_A13, 0, 12, "A13");
+        color(Btn_A13, 0, 12, "A13");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_A13ActionPerformed
 
     private void Btn_A14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_A14ActionPerformed
-        color(Btn_A14, 0, 13, "A14");
+        color(Btn_A14, 0, 13, "A14");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_A14ActionPerformed
 
     private void Btn_B5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B5ActionPerformed
-        color(Btn_B5, 1, 4, "B5");
+        color(Btn_B5, 1, 4, "B5");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_B5ActionPerformed
 
     private void Btn_B7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B7ActionPerformed
-        color(Btn_B7, 1, 6, "B7");
+        color(Btn_B7, 1, 6, "B7");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_B7ActionPerformed
 
     private void Btn_C7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C7ActionPerformed
-        color(Btn_C7, 2, 6, "C7");
+        color(Btn_C7, 2, 6, "C7");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_C7ActionPerformed
 
     private void Btn_B8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B8ActionPerformed
-        color(Btn_B8, 1, 7, "B8");
+        color(Btn_B8, 1, 7, "B8");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_B8ActionPerformed
 
     private void Btn_C8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C8ActionPerformed
-        color(Btn_C8, 2, 7, "C8");
+        color(Btn_C8, 2, 7, "C8");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_C8ActionPerformed
 
     private void Btn_B10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B10ActionPerformed
-        color(Btn_B10, 1, 9, "B10");
+        color(Btn_B10, 1, 9, "B10");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_B10ActionPerformed
 
     private void Btn_B11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B11ActionPerformed
-        color(Btn_B11, 1, 10, "B11");
+        color(Btn_B11, 1, 10, "B11");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_B11ActionPerformed
 
     private void Btn_B13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_B13ActionPerformed
-        color(Btn_B13, 1, 12, "B13");
+        color(Btn_B13, 1, 12, "B13");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_B13ActionPerformed
 
     private void Btn_C5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C5ActionPerformed
-        color(Btn_C5, 2, 4, "C5");
+        color(Btn_C5, 2, 4, "C5");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_C5ActionPerformed
 
     private void Btn_C6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C6ActionPerformed
-        color(Btn_C6, 2, 5, "C6");
+        color(Btn_C6, 2, 5, "C6");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_C6ActionPerformed
 
     private void Btn_C9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C9ActionPerformed
-        color(Btn_C9, 2, 8, "C9");
+        color(Btn_C9, 2, 8, "C9");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_C9ActionPerformed
 
     private void Btn_C10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C10ActionPerformed
-        color(Btn_C10, 2, 9, "C10");
+        color(Btn_C10, 2, 9, "C10");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_C10ActionPerformed
 
     private void Btn_C11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C11ActionPerformed
-        color(Btn_C11, 2, 10, "C11");
+        color(Btn_C11, 2, 10, "C11");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_C11ActionPerformed
 
     private void Btn_C13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C13ActionPerformed
-        color(Btn_C13, 2, 12, "C13");
+        color(Btn_C13, 2, 12, "C13");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_C13ActionPerformed
 
     private void Btn_C14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_C14ActionPerformed
-        color(Btn_C14, 2, 13, "C14");
+        color(Btn_C14, 2, 13, "C14");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_C14ActionPerformed
 
     private void Btn_D5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D5ActionPerformed
-        color(Btn_D5, 3, 4, "D5");
+        color(Btn_D5, 3, 4, "D5");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_D5ActionPerformed
 
     private void Btn_D6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D6ActionPerformed
-        color(Btn_D6, 3, 5, "D6");
+        color(Btn_D6, 3, 5, "D6");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_D6ActionPerformed
 
     private void Btn_D7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D7ActionPerformed
-        color(Btn_D7, 3, 6, "D7");
+        color(Btn_D7, 3, 6, "D7");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_D7ActionPerformed
 
     private void Btn_D8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D8ActionPerformed
-        color(Btn_D8, 3, 7, "D8");
+        color(Btn_D8, 3, 7, "D8");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_D8ActionPerformed
 
     private void Btn_D9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D9ActionPerformed
-        color(Btn_D9, 3, 8, "D9");
+        color(Btn_D9, 3, 8, "D9");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_D9ActionPerformed
 
     private void Btn_D10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D10ActionPerformed
-        color(Btn_D10, 3, 9, "D10");
+        color(Btn_D10, 3, 9, "D10");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_D10ActionPerformed
 
     private void Btn_D11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D11ActionPerformed
-        color(Btn_D11, 3, 10, "D11");
+        color(Btn_D11, 3, 10, "D11");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_D11ActionPerformed
 
     private void Btn_D12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D12ActionPerformed
-        color(Btn_D12, 3, 11, "D12");
+        color(Btn_D12, 3, 11, "D12");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_D12ActionPerformed
 
     private void Btn_D13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D13ActionPerformed
-        color(Btn_D13, 3, 12, "D13");
+        color(Btn_D13, 3, 12, "D13");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_D13ActionPerformed
 
     private void Btn_D14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_D14ActionPerformed
-        color(Btn_D14, 3, 13, "D14");
+        color(Btn_D14, 3, 13, "D14");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_D14ActionPerformed
 
     private void Btn_E5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E5ActionPerformed
-        color(Btn_E5, 4, 4, "E5");
+        color(Btn_E5, 4, 4, "E5");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_E5ActionPerformed
 
     private void Btn_E6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E6ActionPerformed
-        color(Btn_E6, 4, 5, "E6");
+        color(Btn_E6, 4, 5, "E6");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_E6ActionPerformed
 
     private void Btn_E7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E7ActionPerformed
-        color(Btn_E7, 4, 6, "E7");
+        color(Btn_E7, 4, 6, "E7");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_E7ActionPerformed
 
     private void Btn_E8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E8ActionPerformed
-        color(Btn_E8, 4, 7, "E8");
+        color(Btn_E8, 4, 7, "E8");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_E8ActionPerformed
 
     private void Btn_E9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E9ActionPerformed
-        color(Btn_E9, 4, 8, "E9");
+        color(Btn_E9, 4, 8, "E9");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_E9ActionPerformed
 
     private void Btn_E10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E10ActionPerformed
-        color(Btn_E10, 4, 9, "E10");
+        color(Btn_E10, 4, 9, "E10");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_E10ActionPerformed
 
     private void Btn_E11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E11ActionPerformed
-        color(Btn_E11, 4, 10, "E11");
+        color(Btn_E11, 4, 10, "E11");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_E11ActionPerformed
 
     private void Btn_E12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E12ActionPerformed
-        color(Btn_E12, 4, 11, "E12");
+        color(Btn_E12, 4, 11, "E12");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_E12ActionPerformed
 
     private void Btn_E13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E13ActionPerformed
-        color(Btn_E13, 4, 12, "E13");
+        color(Btn_E13, 4, 12, "E13");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_E13ActionPerformed
 
     private void Btn_E14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_E14ActionPerformed
-        color(Btn_E14, 4, 13, "E14");
+        color(Btn_E14, 4, 13, "E14");//Llama al metodo color que recive un boton, int, int, String
     }//GEN-LAST:event_Btn_E14ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        // TODO add your handling code here:
+        // regresa a principal
         principal princ = new principal();
         princ.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
     private void btn_menosTiquetesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_menosTiquetesActionPerformed
-        // TODO add your handling code here:
+        // Metodo para restar tiquetes
         CantidadTiquetes--;
         if (CantidadTiquetes < 1) {
             CantidadTiquetes = 1;
@@ -2314,7 +2314,7 @@ public class seleccionCampos extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_menosTiquetesActionPerformed
 
     private void btn_masTiquetesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_masTiquetesActionPerformed
-        // TODO add your handling code here:
+        // // Metodo para sumar tiquetes
         CantidadTiquetes++;
         txt_cantidad_tiquetes.setText(CantidadTiquetes + "");
     }//GEN-LAST:event_btn_masTiquetesActionPerformed

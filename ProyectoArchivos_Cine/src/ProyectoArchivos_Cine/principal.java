@@ -1,22 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProyectoArchivos_Cine;
 
 import static ProyectoArchivos_Cine.seleccionCampos.txt_tanda;
 import javax.swing.JOptionPane;
-
 /**
- *
- * @author yogg-saron
+Proyeto realizado por:
+Rafa
+Carlos
  */
 public class principal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form principal
-     */
     public principal() {
         initComponents();
     }
@@ -130,12 +123,15 @@ public class principal extends javax.swing.JFrame {
 
     private void Btn_Pelicula1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pelicula1ActionPerformed
         // Pelicula 1
-        seleccionCampos abrir = new seleccionCampos();
+        seleccionCampos abrir = new seleccionCampos();  //instancia el form seleccionCampos 
         seleccionCampos.txt_peliculas.setText("Blade Runner - Double Feature");
+        //Establece el nombre de la pelicula en el txt_peliculas de seleccionCampos
         seleccionCampos.txt_tanda.setText(txt_Selecciontanda.getSelectedItem().toString());
+        //Establece la tanda en txt_Selecciontanda de seleccionCampos
         abrir.setVisible(true);
-        //this.setVisible(false);
+        //abre el form seleccionCampos 
         this.dispose();
+        //oculta el form actual
     }//GEN-LAST:event_Btn_Pelicula1ActionPerformed
 
     private void Btn_AdministracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_AdministracionActionPerformed
@@ -163,18 +159,23 @@ public class principal extends javax.swing.JFrame {
         }*/
 
         InicioSesion sesion = new InicioSesion();
+        //intancia el form de logion para el adminsitrador
         sesion.setVisible(true);
+        //hace que el form sea visisble
         this.dispose();
+        //deshabilita ventana actual 
 
     }//GEN-LAST:event_Btn_AdministracionActionPerformed
 
     private void Btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SalirActionPerformed
         // Boton Salir
         System.exit(0);
+        //sale del programa
     }//GEN-LAST:event_Btn_SalirActionPerformed
 
     private void Btn_Pelicula2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pelicula2ActionPerformed
-        // Peicula 2
+        // Pelicula 2
+        //Mismos comentarios y funcion que en el boton Btn_Pelicula1 
         seleccionCampos abrir = new seleccionCampos();
         seleccionCampos.txt_peliculas.setText("It - El payaso diabolico");
         seleccionCampos.txt_tanda.setText(txt_Selecciontanda.getSelectedItem().toString());
@@ -184,6 +185,7 @@ public class principal extends javax.swing.JFrame {
 
     private void Btn_Pelicula3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pelicula3ActionPerformed
         // Pelicula 3
+        //Mismos comentarios y funcion que en el boton Btn_Pelicula1 
         seleccionCampos abrir = new seleccionCampos();
         seleccionCampos.txt_peliculas.setText("NinjaGo - Lego");
         seleccionCampos.txt_tanda.setText(txt_Selecciontanda.getSelectedItem().toString());
@@ -193,6 +195,7 @@ public class principal extends javax.swing.JFrame {
 
     private void Btn_Pelicula4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pelicula4ActionPerformed
         // pelicula 4
+        //Mismos comentarios y funcion que en el boton Btn_Pelicula1 
         seleccionCampos abrir = new seleccionCampos();
         seleccionCampos.txt_peliculas.setText("Battle of the Sexes");
         seleccionCampos.txt_tanda.setText(txt_Selecciontanda.getSelectedItem().toString());

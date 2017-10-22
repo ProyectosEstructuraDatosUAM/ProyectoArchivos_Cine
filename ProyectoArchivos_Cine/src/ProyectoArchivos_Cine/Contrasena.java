@@ -2,7 +2,6 @@ package ProyectoArchivos_Cine;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-
 /**
  * metodo recibe un parametro tipo String que sera el archivo a leer
  * luego de ser leido se almacena en el buffer de memoria en almacen
