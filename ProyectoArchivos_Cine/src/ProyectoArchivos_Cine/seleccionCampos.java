@@ -510,16 +510,21 @@ public class seleccionCampos extends javax.swing.JFrame {
     }
 
     private void DesactBoton(javax.swing.JButton evt) {
+        //Se recibe un objeto boton y se verifica si está seleccionado anteriormente para desactivarlo
+        
         String pelicula = txt_peliculas.getText();
         String tanda = txt_tanda.getText();
-        //######################################################################
-        //Blade Runner - Double Feature
         
+        //Se dividen todos los nombres de botones que se ingresaron
         String array[] = TiquetesYaReservados.split(",");
         
+        //Se comparan todos los nombres ingresados anteriormente al boton que está evaluando este metodo
         for (int i = 0; i <= array.length - 1; i++) {
 
+            //se guardan las posiciones del array en una variable temporal
             String temp = array[i];
+            
+            //Se comparan el nombre del boton con la variable temporal, si son iguales, está seleccionado y debe desactivarse
             if (evt.getName().equals(temp)) {
                 evt.setBackground(Color.red);
             }
@@ -1972,7 +1977,10 @@ public class seleccionCampos extends javax.swing.JFrame {
             Infocorrecta = true;
         }
         
+        //Se comprueba que la info esté toda completa y que se están seleccionando los tiquetes 
         if (CantidadTiquetes == CantidadTiquetesSeleccionados && Infocorrecta) {
+            
+            //Si todo está correcto, se llena el objeto
             reserva.setNombre_completo(txt_nombre_completo.getText());
             reserva.setCorreo_electronico(txt_correo_electronico.getText());
             reserva.setCedula(txt_cedula.getText());
@@ -1980,7 +1988,6 @@ public class seleccionCampos extends javax.swing.JFrame {
             tipoTicket = txt_tipo_tiquete.getSelectedItem().toString();
             reserva.setTipo_tiquete(tipoTicket);
             reserva.setCantidad_tiquetes(txt_cantidad_tiquetes.getText());
-            //tipoPelicula = txt_peliculas.getSelectedItem().toString();
             reserva.setPelicula(txt_peliculas.getText());
             reserva.setTanda(txt_tanda.getText());
 
@@ -1999,12 +2006,14 @@ public class seleccionCampos extends javax.swing.JFrame {
         donde null seria unsinonimo de disponible.*/
             String tiquetes = "";
 
+            //Crea una variable string en la que guarda todos los tiquetes (botones) seleccionados
             for (int i = 0; i < TiquetesSeleccionados.size(); i++) {
                 tiquetes = tiquetes + TiquetesSeleccionados.get(i);
             }
             
             //////////////////////
             capturaArray = "";
+            //Crea una variable string en la que guarda todos los asientos seleccionados para mostrarlo en el resumen
             for (int i = 0; i < AsientosSeleccionados.size(); i++) {
                 capturaArray = capturaArray + " " + AsientosSeleccionados.get(i);
             }
@@ -2023,6 +2032,7 @@ public class seleccionCampos extends javax.swing.JFrame {
             +"Tipo tiquete:  "+reserva.getTipo_tiquete()+"\n"
             +"Total a pagar: "+totaltickets+"\n"
             +"Pelicula:      "+reserva.getPelicula());*/
+            //Se crea un nuevo formulario y se llenan los valores en él.
             ResumenReservacion abrir = new ResumenReservacion();
 
             abrir.txt_nombre_completo.setText(txt_nombre_completo.getText());
@@ -2036,6 +2046,7 @@ public class seleccionCampos extends javax.swing.JFrame {
             abrir.txt_butacas.setText(capturaArray);
             abrir.tiquetes = tiquetes;
 
+            
             abrir.setVisible(true);
             this.setVisible(false);
 
@@ -2338,10 +2349,14 @@ public class seleccionCampos extends javax.swing.JFrame {
         }
         BufferedReader b = new BufferedReader(f);
         try {
+            
+            //Se leen todas las lineas del archivo
             while ((linea = b.readLine()) != null) {
 
+                //Se dividen cada linea en un arreglo separado por ;
                 String DatosCompra[] = linea.split(";");
 
+                //Cuando se encuentren las coincidencias tanto de pelicula como de la tanda, se extraen esos datos en un string.
                 if (((DatosCompra[12]).equals(PeliculaYaReservada)) && (DatosCompra[13].equals(TandaYaReservada))) {
                     TiquetesYaReservados = (DatosCompra[14]) + "," + TiquetesYaReservados;
                     //Se extrae el archivo con comma de separador
